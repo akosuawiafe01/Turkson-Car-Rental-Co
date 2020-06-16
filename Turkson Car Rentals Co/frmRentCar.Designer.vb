@@ -28,8 +28,6 @@ Partial Class frmRentCar
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cmbCarstatus = New System.Windows.Forms.ComboBox()
-        Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
         Me.cmbCarCategory = New System.Windows.Forms.ComboBox()
         Me.cmbCarYear = New System.Windows.Forms.ComboBox()
         Me.cmbCarMaker = New System.Windows.Forms.ComboBox()
@@ -47,13 +45,15 @@ Partial Class frmRentCar
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.labUsername = New System.Windows.Forms.Label()
         Me.labUserID = New System.Windows.Forms.Label()
-        Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRentalID = New System.Windows.Forms.TextBox()
+        Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
+        Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -117,16 +117,6 @@ Partial Class frmRentCar
         Me.cmbCarstatus.Size = New System.Drawing.Size(146, 21)
         Me.cmbCarstatus.TabIndex = 35
         Me.cmbCarstatus.ValueMember = "carStatus"
-        '
-        'VehicleBindingSource
-        '
-        Me.VehicleBindingSource.DataMember = "Vehicle"
-        Me.VehicleBindingSource.DataSource = Me.Turkson_Co_DataSet
-        '
-        'Turkson_Co_DataSet
-        '
-        Me.Turkson_Co_DataSet.DataSetName = "Turkson_Co_DataSet"
-        Me.Turkson_Co_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmbCarCategory
         '
@@ -295,10 +285,6 @@ Partial Class frmRentCar
         Me.labUserID.Text = "user ID"
         Me.labUserID.Visible = False
         '
-        'VehicleTableAdapter
-        '
-        Me.VehicleTableAdapter.ClearBeforeFill = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -314,6 +300,20 @@ Partial Class frmRentCar
         Me.txtRentalID.Name = "txtRentalID"
         Me.txtRentalID.Size = New System.Drawing.Size(144, 20)
         Me.txtRentalID.TabIndex = 26
+        '
+        'TurksonCo_DataSet
+        '
+        Me.TurksonCo_DataSet.DataSetName = "TurksonCo_DataSet"
+        Me.TurksonCo_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VehicleBindingSource
+        '
+        Me.VehicleBindingSource.DataMember = "Vehicle"
+        Me.VehicleBindingSource.DataSource = Me.TurksonCo_DataSet
+        '
+        'VehicleTableAdapter
+        '
+        Me.VehicleTableAdapter.ClearBeforeFill = True
         '
         'frmRentCar
         '
@@ -334,9 +334,9 @@ Partial Class frmRentCar
         Me.Text = "frmRentCar"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -364,9 +364,9 @@ Partial Class frmRentCar
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents labUsername As Label
     Friend WithEvents labUserID As Label
-    Friend WithEvents Turkson_Co_DataSet As TurksonCo_DataSet
-    Friend WithEvents VehicleBindingSource As BindingSource
-    Friend WithEvents VehicleTableAdapter As TurksonCo_DataSetTableAdapters.VehicleTableAdapter
     Friend WithEvents Label4 As Label
     Friend WithEvents txtRentalID As TextBox
+    Friend WithEvents TurksonCo_DataSet As TurksonCo_DataSet
+    Friend WithEvents VehicleBindingSource As BindingSource
+    Friend WithEvents VehicleTableAdapter As TurksonCo_DataSetTableAdapters.VehicleTableAdapter
 End Class

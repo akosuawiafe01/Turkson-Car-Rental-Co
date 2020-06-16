@@ -2,7 +2,7 @@
 
 Public Class frmRentCar
 
-    Dim randInt As Integer = 10
+    Dim randInt As Integer = 5
 
     Dim rentalAdatpter As TurksonCo_DataSetTableAdapters.RentalTableAdapter = New TurksonCo_DataSetTableAdapters.RentalTableAdapter
     Dim rentalDataset = New TurksonCo_DataSet()
@@ -48,16 +48,13 @@ Public Class frmRentCar
 
 
         'Saving data into database
-        MessageBox.Show("Your courses have been saved successfully", "Registration Successful", MessageBoxButtons.OK)
-
-
-
         MessageBox.Show("Rental details saved sucessfully", "Car Rental")
     End Sub
 
     Private Sub frmRentCar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Turkson_Co_DataSet.Vehicle' table. You can move, or remove it, as needed.
-        Me.VehicleTableAdapter.Fill(Me.Turkson_Co_DataSet.Vehicle)
+        'TODO: This line of code loads data into the 'TurksonCo_DataSet.Vehicle' table. You can move, or remove it, as needed.
+        Me.VehicleTableAdapter.Fill(Me.TurksonCo_DataSet.Vehicle)
+
 
         labUsername.Text = frmUserLogin.Text
 
@@ -69,7 +66,7 @@ Public Class frmRentCar
 
         Try
 
-            Dim constr As String = "Data Source=.;Initial Catalog=TimtimTourApp-Db;Integrated Security=True"
+            Dim constr As String = "Data Source=.;Initial Catalog=TurksonCo-Db;Integrated Security=True"
             Using con As SqlConnection = New SqlConnection(constr)
                 Using cmd As SqlCommand = New SqlCommand("Select * from Client where username='" & frmUserLogin.txtUserName.Text & "'  ")
                     cmd.CommandType = CommandType.Text

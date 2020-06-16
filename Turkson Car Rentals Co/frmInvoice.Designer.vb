@@ -60,7 +60,7 @@ Partial Class frmInvoice
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnPayforCar = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
-        Me.cmbInvoicedate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpInvoicedate = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtRentalID = New System.Windows.Forms.TextBox()
         Me.EmployeeTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.EmployeeTableAdapter()
@@ -507,15 +507,15 @@ Partial Class frmInvoice
         Me.btnBack.Text = "Cancel"
         Me.btnBack.UseVisualStyleBackColor = True
         '
-        'cmbInvoicedate
+        'dtpInvoicedate
         '
-        Me.cmbInvoicedate.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dtpInvoicedate.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbInvoicedate.Location = New System.Drawing.Point(844, 95)
-        Me.cmbInvoicedate.Name = "cmbInvoicedate"
-        Me.cmbInvoicedate.Size = New System.Drawing.Size(159, 20)
-        Me.cmbInvoicedate.TabIndex = 18
+        Me.dtpInvoicedate.Location = New System.Drawing.Point(844, 95)
+        Me.dtpInvoicedate.Name = "dtpInvoicedate"
+        Me.dtpInvoicedate.Size = New System.Drawing.Size(159, 20)
+        Me.dtpInvoicedate.TabIndex = 18
         '
         'Label17
         '
@@ -544,7 +544,7 @@ Partial Class frmInvoice
         Me.ClientSize = New System.Drawing.Size(1003, 530)
         Me.Controls.Add(Me.txtRentalID)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.cmbInvoicedate)
+        Me.Controls.Add(Me.dtpInvoicedate)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnPayforCar)
         Me.Controls.Add(Me.GroupBox3)
@@ -602,7 +602,7 @@ Partial Class frmInvoice
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbPaidTo As ComboBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents cmbInvoicedate As DateTimePicker
+    Friend WithEvents dtpInvoicedate As DateTimePicker
     Friend WithEvents Label17 As Label
     Friend WithEvents txtRentalID As TextBox
     Friend WithEvents Turkson_Co_DataSet As TurksonCo_DataSet

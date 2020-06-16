@@ -3,13 +3,14 @@
 
 Public Class frmInvoice
 
-    Dim randInt As Integer = 10
+    Dim randInt As Integer = 5
 
     Dim invoiceAdapter As TurksonCo_DataSetTableAdapters.Transaction_InvoiceTableAdapter = New TurksonCo_DataSetTableAdapters.Transaction_InvoiceTableAdapter
-    Dim invoiceDataset = New TurksonCo_DataSet()
+    Dim invoiceDataset As TurksonCo_DataSet = New TurksonCo_DataSet()
 
     'Variable for storing rental data collected
     Dim invoiceRow As TurksonCo_DataSet.Transaction_InvoiceRow
+
     Private Sub TextBox10_TextChanged(sender As Object, e As EventArgs) Handles txtTotalCost.TextChanged
 
     End Sub
@@ -35,24 +36,28 @@ Public Class frmInvoice
     Private Sub btnPayforCar_Click(sender As Object, e As EventArgs) Handles btnPayforCar.Click
         Try
 
-            invoiceRow = invoiceDataset.Transaction_Invoice.Row
+            invoiceRow = invoiceDataset.Transaction_Invoice.NewRow
 
             'recieving data from text boxes
 
             invoiceRow.recieptNo = txtrecieptNo.Text.ToString()
-            invoiceRow.dateIssued = dtpPickUp.ToString()
+            invoiceRow.dateIssued = dtpInvoicedate.Value.Date
             invoiceRow.workerID = cmbPaidTo.SelectedValue.ToString()
             invoiceRow.clientID = txtUserID.Text
             invoiceRow.totalAmountPayable = txtTotalCost.Text
             invoiceRow.paymentMethod = cmbPayType.SelectedItem.ToString
             invoiceRow.duration = txtDuration.Text
-            invoiceRow.duedate = dtpDropOff.ToString()
-            invoiceRow.dateHired = dtpPickUp.ToString()
+            invoiceRow.duedate = dtpDropOff.Value.Date
+            invoiceRow.dateHired = dtpPickUp.Value.Date
+            invoiceRow.rentalID = txtRentalID.Text
 
 
 
         Catch ex As Exception
-            MessageBox.Show("Data fields cannot be left null", ex.Message)
+            MessageBox.Show(ex.Message)
+
+        Catch ex As SqlException
+            MessageBox.Show(ex.Message)
         End Try
 
 
@@ -63,7 +68,7 @@ Public Class frmInvoice
 
         'Saving data into database
 
-        MessageBox.Show("Rental details saved sucessfully", "Car Rental")
+        MessageBox.Show("Invoice Generated", "Car Rental")
     End Sub
 
     Private Sub frmInvoice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -75,37 +80,6 @@ Public Class frmInvoice
     End Sub
 
     Private Sub txtUserID_Leave(sender As Object, e As EventArgs) Handles txtUserID.Leave
-        Try
-
-            Dim constr As String = "Data Source=.;Initial Catalog=TurksonCo-Db;Integrated Security=True"
-            Using con As SqlConnection = New SqlConnection(constr)
-                Using cmd As SqlCommand = New SqlCommand("select * from User_Rental_Details where clientID ='" & txtUserID.Text & "'  ")
-                    cmd.CommandType = CommandType.Text
-                    cmd.Connection = con
-                    con.Open()
-                    Using sdr As SqlDataReader = cmd.ExecuteReader()
-                        sdr.Read()
-
-                        'labUserID.Text = sdr("clientID").ToString()
-                        'txtUserID.Text = sdr("clientID").ToString()
-                        txtFirstname.Text = sdr("firstName").ToString()
-                        txtUserLicen.Text = sdr("LicenseNo").ToString()
-                        txtVehicNo.Text = sdr("vehicleID").ToString()
-                        txtModel.Text = sdr("carModel").ToString()
-                        txtCarYeaar.Text = sdr("carYear").ToString()
-                        txtRentalID.Text = sdr("rentalID").ToString()
-
-                    End Using
-                    con.Close()
-                End Using
-            End Using
-
-            txtrecieptNo.Text = randomInteger(randInt)
-
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
 
     End Sub
 
@@ -119,5 +93,41 @@ Public Class frmInvoice
         Else
             Me.Close()
         End If
+    End Sub
+
+    Private Sub txtRentalID_Leave(sender As Object, e As EventArgs) Handles txtRentalID.Leave
+        Try
+
+            Dim constr As String = "Data Source=.;Initial Catalog=TurksonCo-Db;Integrated Security=True"
+            Using con As SqlConnection = New SqlConnection(constr)
+                Using cmd As SqlCommand = New SqlCommand("select * from User_Rental_Details where rentalID ='" & txtRentalID.Text & "'  ")
+                    cmd.CommandType = CommandType.Text
+                    cmd.Connection = con
+                    con.Open()
+                    Using sdr As SqlDataReader = cmd.ExecuteReader()
+                        sdr.Read()
+
+                        'labUserID.Text = sdr("clientID").ToString()
+                        txtUserID.Text = sdr("clientID").ToString()
+                        txtFirstname.Text = sdr("firstName").ToString()
+                        txtUserLicen.Text = sdr("LicenseNo").ToString()
+                        txtVehicNo.Text = sdr("vehicleID").ToString()
+                        txtModel.Text = sdr("carModel").ToString()
+                        txtCarYeaar.Text = sdr("carYear").ToString()
+                        'txtRentalID.Text = sdr("rentalID").ToString()
+
+                    End Using
+                    con.Close()
+                End Using
+            End Using
+
+            txtrecieptNo.Text = randomInteger(randInt)
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class

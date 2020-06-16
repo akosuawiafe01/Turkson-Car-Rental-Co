@@ -79,10 +79,10 @@
     <Compile Include="frmAgreement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomersList.Designer.vb">
-      <DependentUpon>frmCustomersList.vb</DependentUpon>
+    <Compile Include="frmRentalList.Designer.vb">
+      <DependentUpon>frmRentalList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomersList.vb">
+    <Compile Include="frmRentalList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmployeeLogin.Designer.vb">
@@ -107,6 +107,12 @@
       <DependentUpon>frmRentCar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRentCar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchCustomer.Designer.vb">
+      <DependentUpon>frmSearchCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUserLogin.Designer.vb">
@@ -154,8 +160,8 @@
     <EmbeddedResource Include="frmAgreement.resx">
       <DependentUpon>frmAgreement.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomersList.resx">
-      <DependentUpon>frmCustomersList.vb</DependentUpon>
+    <EmbeddedResource Include="frmRentalList.resx">
+      <DependentUpon>frmRentalList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeLogin.resx">
       <DependentUpon>frmEmployeeLogin.vb</DependentUpon>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRentCar.resx">
       <DependentUpon>frmRentCar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCustomer.resx">
+      <DependentUpon>frmSearchCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserLogin.resx">
       <DependentUpon>frmUserLogin.vb</DependentUpon>

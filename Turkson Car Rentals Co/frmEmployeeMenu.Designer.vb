@@ -28,13 +28,13 @@ Partial Class frmEmployeeMenu
         Me.RentACarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgreementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchForACustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SearchForACustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,6 +71,24 @@ Partial Class frmEmployeeMenu
         Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.InvoiceToolStripMenuItem.Text = "Invoices"
         '
+        'SearchForACustomerToolStripMenuItem
+        '
+        Me.SearchForACustomerToolStripMenuItem.Name = "SearchForACustomerToolStripMenuItem"
+        Me.SearchForACustomerToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
+        Me.SearchForACustomerToolStripMenuItem.Text = "Customer Panel"
+        '
+        'ReportsToolStripMenuItem
+        '
+        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+        Me.ReportsToolStripMenuItem.Text = "Reports"
+        '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.LoginToolStripMenuItem.Text = "Logout"
+        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
@@ -102,24 +120,6 @@ Partial Class frmEmployeeMenu
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.LoginToolStripMenuItem.Text = "Logout"
-        '
-        'ReportsToolStripMenuItem
-        '
-        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
-        Me.ReportsToolStripMenuItem.Text = "Reports"
-        '
-        'SearchForACustomerToolStripMenuItem
-        '
-        Me.SearchForACustomerToolStripMenuItem.Name = "SearchForACustomerToolStripMenuItem"
-        Me.SearchForACustomerToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
-        Me.SearchForACustomerToolStripMenuItem.Text = "Customer Panel"
         '
         'frmEmployeeMenu
         '
