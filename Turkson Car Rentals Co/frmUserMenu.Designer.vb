@@ -24,11 +24,10 @@ Partial Class frmUserMenu
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RentACarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgreementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
@@ -37,17 +36,12 @@ Partial Class frmUserMenu
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.InvoiceToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'HomeToolStripMenuItem
         '
@@ -67,11 +61,10 @@ Partial Class frmUserMenu
         Me.AgreementToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
         Me.AgreementToolStripMenuItem.Text = "Agreement"
         '
-        'InvoiceToolStripMenuItem
+        'ContextMenuStrip1
         '
-        Me.InvoiceToolStripMenuItem.Name = "InvoiceToolStripMenuItem"
-        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.InvoiceToolStripMenuItem.Text = "Invoice"
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'Label2
         '
@@ -124,7 +117,6 @@ Partial Class frmUserMenu
     Friend WithEvents HomeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RentACarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgreementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InvoiceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblUsername As Label

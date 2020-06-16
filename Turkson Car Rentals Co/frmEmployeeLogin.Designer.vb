@@ -29,6 +29,7 @@ Partial Class frmEmployeeLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtEmpPasss = New System.Windows.Forms.MaskedTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnLogin
@@ -91,11 +92,21 @@ Partial Class frmEmployeeLogin
         Me.txtEmpPasss.Size = New System.Drawing.Size(154, 20)
         Me.txtEmpPasss.TabIndex = 14
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(488, 303)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(128, 32)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Back"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmEmployeeLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtEmpPasss)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnLogin)
@@ -117,4 +128,5 @@ Partial Class frmEmployeeLogin
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtEmpPasss As MaskedTextBox
+    Friend WithEvents Button1 As Button
 End Class

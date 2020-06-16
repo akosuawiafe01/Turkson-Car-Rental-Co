@@ -96,9 +96,11 @@ Partial Class frmUserLogin
         'empLogin
         '
         Me.empLogin.AutoSize = True
-        Me.empLogin.Location = New System.Drawing.Point(574, 372)
+        Me.empLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.empLogin.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.empLogin.Location = New System.Drawing.Point(649, 0)
         Me.empLogin.Name = "empLogin"
-        Me.empLogin.Size = New System.Drawing.Size(112, 13)
+        Me.empLogin.Size = New System.Drawing.Size(151, 15)
         Me.empLogin.TabIndex = 7
         Me.empLogin.Text = "Employee? Login here"
         '

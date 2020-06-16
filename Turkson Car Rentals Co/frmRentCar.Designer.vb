@@ -22,12 +22,15 @@ Partial Class frmRentCar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cmbCarstatus = New System.Windows.Forms.ComboBox()
+        Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.Turkson_Co_DataSet()
         Me.cmbCarCategory = New System.Windows.Forms.ComboBox()
         Me.cmbCarYear = New System.Windows.Forms.ComboBox()
         Me.cmbCarMaker = New System.Windows.Forms.ComboBox()
@@ -40,10 +43,17 @@ Partial Class frmRentCar
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnRentCar = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.labUsername = New System.Windows.Forms.Label()
+        Me.labUserID = New System.Windows.Forms.Label()
+        Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.VehicleTableAdapter()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtRentalID = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,59 +118,90 @@ Partial Class frmRentCar
         '
         'cmbCarstatus
         '
+        Me.cmbCarstatus.DataSource = Me.VehicleBindingSource
+        Me.cmbCarstatus.DisplayMember = "carStatus"
         Me.cmbCarstatus.FormattingEnabled = True
         Me.cmbCarstatus.Location = New System.Drawing.Point(104, 234)
         Me.cmbCarstatus.Name = "cmbCarstatus"
         Me.cmbCarstatus.Size = New System.Drawing.Size(146, 21)
         Me.cmbCarstatus.TabIndex = 35
+        Me.cmbCarstatus.ValueMember = "carStatus"
+        '
+        'VehicleBindingSource
+        '
+        Me.VehicleBindingSource.DataMember = "Vehicle"
+        Me.VehicleBindingSource.DataSource = Me.Turkson_Co_DataSet
+        '
+        'Turkson_Co_DataSet
+        '
+        Me.Turkson_Co_DataSet.DataSetName = "Turkson_Co_DataSet"
+        Me.Turkson_Co_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmbCarCategory
         '
+        Me.cmbCarCategory.DataSource = Me.VehicleBindingSource
+        Me.cmbCarCategory.DisplayMember = "carCategory"
         Me.cmbCarCategory.FormattingEnabled = True
         Me.cmbCarCategory.Location = New System.Drawing.Point(104, 195)
         Me.cmbCarCategory.Name = "cmbCarCategory"
         Me.cmbCarCategory.Size = New System.Drawing.Size(149, 21)
         Me.cmbCarCategory.TabIndex = 34
+        Me.cmbCarCategory.ValueMember = "carCategory"
         '
         'cmbCarYear
         '
+        Me.cmbCarYear.DataSource = Me.VehicleBindingSource
+        Me.cmbCarYear.DisplayMember = "carYear"
         Me.cmbCarYear.FormattingEnabled = True
         Me.cmbCarYear.Location = New System.Drawing.Point(104, 161)
         Me.cmbCarYear.Name = "cmbCarYear"
         Me.cmbCarYear.Size = New System.Drawing.Size(146, 21)
         Me.cmbCarYear.TabIndex = 33
+        Me.cmbCarYear.ValueMember = "carYear"
         '
         'cmbCarMaker
         '
+        Me.cmbCarMaker.DataSource = Me.VehicleBindingSource
+        Me.cmbCarMaker.DisplayMember = "carManufacturer"
         Me.cmbCarMaker.FormattingEnabled = True
         Me.cmbCarMaker.Location = New System.Drawing.Point(104, 127)
         Me.cmbCarMaker.Name = "cmbCarMaker"
         Me.cmbCarMaker.Size = New System.Drawing.Size(149, 21)
         Me.cmbCarMaker.TabIndex = 32
+        Me.cmbCarMaker.ValueMember = "carManufacturer"
         '
         'cmbCarModel
         '
+        Me.cmbCarModel.DataSource = Me.VehicleBindingSource
+        Me.cmbCarModel.DisplayMember = "carModel"
         Me.cmbCarModel.FormattingEnabled = True
         Me.cmbCarModel.Location = New System.Drawing.Point(104, 87)
         Me.cmbCarModel.Name = "cmbCarModel"
         Me.cmbCarModel.Size = New System.Drawing.Size(149, 21)
         Me.cmbCarModel.TabIndex = 31
+        Me.cmbCarModel.ValueMember = "carModel"
         '
         'cmbCarVehiNo
         '
+        Me.cmbCarVehiNo.DataSource = Me.VehicleBindingSource
+        Me.cmbCarVehiNo.DisplayMember = "carNo"
         Me.cmbCarVehiNo.FormattingEnabled = True
         Me.cmbCarVehiNo.Location = New System.Drawing.Point(104, 60)
         Me.cmbCarVehiNo.Name = "cmbCarVehiNo"
         Me.cmbCarVehiNo.Size = New System.Drawing.Size(149, 21)
         Me.cmbCarVehiNo.TabIndex = 30
+        Me.cmbCarVehiNo.ValueMember = "carNo"
         '
         'cmbCarName
         '
+        Me.cmbCarName.DataSource = Me.VehicleBindingSource
+        Me.cmbCarName.DisplayMember = "carName"
         Me.cmbCarName.FormattingEnabled = True
         Me.cmbCarName.Location = New System.Drawing.Point(104, 25)
         Me.cmbCarName.Name = "cmbCarName"
         Me.cmbCarName.Size = New System.Drawing.Size(149, 21)
         Me.cmbCarName.TabIndex = 29
+        Me.cmbCarName.ValueMember = "carName"
         '
         'Label3
         '
@@ -216,23 +257,23 @@ Partial Class frmRentCar
         Me.Label6.TabIndex = 20
         Me.Label6.Text = "Manufacturer"
         '
-        'Button1
+        'btnRentCar
         '
-        Me.Button1.Location = New System.Drawing.Point(475, 400)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 33)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Rent Car"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRentCar.Location = New System.Drawing.Point(475, 400)
+        Me.btnRentCar.Name = "btnRentCar"
+        Me.btnRentCar.Size = New System.Drawing.Size(97, 33)
+        Me.btnRentCar.TabIndex = 20
+        Me.btnRentCar.Text = "Rent Car"
+        Me.btnRentCar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnBack
         '
-        Me.Button2.Location = New System.Drawing.Point(612, 400)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(85, 33)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "Back"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnBack.Location = New System.Drawing.Point(612, 400)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(85, 33)
+        Me.btnBack.TabIndex = 21
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -243,14 +284,57 @@ Partial Class frmRentCar
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
         '
+        'labUsername
+        '
+        Me.labUsername.AutoSize = True
+        Me.labUsername.Location = New System.Drawing.Point(747, 0)
+        Me.labUsername.Name = "labUsername"
+        Me.labUsername.Size = New System.Drawing.Size(53, 13)
+        Me.labUsername.TabIndex = 23
+        Me.labUsername.Text = "username"
+        '
+        'labUserID
+        '
+        Me.labUserID.AutoSize = True
+        Me.labUserID.Location = New System.Drawing.Point(758, 34)
+        Me.labUserID.Name = "labUserID"
+        Me.labUserID.Size = New System.Drawing.Size(41, 13)
+        Me.labUserID.TabIndex = 24
+        Me.labUserID.Text = "user ID"
+        Me.labUserID.Visible = False
+        '
+        'VehicleTableAdapter
+        '
+        Me.VehicleTableAdapter.ClearBeforeFill = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(663, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Rental ID"
+        '
+        'txtRentalID
+        '
+        Me.txtRentalID.Location = New System.Drawing.Point(736, 50)
+        Me.txtRentalID.Name = "txtRentalID"
+        Me.txtRentalID.Size = New System.Drawing.Size(63, 20)
+        Me.txtRentalID.TabIndex = 26
+        '
         'frmRentCar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 471)
+        Me.Controls.Add(Me.txtRentalID)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.labUserID)
+        Me.Controls.Add(Me.labUsername)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnRentCar)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.Label2)
@@ -259,6 +343,8 @@ Partial Class frmRentCar
         Me.Text = "frmRentCar"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -275,8 +361,8 @@ Partial Class frmRentCar
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnRentCar As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbCarstatus As ComboBox
     Friend WithEvents cmbCarCategory As ComboBox
@@ -286,4 +372,11 @@ Partial Class frmRentCar
     Friend WithEvents cmbCarVehiNo As ComboBox
     Friend WithEvents cmbCarName As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents labUsername As Label
+    Friend WithEvents labUserID As Label
+    Friend WithEvents Turkson_Co_DataSet As Turkson_Co_DataSet
+    Friend WithEvents VehicleBindingSource As BindingSource
+    Friend WithEvents VehicleTableAdapter As Turkson_Co_DataSetTableAdapters.VehicleTableAdapter
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtRentalID As TextBox
 End Class

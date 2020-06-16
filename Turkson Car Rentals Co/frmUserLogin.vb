@@ -7,7 +7,7 @@
 
 
         Dim strCon As String = "Data Source=.;Initial Catalog=TimtimTourApp-Db;Integrated Security=True"
-        Dim strSQL As String = "Select * from Client where userName='" & empname & "' and password ='" & empPass & "' "
+        Dim strSQL As String = "Select * from Client where username='" & empname & "' and password ='" & empPass & "' "
         Dim dataAdapter As New SqlClient.SqlDataAdapter(strSQL, strCon)
         Dim sqlCmd As SqlClient.SqlCommand
         Dim dataTable As New DataTable
@@ -21,5 +21,10 @@
             MessageBox.Show("Enter a correct username or password", "Incorrect Details")
         End If
 
+    End Sub
+
+    Private Sub empLogin_Click(sender As Object, e As EventArgs) Handles empLogin.Click
+        frmEmployeeLogin.Show()
+        Me.Hide()
     End Sub
 End Class

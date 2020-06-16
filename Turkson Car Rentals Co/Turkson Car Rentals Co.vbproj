@@ -73,17 +73,59 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmAgreement.Designer.vb">
+      <DependentUpon>frmAgreement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgreement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmCustomersList.Designer.vb">
+      <DependentUpon>frmCustomersList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomersList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeLogin.Designer.vb">
+      <DependentUpon>frmEmployeeLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeMenu.Designer.vb">
+      <DependentUpon>frmEmployeeMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoice.Designer.vb">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRentCar.Designer.vb">
+      <DependentUpon>frmRentCar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRentCar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserLogin.Designer.vb">
+      <DependentUpon>frmUserLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserMenu.Designer.vb">
+      <DependentUpon>frmUserMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -95,13 +137,55 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Random_Numbers.vb" />
+    <Compile Include="Turkson Rental Co_Splash_Screen.Designer.vb">
+      <DependentUpon>Turkson Rental Co_Splash_Screen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Turkson Rental Co_Splash_Screen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Turkson_Co_DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Turkson_Co_DataSet.vb">
+      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAgreement.resx">
+      <DependentUpon>frmAgreement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomersList.resx">
+      <DependentUpon>frmCustomersList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeLogin.resx">
+      <DependentUpon>frmEmployeeLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeMenu.resx">
+      <DependentUpon>frmEmployeeMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoice.resx">
+      <DependentUpon>frmInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRentCar.resx">
+      <DependentUpon>frmRentCar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserLogin.resx">
+      <DependentUpon>frmUserLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserMenu.resx">
+      <DependentUpon>frmUserMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turkson Rental Co_Splash_Screen.resx">
+      <DependentUpon>Turkson Rental Co_Splash_Screen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +199,23 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Turkson_Co_DataSet.xsc">
+      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Turkson_Co_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Turkson_Co_DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Turkson_Co_DataSet.xss">
+      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2013-Bugatti-Veyron-Grand-Sport-Vitesse-placement-626x382.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expCar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
