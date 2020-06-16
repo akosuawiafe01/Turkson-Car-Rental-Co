@@ -28,8 +28,8 @@ Partial Class frmEmployeeLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtEmpPasss = New System.Windows.Forms.MaskedTextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtEmpPasss = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnLogin
@@ -85,13 +85,6 @@ Partial Class frmEmployeeLogin
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Password"
         '
-        'txtEmpPasss
-        '
-        Me.txtEmpPasss.Location = New System.Drawing.Point(375, 215)
-        Me.txtEmpPasss.Name = "txtEmpPasss"
-        Me.txtEmpPasss.Size = New System.Drawing.Size(154, 20)
-        Me.txtEmpPasss.TabIndex = 14
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(488, 303)
@@ -101,13 +94,21 @@ Partial Class frmEmployeeLogin
         Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'txtEmpPasss
+        '
+        Me.txtEmpPasss.Location = New System.Drawing.Point(373, 217)
+        Me.txtEmpPasss.Name = "txtEmpPasss"
+        Me.txtEmpPasss.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtEmpPasss.Size = New System.Drawing.Size(146, 20)
+        Me.txtEmpPasss.TabIndex = 16
+        '
         'frmEmployeeLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtEmpPasss)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtEmpName)
@@ -127,6 +128,6 @@ Partial Class frmEmployeeLogin
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtEmpPasss As MaskedTextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents txtEmpPasss As TextBox
 End Class

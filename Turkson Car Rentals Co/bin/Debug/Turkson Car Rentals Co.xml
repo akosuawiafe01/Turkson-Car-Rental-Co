@@ -32,187 +32,167 @@ Turkson Car Rentals Co
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.ClientDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.ClientDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.EmployeeDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.EmployeeDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.All_InvoicesDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.RentalDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.Transaction_InvoiceDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.Transaction_InvoiceDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.User_Rental_DetailsDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.VehicleDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.VehicleDataTable">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.User_Rental_DetailsDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.RentalDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.ClientRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.ClientRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.EmployeeRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.EmployeeRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.All_InvoicesRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.RentalRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.Transaction_InvoiceRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.Transaction_InvoiceRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.User_Rental_DetailsRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.VehicleRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.VehicleRow">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.User_Rental_DetailsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.RentalRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.ClientRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.ClientRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.EmployeeRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.EmployeeRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.All_InvoicesRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.RentalRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.Transaction_InvoiceRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.Transaction_InvoiceRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.User_Rental_DetailsRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.VehicleRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.VehicleRowChangeEvent">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSet.User_Rental_DetailsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSet.RentalRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.ClientTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.ClientTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.EmployeeTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.EmployeeTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.All_InvoicesTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.RentalTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.Transaction_InvoiceTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.Transaction_InvoiceTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.User_Rental_DetailsTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.VehicleTableAdapter">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.User_Rental_DetailsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.RentalTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager">
 <summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
 </member>
-<member name="M:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Turkson_Car_Rentals_Co.Turkson_Co_DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Turkson_Car_Rentals_Co.TurksonCo_DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Update rows in top-down order.
 </summary>
 </member>
-<member name="M:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Turkson_Car_Rentals_Co.Turkson_Co_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Turkson_Car_Rentals_Co.TurksonCo_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Insert rows in top-down order.
 </summary>
 </member>
-<member name="M:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Turkson_Car_Rentals_Co.Turkson_Co_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Turkson_Car_Rentals_Co.TurksonCo_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Delete rows in bottom-up order.
 </summary>
 </member>
-<member name="M:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
 </member>
-<member name="M:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.UpdateAll(Turkson_Car_Rentals_Co.Turkson_Co_DataSet)">
+<member name="M:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.UpdateAll(Turkson_Car_Rentals_Co.TurksonCo_DataSet)">
 <summary>
 Update all changes to the dataset.
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
 <summary>
 Update Order Option
 </summary>
 </member>
-<member name="T:Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<member name="T:Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
 </summary>

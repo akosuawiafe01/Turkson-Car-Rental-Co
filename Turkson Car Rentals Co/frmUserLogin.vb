@@ -1,15 +1,15 @@
 ﻿Public Class frmUserLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim empPass, empname As String
+        Dim userPass, username As String
 
-        empPass = txtUserpasss.Text
-        empname = txtUserName.Text
+        userPass = txtUserpasss.Text
+        username = txtUserName.Text
 
 
-        Dim strCon As String = "Data Source=.;Initial Catalog=TimtimTourApp-Db;Integrated Security=True"
-        Dim strSQL As String = "Select * from Client where username='" & empname & "' and password ='" & empPass & "' "
+        Dim strCon As String = "Data Source=.;Initial Catalog=TurksonCo-Db;Integrated Security=True"
+        Dim strSQL As String = "Select * from Client where username='" & username & "' and password ='" & userPass & "' "
         Dim dataAdapter As New SqlClient.SqlDataAdapter(strSQL, strCon)
-        Dim sqlCmd As SqlClient.SqlCommand
+        'Dim sqlCmd As SqlClient.SqlCommand
         Dim dataTable As New DataTable
         dataAdapter.Fill(dataTable)
 

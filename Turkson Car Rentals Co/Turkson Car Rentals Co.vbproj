@@ -144,13 +144,10 @@
     <Compile Include="Turkson Rental Co_Splash_Screen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Turkson_Co_DataSet.Designer.vb">
+    <Compile Include="TurksonCo_DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Turkson_Co_DataSet.vb">
-      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+      <DependentUpon>TurksonCo_DataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -199,16 +196,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="Turkson_Co_DataSet.xsc">
-      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    <None Include="TurksonCo_DataSet.xsc">
+      <DependentUpon>TurksonCo_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Turkson_Co_DataSet.xsd">
+    <None Include="TurksonCo_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Turkson_Co_DataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>TurksonCo_DataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Turkson_Co_DataSet.xss">
-      <DependentUpon>Turkson_Co_DataSet.xsd</DependentUpon>
+    <None Include="TurksonCo_DataSet.xss">
+      <DependentUpon>TurksonCo_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

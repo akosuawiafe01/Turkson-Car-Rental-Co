@@ -25,12 +25,11 @@ Partial Class frmRentCar
         Me.components = New System.ComponentModel.Container()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cmbCarstatus = New System.Windows.Forms.ComboBox()
         Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.Turkson_Co_DataSet()
+        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
         Me.cmbCarCategory = New System.Windows.Forms.ComboBox()
         Me.cmbCarYear = New System.Windows.Forms.ComboBox()
         Me.cmbCarMaker = New System.Windows.Forms.ComboBox()
@@ -48,7 +47,7 @@ Partial Class frmRentCar
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.labUsername = New System.Windows.Forms.Label()
         Me.labUserID = New System.Windows.Forms.Label()
-        Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.VehicleTableAdapter()
+        Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRentalID = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
@@ -60,7 +59,7 @@ Partial Class frmRentCar
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(363, 79)
+        Me.Label2.Location = New System.Drawing.Point(597, 96)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 14
@@ -71,18 +70,10 @@ Partial Class frmRentCar
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(800, 109)
+        Me.Label1.Size = New System.Drawing.Size(1228, 109)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Splitter1
-        '
-        Me.Splitter1.Location = New System.Drawing.Point(0, 109)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(415, 362)
-        Me.Splitter1.TabIndex = 17
-        Me.Splitter1.TabStop = False
         '
         'Label5
         '
@@ -109,7 +100,7 @@ Partial Class frmRentCar
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(421, 112)
+        Me.GroupBox2.Location = New System.Drawing.Point(830, 130)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(313, 274)
         Me.GroupBox2.TabIndex = 19
@@ -259,7 +250,7 @@ Partial Class frmRentCar
         '
         'btnRentCar
         '
-        Me.btnRentCar.Location = New System.Drawing.Point(475, 400)
+        Me.btnRentCar.Location = New System.Drawing.Point(884, 418)
         Me.btnRentCar.Name = "btnRentCar"
         Me.btnRentCar.Size = New System.Drawing.Size(97, 33)
         Me.btnRentCar.TabIndex = 20
@@ -268,7 +259,7 @@ Partial Class frmRentCar
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(612, 400)
+        Me.btnBack.Location = New System.Drawing.Point(1021, 418)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(85, 33)
         Me.btnBack.TabIndex = 21
@@ -278,25 +269,26 @@ Partial Class frmRentCar
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources._2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x382
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 140)
+        Me.PictureBox1.Location = New System.Drawing.Point(23, 130)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(406, 311)
+        Me.PictureBox1.Size = New System.Drawing.Size(572, 311)
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
         '
         'labUsername
         '
         Me.labUsername.AutoSize = True
-        Me.labUsername.Location = New System.Drawing.Point(747, 0)
+        Me.labUsername.Location = New System.Drawing.Point(1175, 9)
         Me.labUsername.Name = "labUsername"
         Me.labUsername.Size = New System.Drawing.Size(53, 13)
         Me.labUsername.TabIndex = 23
         Me.labUsername.Text = "username"
+        Me.labUsername.Visible = False
         '
         'labUserID
         '
         Me.labUserID.AutoSize = True
-        Me.labUserID.Location = New System.Drawing.Point(758, 34)
+        Me.labUserID.Location = New System.Drawing.Point(1175, 60)
         Me.labUserID.Name = "labUserID"
         Me.labUserID.Size = New System.Drawing.Size(41, 13)
         Me.labUserID.TabIndex = 24
@@ -310,7 +302,7 @@ Partial Class frmRentCar
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(663, 48)
+        Me.Label4.Location = New System.Drawing.Point(944, 27)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 13)
         Me.Label4.TabIndex = 25
@@ -318,16 +310,16 @@ Partial Class frmRentCar
         '
         'txtRentalID
         '
-        Me.txtRentalID.Location = New System.Drawing.Point(736, 50)
+        Me.txtRentalID.Location = New System.Drawing.Point(1072, 27)
         Me.txtRentalID.Name = "txtRentalID"
-        Me.txtRentalID.Size = New System.Drawing.Size(63, 20)
+        Me.txtRentalID.Size = New System.Drawing.Size(144, 20)
         Me.txtRentalID.TabIndex = 26
         '
         'frmRentCar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 471)
+        Me.ClientSize = New System.Drawing.Size(1228, 471)
         Me.Controls.Add(Me.txtRentalID)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.labUserID)
@@ -336,7 +328,6 @@ Partial Class frmRentCar
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnRentCar)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmRentCar"
@@ -353,7 +344,6 @@ Partial Class frmRentCar
 
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Splitter1 As Splitter
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label10 As Label
@@ -374,9 +364,9 @@ Partial Class frmRentCar
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents labUsername As Label
     Friend WithEvents labUserID As Label
-    Friend WithEvents Turkson_Co_DataSet As Turkson_Co_DataSet
+    Friend WithEvents Turkson_Co_DataSet As TurksonCo_DataSet
     Friend WithEvents VehicleBindingSource As BindingSource
-    Friend WithEvents VehicleTableAdapter As Turkson_Co_DataSetTableAdapters.VehicleTableAdapter
+    Friend WithEvents VehicleTableAdapter As TurksonCo_DataSetTableAdapters.VehicleTableAdapter
     Friend WithEvents Label4 As Label
     Friend WithEvents txtRentalID As TextBox
 End Class

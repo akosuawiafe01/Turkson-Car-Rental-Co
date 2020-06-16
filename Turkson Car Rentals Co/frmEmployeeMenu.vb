@@ -4,10 +4,21 @@
     End Sub
 
     Private Sub RentACarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RentACarToolStripMenuItem.Click
-        frmCustomersList.Show()
+        frmRentalList.Show()
     End Sub
 
     Private Sub InvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvoiceToolStripMenuItem.Click
         frmInvoice.Show()
+    End Sub
+
+
+    Private Sub LoginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginToolStripMenuItem.Click
+        frmEmployeeLogin.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub SearchForACustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchForACustomerToolStripMenuItem.Click
+        frmSearchCustomer.Show()
+        Me.Hide()
     End Sub
 End Class

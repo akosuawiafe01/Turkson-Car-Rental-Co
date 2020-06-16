@@ -41,6 +41,8 @@ Partial Class frmInvoice
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmbPaidTo = New System.Windows.Forms.ComboBox()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cmbPayType = New System.Windows.Forms.ComboBox()
         Me.label8 = New System.Windows.Forms.Label()
@@ -61,14 +63,12 @@ Partial Class frmInvoice
         Me.cmbInvoicedate = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtRentalID = New System.Windows.Forms.TextBox()
-        Me.Turkson_Co_DataSet = New Turkson_Car_Rentals_Co.Turkson_Co_DataSet()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeTableAdapter = New Turkson_Car_Rentals_Co.Turkson_Co_DataSetTableAdapters.EmployeeTableAdapter()
+        Me.EmployeeTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.EmployeeTableAdapter()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -77,7 +77,7 @@ Partial Class frmInvoice
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(373, 79)
+        Me.Label2.Location = New System.Drawing.Point(468, 79)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(42, 13)
         Me.Label2.TabIndex = 12
@@ -90,7 +90,7 @@ Partial Class frmInvoice
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(800, 92)
+        Me.Label1.Size = New System.Drawing.Size(1003, 92)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -304,6 +304,16 @@ Partial Class frmInvoice
         Me.cmbPaidTo.Size = New System.Drawing.Size(163, 21)
         Me.cmbPaidTo.TabIndex = 36
         Me.cmbPaidTo.ValueMember = "empID"
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Turkson_Co_DataSet
+        '
+        'Turkson_Co_DataSet
+        '
+        Me.Turkson_Co_DataSet.DataSetName = "Turkson_Co_DataSet"
+        Me.Turkson_Co_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label14
         '
@@ -523,16 +533,6 @@ Partial Class frmInvoice
         Me.txtRentalID.Size = New System.Drawing.Size(105, 20)
         Me.txtRentalID.TabIndex = 20
         '
-        'Turkson_Co_DataSet
-        '
-        Me.Turkson_Co_DataSet.DataSetName = "Turkson_Co_DataSet"
-        Me.Turkson_Co_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Turkson_Co_DataSet
-        '
         'EmployeeTableAdapter
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
@@ -560,8 +560,8 @@ Partial Class frmInvoice
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Turkson_Co_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -605,7 +605,7 @@ Partial Class frmInvoice
     Friend WithEvents cmbInvoicedate As DateTimePicker
     Friend WithEvents Label17 As Label
     Friend WithEvents txtRentalID As TextBox
-    Friend WithEvents Turkson_Co_DataSet As Turkson_Co_DataSet
+    Friend WithEvents Turkson_Co_DataSet As TurksonCo_DataSet
     Friend WithEvents EmployeeBindingSource As BindingSource
-    Friend WithEvents EmployeeTableAdapter As Turkson_Co_DataSetTableAdapters.EmployeeTableAdapter
+    Friend WithEvents EmployeeTableAdapter As TurksonCo_DataSetTableAdapters.EmployeeTableAdapter
 End Class

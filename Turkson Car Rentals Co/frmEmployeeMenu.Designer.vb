@@ -32,12 +32,15 @@ Partial Class frmEmployeeMenu
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SearchForACustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.InvoiceToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.SearchForACustomerToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LoginToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 92)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -53,8 +56,8 @@ Partial Class frmEmployeeMenu
         'RentACarToolStripMenuItem
         '
         Me.RentACarToolStripMenuItem.Name = "RentACarToolStripMenuItem"
-        Me.RentACarToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
-        Me.RentACarToolStripMenuItem.Text = "Customers"
+        Me.RentACarToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.RentACarToolStripMenuItem.Text = "Rental List"
         '
         'AgreementToolStripMenuItem
         '
@@ -100,6 +103,24 @@ Partial Class frmEmployeeMenu
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'LoginToolStripMenuItem
+        '
+        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.LoginToolStripMenuItem.Text = "Logout"
+        '
+        'ReportsToolStripMenuItem
+        '
+        Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+        Me.ReportsToolStripMenuItem.Text = "Reports"
+        '
+        'SearchForACustomerToolStripMenuItem
+        '
+        Me.SearchForACustomerToolStripMenuItem.Name = "SearchForACustomerToolStripMenuItem"
+        Me.SearchForACustomerToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
+        Me.SearchForACustomerToolStripMenuItem.Text = "Customer Panel"
+        '
         'frmEmployeeMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -127,4 +148,7 @@ Partial Class frmEmployeeMenu
     Friend WithEvents lblUsername As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents LoginToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SearchForACustomerToolStripMenuItem As ToolStripMenuItem
 End Class

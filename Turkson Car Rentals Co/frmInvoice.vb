@@ -3,12 +3,13 @@
 
 Public Class frmInvoice
 
+    Dim randInt As Integer = 10
 
-    Dim invoiceAdapter As Turkson_Co_DataSetTableAdapters.Transaction_InvoiceTableAdapter = New Turkson_Co_DataSetTableAdapters.Transaction_InvoiceTableAdapter
-    Dim invoiceDataset = New Turkson_Co_DataSet()
+    Dim invoiceAdapter As TurksonCo_DataSetTableAdapters.Transaction_InvoiceTableAdapter = New TurksonCo_DataSetTableAdapters.Transaction_InvoiceTableAdapter
+    Dim invoiceDataset = New TurksonCo_DataSet()
 
     'Variable for storing rental data collected
-    Dim invoiceRow As Turkson_Co_DataSet.Transaction_InvoiceRow
+    Dim invoiceRow As TurksonCo_DataSet.Transaction_InvoiceRow
     Private Sub TextBox10_TextChanged(sender As Object, e As EventArgs) Handles txtTotalCost.TextChanged
 
     End Sub
@@ -56,7 +57,7 @@ Public Class frmInvoice
 
 
         'saving the Courses into the database
-        Turkson_Co_DataSet.Transaction_Invoice.AddTransaction_InvoiceRow(invoiceRow)
+        invoiceDataset.Transaction_Invoice.AddTransaction_InvoiceRow(invoiceRow)
         invoiceAdapter.Update(invoiceDataset.Transaction_Invoice)
 
 
@@ -76,7 +77,7 @@ Public Class frmInvoice
     Private Sub txtUserID_Leave(sender As Object, e As EventArgs) Handles txtUserID.Leave
         Try
 
-            Dim constr As String = "Data Source=.;Initial Catalog=TimtimTourApp-Db;Integrated Security=True"
+            Dim constr As String = "Data Source=.;Initial Catalog=TurksonCo-Db;Integrated Security=True"
             Using con As SqlConnection = New SqlConnection(constr)
                 Using cmd As SqlCommand = New SqlCommand("select * from User_Rental_Details where clientID ='" & txtUserID.Text & "'  ")
                     cmd.CommandType = CommandType.Text
@@ -99,6 +100,7 @@ Public Class frmInvoice
                 End Using
             End Using
 
+            txtrecieptNo.Text = randomInteger(randInt)
 
 
         Catch ex As Exception

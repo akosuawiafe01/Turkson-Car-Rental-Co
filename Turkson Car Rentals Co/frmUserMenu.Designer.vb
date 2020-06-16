@@ -31,12 +31,13 @@ Partial Class frmUserMenu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.LogoutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -93,6 +94,12 @@ Partial Class frmUserMenu
         Me.lblUsername.TabIndex = 11
         Me.lblUsername.Text = "username"
         '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
         'frmUserMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -120,4 +127,5 @@ Partial Class frmUserMenu
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblUsername As Label
+    Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
 End Class

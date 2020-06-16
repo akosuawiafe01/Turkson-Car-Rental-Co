@@ -4,11 +4,11 @@ Public Class frmRentCar
 
     Dim randInt As Integer = 10
 
-    Dim rentalAdatpter As Turkson_Co_DataSetTableAdapters.RentalTableAdapter = New Turkson_Co_DataSetTableAdapters.RentalTableAdapter
-    Dim rentalDataset = New Turkson_Co_DataSet()
+    Dim rentalAdatpter As TurksonCo_DataSetTableAdapters.RentalTableAdapter = New TurksonCo_DataSetTableAdapters.RentalTableAdapter
+    Dim rentalDataset = New TurksonCo_DataSet()
 
     'Variable for storing rental data collected
-    Dim rentalRow As Turkson_Co_DataSet.RentalRow
+    Dim rentalRow As TurksonCo_DataSet.RentalRow
 
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click

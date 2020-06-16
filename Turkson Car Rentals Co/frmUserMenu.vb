@@ -19,4 +19,9 @@
         frmRentCar.Show()
         Me.Hide()
     End Sub
+
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        Me.Hide()
+        frmUserLogin.Show()
+    End Sub
 End Class

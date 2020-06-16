@@ -20,34 +20,32 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("Turkson_Co_DataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("TurksonCo_DataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class Turkson_Co_DataSet
+Partial Public Class TurksonCo_DataSet
     Inherits Global.System.Data.DataSet
     
     Private tableClient As ClientDataTable
     
     Private tableEmployee As EmployeeDataTable
     
-    Private tableAll_Invoices As All_InvoicesDataTable
+    Private tableRental As RentalDataTable
     
     Private tableTransaction_Invoice As Transaction_InvoiceDataTable
     
-    Private tableUser_Rental_Details As User_Rental_DetailsDataTable
-    
     Private tableVehicle As VehicleDataTable
     
-    Private tableRental As RentalDataTable
-    
-    Private relationendorses As Global.System.Data.DataRelation
-    
-    Private relationrecieves As Global.System.Data.DataRelation
-    
-    Private relationFK_Transaction_Invoice_Rental As Global.System.Data.DataRelation
+    Private tableUser_Rental_Details As User_Rental_DetailsDataTable
     
     Private relationcan_cover As Global.System.Data.DataRelation
     
     Private relationcan_rent As Global.System.Data.DataRelation
+    
+    Private relationendorses As Global.System.Data.DataRelation
+    
+    Private relationFK_Transaction_Invoice_Rental As Global.System.Data.DataRelation
+    
+    Private relationrecieves As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -84,20 +82,17 @@ Partial Public Class Turkson_Co_DataSet
             If (Not (ds.Tables("Employee")) Is Nothing) Then
                 MyBase.Tables.Add(New EmployeeDataTable(ds.Tables("Employee")))
             End If
-            If (Not (ds.Tables("All_Invoices")) Is Nothing) Then
-                MyBase.Tables.Add(New All_InvoicesDataTable(ds.Tables("All_Invoices")))
+            If (Not (ds.Tables("Rental")) Is Nothing) Then
+                MyBase.Tables.Add(New RentalDataTable(ds.Tables("Rental")))
             End If
             If (Not (ds.Tables("Transaction_Invoice")) Is Nothing) Then
                 MyBase.Tables.Add(New Transaction_InvoiceDataTable(ds.Tables("Transaction_Invoice")))
             End If
-            If (Not (ds.Tables("User_Rental_Details")) Is Nothing) Then
-                MyBase.Tables.Add(New User_Rental_DetailsDataTable(ds.Tables("User_Rental_Details")))
-            End If
             If (Not (ds.Tables("Vehicle")) Is Nothing) Then
                 MyBase.Tables.Add(New VehicleDataTable(ds.Tables("Vehicle")))
             End If
-            If (Not (ds.Tables("Rental")) Is Nothing) Then
-                MyBase.Tables.Add(New RentalDataTable(ds.Tables("Rental")))
+            If (Not (ds.Tables("User_Rental_Details")) Is Nothing) Then
+                MyBase.Tables.Add(New User_Rental_DetailsDataTable(ds.Tables("User_Rental_Details")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -140,9 +135,9 @@ Partial Public Class Turkson_Co_DataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property All_Invoices() As All_InvoicesDataTable
+    Public ReadOnly Property Rental() As RentalDataTable
         Get
-            Return Me.tableAll_Invoices
+            Return Me.tableRental
         End Get
     End Property
     
@@ -160,16 +155,6 @@ Partial Public Class Turkson_Co_DataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property User_Rental_Details() As User_Rental_DetailsDataTable
-        Get
-            Return Me.tableUser_Rental_Details
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property Vehicle() As VehicleDataTable
         Get
             Return Me.tableVehicle
@@ -180,9 +165,9 @@ Partial Public Class Turkson_Co_DataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Rental() As RentalDataTable
+    Public ReadOnly Property User_Rental_Details() As User_Rental_DetailsDataTable
         Get
-            Return Me.tableRental
+            Return Me.tableUser_Rental_Details
         End Get
     End Property
     
@@ -228,7 +213,7 @@ Partial Public Class Turkson_Co_DataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As Turkson_Co_DataSet = CType(MyBase.Clone,Turkson_Co_DataSet)
+        Dim cln As TurksonCo_DataSet = CType(MyBase.Clone,TurksonCo_DataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -259,20 +244,17 @@ Partial Public Class Turkson_Co_DataSet
             If (Not (ds.Tables("Employee")) Is Nothing) Then
                 MyBase.Tables.Add(New EmployeeDataTable(ds.Tables("Employee")))
             End If
-            If (Not (ds.Tables("All_Invoices")) Is Nothing) Then
-                MyBase.Tables.Add(New All_InvoicesDataTable(ds.Tables("All_Invoices")))
+            If (Not (ds.Tables("Rental")) Is Nothing) Then
+                MyBase.Tables.Add(New RentalDataTable(ds.Tables("Rental")))
             End If
             If (Not (ds.Tables("Transaction_Invoice")) Is Nothing) Then
                 MyBase.Tables.Add(New Transaction_InvoiceDataTable(ds.Tables("Transaction_Invoice")))
             End If
-            If (Not (ds.Tables("User_Rental_Details")) Is Nothing) Then
-                MyBase.Tables.Add(New User_Rental_DetailsDataTable(ds.Tables("User_Rental_Details")))
-            End If
             If (Not (ds.Tables("Vehicle")) Is Nothing) Then
                 MyBase.Tables.Add(New VehicleDataTable(ds.Tables("Vehicle")))
             End If
-            If (Not (ds.Tables("Rental")) Is Nothing) Then
-                MyBase.Tables.Add(New RentalDataTable(ds.Tables("Rental")))
+            If (Not (ds.Tables("User_Rental_Details")) Is Nothing) Then
+                MyBase.Tables.Add(New User_Rental_DetailsDataTable(ds.Tables("User_Rental_Details")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -318,10 +300,10 @@ Partial Public Class Turkson_Co_DataSet
                 Me.tableEmployee.InitVars
             End If
         End If
-        Me.tableAll_Invoices = CType(MyBase.Tables("All_Invoices"),All_InvoicesDataTable)
+        Me.tableRental = CType(MyBase.Tables("Rental"),RentalDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableAll_Invoices) Is Nothing) Then
-                Me.tableAll_Invoices.InitVars
+            If (Not (Me.tableRental) Is Nothing) Then
+                Me.tableRental.InitVars
             End If
         End If
         Me.tableTransaction_Invoice = CType(MyBase.Tables("Transaction_Invoice"),Transaction_InvoiceDataTable)
@@ -330,63 +312,55 @@ Partial Public Class Turkson_Co_DataSet
                 Me.tableTransaction_Invoice.InitVars
             End If
         End If
-        Me.tableUser_Rental_Details = CType(MyBase.Tables("User_Rental_Details"),User_Rental_DetailsDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableUser_Rental_Details) Is Nothing) Then
-                Me.tableUser_Rental_Details.InitVars
-            End If
-        End If
         Me.tableVehicle = CType(MyBase.Tables("Vehicle"),VehicleDataTable)
         If (initTable = true) Then
             If (Not (Me.tableVehicle) Is Nothing) Then
                 Me.tableVehicle.InitVars
             End If
         End If
-        Me.tableRental = CType(MyBase.Tables("Rental"),RentalDataTable)
+        Me.tableUser_Rental_Details = CType(MyBase.Tables("User_Rental_Details"),User_Rental_DetailsDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableRental) Is Nothing) Then
-                Me.tableRental.InitVars
+            If (Not (Me.tableUser_Rental_Details) Is Nothing) Then
+                Me.tableUser_Rental_Details.InitVars
             End If
         End If
-        Me.relationendorses = Me.Relations("endorses")
-        Me.relationrecieves = Me.Relations("recieves")
-        Me.relationFK_Transaction_Invoice_Rental = Me.Relations("FK_Transaction_Invoice_Rental")
         Me.relationcan_cover = Me.Relations("can cover")
         Me.relationcan_rent = Me.Relations("can rent")
+        Me.relationendorses = Me.Relations("endorses")
+        Me.relationFK_Transaction_Invoice_Rental = Me.Relations("FK_Transaction_Invoice_Rental")
+        Me.relationrecieves = Me.Relations("recieves")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "Turkson_Co_DataSet"
+        Me.DataSetName = "TurksonCo_DataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/Turkson_Co_DataSet.xsd"
+        Me.Namespace = "http://tempuri.org/TurksonCo_DataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableClient = New ClientDataTable()
         MyBase.Tables.Add(Me.tableClient)
         Me.tableEmployee = New EmployeeDataTable()
         MyBase.Tables.Add(Me.tableEmployee)
-        Me.tableAll_Invoices = New All_InvoicesDataTable()
-        MyBase.Tables.Add(Me.tableAll_Invoices)
-        Me.tableTransaction_Invoice = New Transaction_InvoiceDataTable()
-        MyBase.Tables.Add(Me.tableTransaction_Invoice)
-        Me.tableUser_Rental_Details = New User_Rental_DetailsDataTable()
-        MyBase.Tables.Add(Me.tableUser_Rental_Details)
-        Me.tableVehicle = New VehicleDataTable()
-        MyBase.Tables.Add(Me.tableVehicle)
         Me.tableRental = New RentalDataTable()
         MyBase.Tables.Add(Me.tableRental)
-        Me.relationendorses = New Global.System.Data.DataRelation("endorses", New Global.System.Data.DataColumn() {Me.tableEmployee.empIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.workerIDColumn}, false)
-        Me.Relations.Add(Me.relationendorses)
-        Me.relationrecieves = New Global.System.Data.DataRelation("recieves", New Global.System.Data.DataColumn() {Me.tableClient.clientIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.clientIDColumn}, false)
-        Me.Relations.Add(Me.relationrecieves)
-        Me.relationFK_Transaction_Invoice_Rental = New Global.System.Data.DataRelation("FK_Transaction_Invoice_Rental", New Global.System.Data.DataColumn() {Me.tableRental.rentalIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.rentalIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_Transaction_Invoice_Rental)
+        Me.tableTransaction_Invoice = New Transaction_InvoiceDataTable()
+        MyBase.Tables.Add(Me.tableTransaction_Invoice)
+        Me.tableVehicle = New VehicleDataTable()
+        MyBase.Tables.Add(Me.tableVehicle)
+        Me.tableUser_Rental_Details = New User_Rental_DetailsDataTable()
+        MyBase.Tables.Add(Me.tableUser_Rental_Details)
         Me.relationcan_cover = New Global.System.Data.DataRelation("can cover", New Global.System.Data.DataColumn() {Me.tableVehicle.carNoColumn}, New Global.System.Data.DataColumn() {Me.tableRental.vehicleIDColumn}, false)
         Me.Relations.Add(Me.relationcan_cover)
         Me.relationcan_rent = New Global.System.Data.DataRelation("can rent", New Global.System.Data.DataColumn() {Me.tableClient.clientIDColumn}, New Global.System.Data.DataColumn() {Me.tableRental.clientIDColumn}, false)
         Me.Relations.Add(Me.relationcan_rent)
+        Me.relationendorses = New Global.System.Data.DataRelation("endorses", New Global.System.Data.DataColumn() {Me.tableEmployee.empIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.workerIDColumn}, false)
+        Me.Relations.Add(Me.relationendorses)
+        Me.relationFK_Transaction_Invoice_Rental = New Global.System.Data.DataRelation("FK_Transaction_Invoice_Rental", New Global.System.Data.DataColumn() {Me.tableRental.rentalIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.rentalIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_Transaction_Invoice_Rental)
+        Me.relationrecieves = New Global.System.Data.DataRelation("recieves", New Global.System.Data.DataColumn() {Me.tableClient.clientIDColumn}, New Global.System.Data.DataColumn() {Me.tableTransaction_Invoice.clientIDColumn}, false)
+        Me.Relations.Add(Me.relationrecieves)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -403,7 +377,7 @@ Partial Public Class Turkson_Co_DataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeAll_Invoices() As Boolean
+    Private Function ShouldSerializeRental() As Boolean
         Return false
     End Function
     
@@ -415,19 +389,13 @@ Partial Public Class Turkson_Co_DataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeUser_Rental_Details() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Function ShouldSerializeVehicle() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeRental() As Boolean
+    Private Function ShouldSerializeUser_Rental_Details() As Boolean
         Return false
     End Function
     
@@ -442,7 +410,7 @@ Partial Public Class Turkson_Co_DataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+        Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -496,19 +464,16 @@ Partial Public Class Turkson_Co_DataSet
     Public Delegate Sub EmployeeRowChangeEventHandler(ByVal sender As Object, ByVal e As EmployeeRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub All_InvoicesRowChangeEventHandler(ByVal sender As Object, ByVal e As All_InvoicesRowChangeEvent)
+    Public Delegate Sub RentalRowChangeEventHandler(ByVal sender As Object, ByVal e As RentalRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub Transaction_InvoiceRowChangeEventHandler(ByVal sender As Object, ByVal e As Transaction_InvoiceRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub User_Rental_DetailsRowChangeEventHandler(ByVal sender As Object, ByVal e As User_Rental_DetailsRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub VehicleRowChangeEventHandler(ByVal sender As Object, ByVal e As VehicleRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub RentalRowChangeEventHandler(ByVal sender As Object, ByVal e As RentalRowChangeEvent)
+    Public Delegate Sub User_Rental_DetailsRowChangeEventHandler(ByVal sender As Object, ByVal e As User_Rental_DetailsRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -700,7 +665,7 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddClientRow(ByVal clientID As String, ByVal firstName As String, ByVal lastname As String, ByVal otherName As String, ByVal DOB As String, ByVal LicenseNo As String, ByVal contact As String, ByVal email As String, ByVal residenceLocation As String, ByVal username As String, ByVal password As String) As ClientRow
+        Public Overloads Function AddClientRow(ByVal clientID As String, ByVal firstName As String, ByVal lastname As String, ByVal otherName As String, ByVal DOB As Date, ByVal LicenseNo As String, ByVal contact As String, ByVal email As String, ByVal residenceLocation As String, ByVal username As String, ByVal password As String) As ClientRow
             Dim rowClientRow As ClientRow = CType(Me.NewRow,ClientRow)
             Dim columnValuesArray() As Object = New Object() {clientID, firstName, lastname, otherName, DOB, LicenseNo, contact, email, residenceLocation, username, password}
             rowClientRow.ItemArray = columnValuesArray
@@ -755,7 +720,7 @@ Partial Public Class Turkson_Co_DataSet
             MyBase.Columns.Add(Me.columnlastname)
             Me.columnotherName = New Global.System.Data.DataColumn("otherName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnotherName)
-            Me.columnDOB = New Global.System.Data.DataColumn("DOB", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDOB = New Global.System.Data.DataColumn("DOB", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDOB)
             Me.columnLicenseNo = New Global.System.Data.DataColumn("LicenseNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLicenseNo)
@@ -776,10 +741,9 @@ Partial Public Class Turkson_Co_DataSet
             Me.columnfirstName.MaxLength = 10
             Me.columnlastname.MaxLength = 10
             Me.columnotherName.MaxLength = 10
-            Me.columnDOB.MaxLength = 10
             Me.columnLicenseNo.MaxLength = 50
             Me.columncontact.MaxLength = 10
-            Me.columnemail.MaxLength = 10
+            Me.columnemail.MaxLength = 150
             Me.columnresidenceLocation.MaxLength = 10
             Me.columnusername.MaxLength = 30
             Me.columnpassword.MaxLength = 10
@@ -850,7 +814,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1154,7 +1118,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1221,42 +1185,24 @@ Partial Public Class Turkson_Co_DataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class All_InvoicesDataTable
-        Inherits Global.System.Data.TypedTableBase(Of All_InvoicesRow)
+    Partial Public Class RentalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of RentalRow)
+        
+        Private columncarModel As Global.System.Data.DataColumn
+        
+        Private columncarYear As Global.System.Data.DataColumn
         
         Private columnclientID As Global.System.Data.DataColumn
         
-        Private columnfirstName As Global.System.Data.DataColumn
-        
-        Private columnlastname As Global.System.Data.DataColumn
-        
-        Private columnLicenseNo As Global.System.Data.DataColumn
-        
-        Private columnempID As Global.System.Data.DataColumn
-        
-        Private columnempName As Global.System.Data.DataColumn
-        
-        Private columndateHired As Global.System.Data.DataColumn
-        
-        Private columnduration As Global.System.Data.DataColumn
-        
-        Private columnduedate As Global.System.Data.DataColumn
+        Private columnvehicleID As Global.System.Data.DataColumn
         
         Private columnrentalID As Global.System.Data.DataColumn
-        
-        Private columnrecieptNo As Global.System.Data.DataColumn
-        
-        Private columndateIssued As Global.System.Data.DataColumn
-        
-        Private columntotalAmountPayable As Global.System.Data.DataColumn
-        
-        Private columnpaymentMethod As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "All_Invoices"
+            Me.TableName = "Rental"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1289,6 +1235,22 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property carModelColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncarModel
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property carYearColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncarYear
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property clientIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnclientID
@@ -1297,65 +1259,9 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property firstNameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property vehicleIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnfirstName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property lastnameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnlastname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property LicenseNoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnLicenseNo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property empIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnempID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property empNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnempName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property dateHiredColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndateHired
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property durationColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnduration
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property duedateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnduedate
+                Return Me.columnvehicleID
             End Get
         End Property
         
@@ -1364,38 +1270,6 @@ Partial Public Class Turkson_Co_DataSet
         Public ReadOnly Property rentalIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnrentalID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property recieptNoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnrecieptNo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property dateIssuedColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndateIssued
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property totalAmountPayableColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntotalAmountPayable
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property paymentMethodColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpaymentMethod
             End Get
         End Property
         
@@ -1410,44 +1284,56 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As All_InvoicesRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As RentalRow
             Get
-                Return CType(Me.Rows(index),All_InvoicesRow)
+                Return CType(Me.Rows(index),RentalRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event All_InvoicesRowChanging As All_InvoicesRowChangeEventHandler
+        Public Event RentalRowChanging As RentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event All_InvoicesRowChanged As All_InvoicesRowChangeEventHandler
+        Public Event RentalRowChanged As RentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event All_InvoicesRowDeleting As All_InvoicesRowChangeEventHandler
+        Public Event RentalRowDeleting As RentalRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event All_InvoicesRowDeleted As All_InvoicesRowChangeEventHandler
+        Public Event RentalRowDeleted As RentalRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddAll_InvoicesRow(ByVal row As All_InvoicesRow)
+        Public Overloads Sub AddRentalRow(ByVal row As RentalRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddAll_InvoicesRow(ByVal clientID As String, ByVal firstName As String, ByVal lastname As String, ByVal LicenseNo As String, ByVal empID As String, ByVal empName As String, ByVal dateHired As Date, ByVal duration As Integer, ByVal duedate As Date, ByVal rentalID As String, ByVal recieptNo As String, ByVal dateIssued As Date, ByVal totalAmountPayable As Double, ByVal paymentMethod As String) As All_InvoicesRow
-            Dim rowAll_InvoicesRow As All_InvoicesRow = CType(Me.NewRow,All_InvoicesRow)
-            Dim columnValuesArray() As Object = New Object() {clientID, firstName, lastname, LicenseNo, empID, empName, dateHired, duration, duedate, rentalID, recieptNo, dateIssued, totalAmountPayable, paymentMethod}
-            rowAll_InvoicesRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowAll_InvoicesRow)
-            Return rowAll_InvoicesRow
+        Public Overloads Function AddRentalRow(ByVal carModel As String, ByVal carYear As String, ByVal parentClientRowBycan_rent As ClientRow, ByVal parentVehicleRowBycan_cover As VehicleRow) As RentalRow
+            Dim rowRentalRow As RentalRow = CType(Me.NewRow,RentalRow)
+            Dim columnValuesArray() As Object = New Object() {carModel, carYear, Nothing, Nothing, Nothing}
+            If (Not (parentClientRowBycan_rent) Is Nothing) Then
+                columnValuesArray(2) = parentClientRowBycan_rent(0)
+            End If
+            If (Not (parentVehicleRowBycan_cover) Is Nothing) Then
+                columnValuesArray(3) = parentVehicleRowBycan_cover(0)
+            End If
+            rowRentalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRentalRow)
+            Return rowRentalRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByrentalID(ByVal rentalID As Integer) As RentalRow
+            Return CType(Me.Rows.Find(New Object() {rentalID}),RentalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As All_InvoicesDataTable = CType(MyBase.Clone,All_InvoicesDataTable)
+            Dim cln As RentalDataTable = CType(MyBase.Clone,RentalDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1455,98 +1341,69 @@ Partial Public Class Turkson_Co_DataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New All_InvoicesDataTable()
+            Return New RentalDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columncarModel = MyBase.Columns("carModel")
+            Me.columncarYear = MyBase.Columns("carYear")
             Me.columnclientID = MyBase.Columns("clientID")
-            Me.columnfirstName = MyBase.Columns("firstName")
-            Me.columnlastname = MyBase.Columns("lastname")
-            Me.columnLicenseNo = MyBase.Columns("LicenseNo")
-            Me.columnempID = MyBase.Columns("empID")
-            Me.columnempName = MyBase.Columns("empName")
-            Me.columndateHired = MyBase.Columns("dateHired")
-            Me.columnduration = MyBase.Columns("duration")
-            Me.columnduedate = MyBase.Columns("duedate")
+            Me.columnvehicleID = MyBase.Columns("vehicleID")
             Me.columnrentalID = MyBase.Columns("rentalID")
-            Me.columnrecieptNo = MyBase.Columns("recieptNo")
-            Me.columndateIssued = MyBase.Columns("dateIssued")
-            Me.columntotalAmountPayable = MyBase.Columns("totalAmountPayable")
-            Me.columnpaymentMethod = MyBase.Columns("paymentMethod")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
+            Me.columncarModel = New Global.System.Data.DataColumn("carModel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncarModel)
+            Me.columncarYear = New Global.System.Data.DataColumn("carYear", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncarYear)
             Me.columnclientID = New Global.System.Data.DataColumn("clientID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnclientID)
-            Me.columnfirstName = New Global.System.Data.DataColumn("firstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnfirstName)
-            Me.columnlastname = New Global.System.Data.DataColumn("lastname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnlastname)
-            Me.columnLicenseNo = New Global.System.Data.DataColumn("LicenseNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnLicenseNo)
-            Me.columnempID = New Global.System.Data.DataColumn("empID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnempID)
-            Me.columnempName = New Global.System.Data.DataColumn("empName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnempName)
-            Me.columndateHired = New Global.System.Data.DataColumn("dateHired", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndateHired)
-            Me.columnduration = New Global.System.Data.DataColumn("duration", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnduration)
-            Me.columnduedate = New Global.System.Data.DataColumn("duedate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnduedate)
-            Me.columnrentalID = New Global.System.Data.DataColumn("rentalID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnvehicleID = New Global.System.Data.DataColumn("vehicleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvehicleID)
+            Me.columnrentalID = New Global.System.Data.DataColumn("rentalID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnrentalID)
-            Me.columnrecieptNo = New Global.System.Data.DataColumn("recieptNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnrecieptNo)
-            Me.columndateIssued = New Global.System.Data.DataColumn("dateIssued", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndateIssued)
-            Me.columntotalAmountPayable = New Global.System.Data.DataColumn("totalAmountPayable", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntotalAmountPayable)
-            Me.columnpaymentMethod = New Global.System.Data.DataColumn("paymentMethod", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpaymentMethod)
-            Me.columnclientID.AllowDBNull = false
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrentalID}, true))
+            Me.columncarModel.MaxLength = 500
+            Me.columncarYear.MaxLength = 10
             Me.columnclientID.MaxLength = 5
-            Me.columnfirstName.MaxLength = 10
-            Me.columnlastname.MaxLength = 10
-            Me.columnLicenseNo.MaxLength = 50
-            Me.columnempID.AllowDBNull = false
-            Me.columnempID.MaxLength = 5
-            Me.columnempName.MaxLength = 50
+            Me.columnvehicleID.MaxLength = 50
+            Me.columnrentalID.AutoIncrement = true
+            Me.columnrentalID.AutoIncrementSeed = -1
+            Me.columnrentalID.AutoIncrementStep = -1
             Me.columnrentalID.AllowDBNull = false
-            Me.columnrentalID.MaxLength = 10
-            Me.columnrecieptNo.AllowDBNull = false
-            Me.columnrecieptNo.MaxLength = 10
-            Me.columnpaymentMethod.MaxLength = 20
+            Me.columnrentalID.ReadOnly = true
+            Me.columnrentalID.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewAll_InvoicesRow() As All_InvoicesRow
-            Return CType(Me.NewRow,All_InvoicesRow)
+        Public Function NewRentalRow() As RentalRow
+            Return CType(Me.NewRow,RentalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New All_InvoicesRow(builder)
+            Return New RentalRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(All_InvoicesRow)
+            Return GetType(RentalRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.All_InvoicesRowChangedEvent) Is Nothing) Then
-                RaiseEvent All_InvoicesRowChanged(Me, New All_InvoicesRowChangeEvent(CType(e.Row,All_InvoicesRow), e.Action))
+            If (Not (Me.RentalRowChangedEvent) Is Nothing) Then
+                RaiseEvent RentalRowChanged(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
             End If
         End Sub
         
@@ -1554,8 +1411,8 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.All_InvoicesRowChangingEvent) Is Nothing) Then
-                RaiseEvent All_InvoicesRowChanging(Me, New All_InvoicesRowChangeEvent(CType(e.Row,All_InvoicesRow), e.Action))
+            If (Not (Me.RentalRowChangingEvent) Is Nothing) Then
+                RaiseEvent RentalRowChanging(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
             End If
         End Sub
         
@@ -1563,8 +1420,8 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.All_InvoicesRowDeletedEvent) Is Nothing) Then
-                RaiseEvent All_InvoicesRowDeleted(Me, New All_InvoicesRowChangeEvent(CType(e.Row,All_InvoicesRow), e.Action))
+            If (Not (Me.RentalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent RentalRowDeleted(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
             End If
         End Sub
         
@@ -1572,14 +1429,14 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.All_InvoicesRowDeletingEvent) Is Nothing) Then
-                RaiseEvent All_InvoicesRowDeleting(Me, New All_InvoicesRowChangeEvent(CType(e.Row,All_InvoicesRow), e.Action))
+            If (Not (Me.RentalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent RentalRowDeleting(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveAll_InvoicesRow(ByVal row As All_InvoicesRow)
+        Public Sub RemoveRentalRow(ByVal row As RentalRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1588,7 +1445,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1606,7 +1463,7 @@ Partial Public Class Turkson_Co_DataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "All_InvoicesDataTable"
+            attribute2.FixedValue = "RentalDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1830,7 +1687,7 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddTransaction_InvoiceRow(ByVal recieptNo As String, ByVal dateIssued As Date, ByVal parentEmployeeRowByendorses As EmployeeRow, ByVal parentClientRowByrecieves As ClientRow, ByVal totalAmountPayable As Double, ByVal paymentMethod As String, ByVal duration As Integer, ByVal duedate As Date, ByVal dateHired As Date) As Transaction_InvoiceRow
+        Public Overloads Function AddTransaction_InvoiceRow(ByVal recieptNo As String, ByVal dateIssued As Date, ByVal parentEmployeeRowByendorses As EmployeeRow, ByVal parentClientRowByrecieves As ClientRow, ByVal totalAmountPayable As String, ByVal paymentMethod As String, ByVal duration As Integer, ByVal duedate As Date, ByVal dateHired As Date) As Transaction_InvoiceRow
             Dim rowTransaction_InvoiceRow As Transaction_InvoiceRow = CType(Me.NewRow,Transaction_InvoiceRow)
             Dim columnValuesArray() As Object = New Object() {recieptNo, dateIssued, Nothing, Nothing, totalAmountPayable, paymentMethod, duration, duedate, dateHired, Nothing}
             If (Not (parentEmployeeRowByendorses) Is Nothing) Then
@@ -1890,7 +1747,7 @@ Partial Public Class Turkson_Co_DataSet
             MyBase.Columns.Add(Me.columnworkerID)
             Me.columnclientID = New Global.System.Data.DataColumn("clientID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnclientID)
-            Me.columntotalAmountPayable = New Global.System.Data.DataColumn("totalAmountPayable", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.columntotalAmountPayable = New Global.System.Data.DataColumn("totalAmountPayable", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntotalAmountPayable)
             Me.columnpaymentMethod = New Global.System.Data.DataColumn("paymentMethod", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpaymentMethod)
@@ -1908,6 +1765,7 @@ Partial Public Class Turkson_Co_DataSet
             Me.columnrecieptNo.MaxLength = 10
             Me.columnworkerID.MaxLength = 5
             Me.columnclientID.MaxLength = 5
+            Me.columntotalAmountPayable.MaxLength = 5
             Me.columnpaymentMethod.MaxLength = 20
             Me.columnrentalID.AutoIncrement = true
             Me.columnrentalID.AutoIncrementSeed = -1
@@ -1981,7 +1839,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2000,364 +1858,6 @@ Partial Public Class Turkson_Co_DataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "Transaction_InvoiceDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class User_Rental_DetailsDataTable
-        Inherits Global.System.Data.TypedTableBase(Of User_Rental_DetailsRow)
-        
-        Private columnclientID As Global.System.Data.DataColumn
-        
-        Private columnrentalID As Global.System.Data.DataColumn
-        
-        Private columnvehicleID As Global.System.Data.DataColumn
-        
-        Private columncarModel As Global.System.Data.DataColumn
-        
-        Private columncarYear As Global.System.Data.DataColumn
-        
-        Private columnfirstName As Global.System.Data.DataColumn
-        
-        Private columnlastname As Global.System.Data.DataColumn
-        
-        Private columnLicenseNo As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "User_Rental_Details"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property clientIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnclientID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property rentalIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnrentalID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property vehicleIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnvehicleID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property carModelColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncarModel
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property carYearColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncarYear
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property firstNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnfirstName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property lastnameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnlastname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property LicenseNoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnLicenseNo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As User_Rental_DetailsRow
-            Get
-                Return CType(Me.Rows(index),User_Rental_DetailsRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event User_Rental_DetailsRowChanging As User_Rental_DetailsRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event User_Rental_DetailsRowChanged As User_Rental_DetailsRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event User_Rental_DetailsRowDeleting As User_Rental_DetailsRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event User_Rental_DetailsRowDeleted As User_Rental_DetailsRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddUser_Rental_DetailsRow(ByVal row As User_Rental_DetailsRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddUser_Rental_DetailsRow(ByVal clientID As String, ByVal rentalID As Integer, ByVal vehicleID As String, ByVal carModel As String, ByVal carYear As Date, ByVal firstName As String, ByVal lastname As String, ByVal LicenseNo As String) As User_Rental_DetailsRow
-            Dim rowUser_Rental_DetailsRow As User_Rental_DetailsRow = CType(Me.NewRow,User_Rental_DetailsRow)
-            Dim columnValuesArray() As Object = New Object() {clientID, rentalID, vehicleID, carModel, carYear, firstName, lastname, LicenseNo}
-            rowUser_Rental_DetailsRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowUser_Rental_DetailsRow)
-            Return rowUser_Rental_DetailsRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByclientIDrentalID(ByVal clientID As String, ByVal rentalID As Integer) As User_Rental_DetailsRow
-            Return CType(Me.Rows.Find(New Object() {clientID, rentalID}),User_Rental_DetailsRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As User_Rental_DetailsDataTable = CType(MyBase.Clone,User_Rental_DetailsDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New User_Rental_DetailsDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnclientID = MyBase.Columns("clientID")
-            Me.columnrentalID = MyBase.Columns("rentalID")
-            Me.columnvehicleID = MyBase.Columns("vehicleID")
-            Me.columncarModel = MyBase.Columns("carModel")
-            Me.columncarYear = MyBase.Columns("carYear")
-            Me.columnfirstName = MyBase.Columns("firstName")
-            Me.columnlastname = MyBase.Columns("lastname")
-            Me.columnLicenseNo = MyBase.Columns("LicenseNo")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnclientID = New Global.System.Data.DataColumn("clientID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnclientID)
-            Me.columnrentalID = New Global.System.Data.DataColumn("rentalID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnrentalID)
-            Me.columnvehicleID = New Global.System.Data.DataColumn("vehicleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnvehicleID)
-            Me.columncarModel = New Global.System.Data.DataColumn("carModel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncarModel)
-            Me.columncarYear = New Global.System.Data.DataColumn("carYear", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncarYear)
-            Me.columnfirstName = New Global.System.Data.DataColumn("firstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnfirstName)
-            Me.columnlastname = New Global.System.Data.DataColumn("lastname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnlastname)
-            Me.columnLicenseNo = New Global.System.Data.DataColumn("LicenseNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnLicenseNo)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnclientID, Me.columnrentalID}, true))
-            Me.columnclientID.AllowDBNull = false
-            Me.columnclientID.MaxLength = 5
-            Me.columnrentalID.AllowDBNull = false
-            Me.columnvehicleID.MaxLength = 50
-            Me.columncarModel.MaxLength = 500
-            Me.columnfirstName.MaxLength = 10
-            Me.columnlastname.MaxLength = 10
-            Me.columnLicenseNo.MaxLength = 50
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewUser_Rental_DetailsRow() As User_Rental_DetailsRow
-            Return CType(Me.NewRow,User_Rental_DetailsRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New User_Rental_DetailsRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(User_Rental_DetailsRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.User_Rental_DetailsRowChangedEvent) Is Nothing) Then
-                RaiseEvent User_Rental_DetailsRowChanged(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.User_Rental_DetailsRowChangingEvent) Is Nothing) Then
-                RaiseEvent User_Rental_DetailsRowChanging(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.User_Rental_DetailsRowDeletedEvent) Is Nothing) Then
-                RaiseEvent User_Rental_DetailsRowDeleted(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.User_Rental_DetailsRowDeletingEvent) Is Nothing) Then
-                RaiseEvent User_Rental_DetailsRowDeleting(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveUser_Rental_DetailsRow(ByVal row As User_Rental_DetailsRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "User_Rental_DetailsDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2726,7 +2226,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2793,24 +2293,30 @@ Partial Public Class Turkson_Co_DataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class RentalDataTable
-        Inherits Global.System.Data.TypedTableBase(Of RentalRow)
+    Partial Public Class User_Rental_DetailsDataTable
+        Inherits Global.System.Data.TypedTableBase(Of User_Rental_DetailsRow)
+        
+        Private columnclientID As Global.System.Data.DataColumn
+        
+        Private columnrentalID As Global.System.Data.DataColumn
+        
+        Private columnvehicleID As Global.System.Data.DataColumn
         
         Private columncarModel As Global.System.Data.DataColumn
         
         Private columncarYear As Global.System.Data.DataColumn
         
-        Private columnclientID As Global.System.Data.DataColumn
+        Private columnfirstName As Global.System.Data.DataColumn
         
-        Private columnvehicleID As Global.System.Data.DataColumn
+        Private columnlastname As Global.System.Data.DataColumn
         
-        Private columnrentalID As Global.System.Data.DataColumn
+        Private columnLicenseNo As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Rental"
+            Me.TableName = "User_Rental_Details"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2843,6 +2349,30 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property clientIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnclientID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property rentalIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrentalID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property vehicleIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvehicleID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property carModelColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncarModel
@@ -2859,25 +2389,25 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property clientIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property firstNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnclientID
+                Return Me.columnfirstName
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property vehicleIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property lastnameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnvehicleID
+                Return Me.columnlastname
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property rentalIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property LicenseNoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnrentalID
+                Return Me.columnLicenseNo
             End Get
         End Property
         
@@ -2892,56 +2422,50 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As RentalRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As User_Rental_DetailsRow
             Get
-                Return CType(Me.Rows(index),RentalRow)
+                Return CType(Me.Rows(index),User_Rental_DetailsRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event RentalRowChanging As RentalRowChangeEventHandler
+        Public Event User_Rental_DetailsRowChanging As User_Rental_DetailsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event RentalRowChanged As RentalRowChangeEventHandler
+        Public Event User_Rental_DetailsRowChanged As User_Rental_DetailsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event RentalRowDeleting As RentalRowChangeEventHandler
+        Public Event User_Rental_DetailsRowDeleting As User_Rental_DetailsRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event RentalRowDeleted As RentalRowChangeEventHandler
+        Public Event User_Rental_DetailsRowDeleted As User_Rental_DetailsRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddRentalRow(ByVal row As RentalRow)
+        Public Overloads Sub AddUser_Rental_DetailsRow(ByVal row As User_Rental_DetailsRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddRentalRow(ByVal carModel As String, ByVal carYear As String, ByVal parentClientRowBycan_rent As ClientRow, ByVal parentVehicleRowBycan_cover As VehicleRow) As RentalRow
-            Dim rowRentalRow As RentalRow = CType(Me.NewRow,RentalRow)
-            Dim columnValuesArray() As Object = New Object() {carModel, carYear, Nothing, Nothing, Nothing}
-            If (Not (parentClientRowBycan_rent) Is Nothing) Then
-                columnValuesArray(2) = parentClientRowBycan_rent(0)
-            End If
-            If (Not (parentVehicleRowBycan_cover) Is Nothing) Then
-                columnValuesArray(3) = parentVehicleRowBycan_cover(0)
-            End If
-            rowRentalRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowRentalRow)
-            Return rowRentalRow
+        Public Overloads Function AddUser_Rental_DetailsRow(ByVal clientID As String, ByVal rentalID As Integer, ByVal vehicleID As String, ByVal carModel As String, ByVal carYear As String, ByVal firstName As String, ByVal lastname As String, ByVal LicenseNo As String) As User_Rental_DetailsRow
+            Dim rowUser_Rental_DetailsRow As User_Rental_DetailsRow = CType(Me.NewRow,User_Rental_DetailsRow)
+            Dim columnValuesArray() As Object = New Object() {clientID, rentalID, vehicleID, carModel, carYear, firstName, lastname, LicenseNo}
+            rowUser_Rental_DetailsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowUser_Rental_DetailsRow)
+            Return rowUser_Rental_DetailsRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByrentalID(ByVal rentalID As Integer) As RentalRow
-            Return CType(Me.Rows.Find(New Object() {rentalID}),RentalRow)
+        Public Function FindByclientIDrentalID(ByVal clientID As String, ByVal rentalID As Integer) As User_Rental_DetailsRow
+            Return CType(Me.Rows.Find(New Object() {clientID, rentalID}),User_Rental_DetailsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As RentalDataTable = CType(MyBase.Clone,RentalDataTable)
+            Dim cln As User_Rental_DetailsDataTable = CType(MyBase.Clone,User_Rental_DetailsDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -2949,69 +2473,77 @@ Partial Public Class Turkson_Co_DataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New RentalDataTable()
+            Return New User_Rental_DetailsDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnclientID = MyBase.Columns("clientID")
+            Me.columnrentalID = MyBase.Columns("rentalID")
+            Me.columnvehicleID = MyBase.Columns("vehicleID")
             Me.columncarModel = MyBase.Columns("carModel")
             Me.columncarYear = MyBase.Columns("carYear")
-            Me.columnclientID = MyBase.Columns("clientID")
-            Me.columnvehicleID = MyBase.Columns("vehicleID")
-            Me.columnrentalID = MyBase.Columns("rentalID")
+            Me.columnfirstName = MyBase.Columns("firstName")
+            Me.columnlastname = MyBase.Columns("lastname")
+            Me.columnLicenseNo = MyBase.Columns("LicenseNo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnclientID = New Global.System.Data.DataColumn("clientID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnclientID)
+            Me.columnrentalID = New Global.System.Data.DataColumn("rentalID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrentalID)
+            Me.columnvehicleID = New Global.System.Data.DataColumn("vehicleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvehicleID)
             Me.columncarModel = New Global.System.Data.DataColumn("carModel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncarModel)
             Me.columncarYear = New Global.System.Data.DataColumn("carYear", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncarYear)
-            Me.columnclientID = New Global.System.Data.DataColumn("clientID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnclientID)
-            Me.columnvehicleID = New Global.System.Data.DataColumn("vehicleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnvehicleID)
-            Me.columnrentalID = New Global.System.Data.DataColumn("rentalID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnrentalID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrentalID}, true))
+            Me.columnfirstName = New Global.System.Data.DataColumn("firstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfirstName)
+            Me.columnlastname = New Global.System.Data.DataColumn("lastname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlastname)
+            Me.columnLicenseNo = New Global.System.Data.DataColumn("LicenseNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLicenseNo)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnclientID, Me.columnrentalID}, true))
+            Me.columnclientID.AllowDBNull = false
+            Me.columnclientID.MaxLength = 5
+            Me.columnrentalID.AllowDBNull = false
+            Me.columnvehicleID.MaxLength = 50
             Me.columncarModel.MaxLength = 500
             Me.columncarYear.MaxLength = 10
-            Me.columnclientID.MaxLength = 5
-            Me.columnvehicleID.MaxLength = 50
-            Me.columnrentalID.AutoIncrement = true
-            Me.columnrentalID.AutoIncrementSeed = -1
-            Me.columnrentalID.AutoIncrementStep = -1
-            Me.columnrentalID.AllowDBNull = false
-            Me.columnrentalID.ReadOnly = true
-            Me.columnrentalID.Unique = true
+            Me.columnfirstName.MaxLength = 10
+            Me.columnlastname.MaxLength = 10
+            Me.columnLicenseNo.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewRentalRow() As RentalRow
-            Return CType(Me.NewRow,RentalRow)
+        Public Function NewUser_Rental_DetailsRow() As User_Rental_DetailsRow
+            Return CType(Me.NewRow,User_Rental_DetailsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New RentalRow(builder)
+            Return New User_Rental_DetailsRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(RentalRow)
+            Return GetType(User_Rental_DetailsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.RentalRowChangedEvent) Is Nothing) Then
-                RaiseEvent RentalRowChanged(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
+            If (Not (Me.User_Rental_DetailsRowChangedEvent) Is Nothing) Then
+                RaiseEvent User_Rental_DetailsRowChanged(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
             End If
         End Sub
         
@@ -3019,8 +2551,8 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.RentalRowChangingEvent) Is Nothing) Then
-                RaiseEvent RentalRowChanging(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
+            If (Not (Me.User_Rental_DetailsRowChangingEvent) Is Nothing) Then
+                RaiseEvent User_Rental_DetailsRowChanging(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
             End If
         End Sub
         
@@ -3028,8 +2560,8 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.RentalRowDeletedEvent) Is Nothing) Then
-                RaiseEvent RentalRowDeleted(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
+            If (Not (Me.User_Rental_DetailsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent User_Rental_DetailsRowDeleted(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
             End If
         End Sub
         
@@ -3037,14 +2569,14 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.RentalRowDeletingEvent) Is Nothing) Then
-                RaiseEvent RentalRowDeleting(Me, New RentalRowChangeEvent(CType(e.Row,RentalRow), e.Action))
+            If (Not (Me.User_Rental_DetailsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent User_Rental_DetailsRowDeleting(Me, New User_Rental_DetailsRowChangeEvent(CType(e.Row,User_Rental_DetailsRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveRentalRow(ByVal row As RentalRow)
+        Public Sub RemoveUser_Rental_DetailsRow(ByVal row As User_Rental_DetailsRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -3053,7 +2585,7 @@ Partial Public Class Turkson_Co_DataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Turkson_Co_DataSet = New Turkson_Co_DataSet()
+            Dim ds As TurksonCo_DataSet = New TurksonCo_DataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -3071,7 +2603,7 @@ Partial Public Class Turkson_Co_DataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "RentalDataTable"
+            attribute2.FixedValue = "User_Rental_DetailsDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -3188,10 +2720,10 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DOB() As String
+        Public Property DOB() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableClient.DOBColumn),String)
+                    Return CType(Me(Me.tableClient.DOBColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'DOB' in table 'Client' is DBNull.", e)
                 End Try
@@ -3413,21 +2945,21 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function GetTransaction_InvoiceRows() As Transaction_InvoiceRow()
-            If (Me.Table.ChildRelations("recieves") Is Nothing) Then
-                Return New Transaction_InvoiceRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("recieves")),Transaction_InvoiceRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function GetRentalRows() As RentalRow()
             If (Me.Table.ChildRelations("can rent") Is Nothing) Then
                 Return New RentalRow(-1) {}
             Else
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("can rent")),RentalRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetTransaction_InvoiceRows() As Transaction_InvoiceRow()
+            If (Me.Table.ChildRelations("recieves") Is Nothing) Then
+                Return New Transaction_InvoiceRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("recieves")),Transaction_InvoiceRow())
             End If
         End Function
     End Class
@@ -3553,331 +3085,168 @@ Partial Public Class Turkson_Co_DataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class All_InvoicesRow
+    Partial Public Class RentalRow
         Inherits Global.System.Data.DataRow
         
-        Private tableAll_Invoices As All_InvoicesDataTable
+        Private tableRental As RentalDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableAll_Invoices = CType(Me.Table,All_InvoicesDataTable)
+            Me.tableRental = CType(Me.Table,RentalDataTable)
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property carModel() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRental.carModelColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'carModel' in table 'Rental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRental.carModelColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property carYear() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRental.carYearColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'carYear' in table 'Rental' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRental.carYearColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property clientID() As String
             Get
-                Return CType(Me(Me.tableAll_Invoices.clientIDColumn),String)
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.clientIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property firstName() As String
-            Get
                 Try 
-                    Return CType(Me(Me.tableAll_Invoices.firstNameColumn),String)
+                    Return CType(Me(Me.tableRental.clientIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'firstName' in table 'All_Invoices' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'clientID' in table 'Rental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableAll_Invoices.firstNameColumn) = value
+                Me(Me.tableRental.clientIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property lastname() As String
+        Public Property vehicleID() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableAll_Invoices.lastnameColumn),String)
+                    Return CType(Me(Me.tableRental.vehicleIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'lastname' in table 'All_Invoices' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vehicleID' in table 'Rental' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableAll_Invoices.lastnameColumn) = value
+                Me(Me.tableRental.vehicleIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property LicenseNo() As String
+        Public Property rentalID() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.LicenseNoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'LicenseNo' in table 'All_Invoices' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableRental.rentalIDColumn),Integer)
             End Get
             Set
-                Me(Me.tableAll_Invoices.LicenseNoColumn) = value
+                Me(Me.tableRental.rentalIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property empID() As String
+        Public Property VehicleRow() As VehicleRow
             Get
-                Return CType(Me(Me.tableAll_Invoices.empIDColumn),String)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("can cover")),VehicleRow)
             End Get
             Set
-                Me(Me.tableAll_Invoices.empIDColumn) = value
+                Me.SetParentRow(value, Me.Table.ParentRelations("can cover"))
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property empName() As String
+        Public Property ClientRow() As ClientRow
             Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.empNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'empName' in table 'All_Invoices' is DBNull.", e)
-                End Try
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("can rent")),ClientRow)
             End Get
             Set
-                Me(Me.tableAll_Invoices.empNameColumn) = value
+                Me.SetParentRow(value, Me.Table.ParentRelations("can rent"))
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property dateHired() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.dateHiredColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateHired' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.dateHiredColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property duration() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.durationColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'duration' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.durationColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property duedate() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.duedateColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'duedate' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.duedateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property rentalID() As String
-            Get
-                Return CType(Me(Me.tableAll_Invoices.rentalIDColumn),String)
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.rentalIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property recieptNo() As String
-            Get
-                Return CType(Me(Me.tableAll_Invoices.recieptNoColumn),String)
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.recieptNoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property dateIssued() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.dateIssuedColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateIssued' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.dateIssuedColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property totalAmountPayable() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.totalAmountPayableColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalAmountPayable' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.totalAmountPayableColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property paymentMethod() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableAll_Invoices.paymentMethodColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'paymentMethod' in table 'All_Invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAll_Invoices.paymentMethodColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsfirstNameNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.firstNameColumn)
+        Public Function IscarModelNull() As Boolean
+            Return Me.IsNull(Me.tableRental.carModelColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetfirstNameNull()
-            Me(Me.tableAll_Invoices.firstNameColumn) = Global.System.Convert.DBNull
+        Public Sub SetcarModelNull()
+            Me(Me.tableRental.carModelColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IslastnameNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.lastnameColumn)
+        Public Function IscarYearNull() As Boolean
+            Return Me.IsNull(Me.tableRental.carYearColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetlastnameNull()
-            Me(Me.tableAll_Invoices.lastnameColumn) = Global.System.Convert.DBNull
+        Public Sub SetcarYearNull()
+            Me(Me.tableRental.carYearColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsLicenseNoNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.LicenseNoColumn)
+        Public Function IsclientIDNull() As Boolean
+            Return Me.IsNull(Me.tableRental.clientIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetLicenseNoNull()
-            Me(Me.tableAll_Invoices.LicenseNoColumn) = Global.System.Convert.DBNull
+        Public Sub SetclientIDNull()
+            Me(Me.tableRental.clientIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsempNameNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.empNameColumn)
+        Public Function IsvehicleIDNull() As Boolean
+            Return Me.IsNull(Me.tableRental.vehicleIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetempNameNull()
-            Me(Me.tableAll_Invoices.empNameColumn) = Global.System.Convert.DBNull
+        Public Sub SetvehicleIDNull()
+            Me(Me.tableRental.vehicleIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsdateHiredNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.dateHiredColumn)
+        Public Function GetTransaction_InvoiceRows() As Transaction_InvoiceRow()
+            If (Me.Table.ChildRelations("FK_Transaction_Invoice_Rental") Is Nothing) Then
+                Return New Transaction_InvoiceRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Transaction_Invoice_Rental")),Transaction_InvoiceRow())
+            End If
         End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetdateHiredNull()
-            Me(Me.tableAll_Invoices.dateHiredColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsdurationNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.durationColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetdurationNull()
-            Me(Me.tableAll_Invoices.durationColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsduedateNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.duedateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetduedateNull()
-            Me(Me.tableAll_Invoices.duedateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsdateIssuedNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.dateIssuedColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetdateIssuedNull()
-            Me(Me.tableAll_Invoices.dateIssuedColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IstotalAmountPayableNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.totalAmountPayableColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SettotalAmountPayableNull()
-            Me(Me.tableAll_Invoices.totalAmountPayableColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IspaymentMethodNull() As Boolean
-            Return Me.IsNull(Me.tableAll_Invoices.paymentMethodColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetpaymentMethodNull()
-            Me(Me.tableAll_Invoices.paymentMethodColumn) = Global.System.Convert.DBNull
-        End Sub
     End Class
     
     '''<summary>
@@ -3953,10 +3322,10 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property totalAmountPayable() As Double
+        Public Property totalAmountPayable() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableTransaction_Invoice.totalAmountPayableColumn),Double)
+                    Return CType(Me(Me.tableTransaction_Invoice.totalAmountPayableColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'totalAmountPayable' in table 'Transaction_Invoice' is DBNul"& _ 
                             "l.", e)
@@ -4051,23 +3420,23 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClientRow() As ClientRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("recieves")),ClientRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("recieves"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property RentalRow() As RentalRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Transaction_Invoice_Rental")),RentalRow)
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_Transaction_Invoice_Rental"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ClientRow() As ClientRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("recieves")),ClientRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("recieves"))
             End Set
         End Property
         
@@ -4165,206 +3534,6 @@ Partial Public Class Turkson_Co_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetdateHiredNull()
             Me(Me.tableTransaction_Invoice.dateHiredColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class User_Rental_DetailsRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableUser_Rental_Details As User_Rental_DetailsDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableUser_Rental_Details = CType(Me.Table,User_Rental_DetailsDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property clientID() As String
-            Get
-                Return CType(Me(Me.tableUser_Rental_Details.clientIDColumn),String)
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.clientIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property rentalID() As Integer
-            Get
-                Return CType(Me(Me.tableUser_Rental_Details.rentalIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.rentalIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property vehicleID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.vehicleIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'vehicleID' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.vehicleIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property carModel() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.carModelColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'carModel' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.carModelColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property carYear() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.carYearColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'carYear' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.carYearColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property firstName() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.firstNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'firstName' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.firstNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property lastname() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.lastnameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'lastname' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.lastnameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property LicenseNo() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUser_Rental_Details.LicenseNoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'LicenseNo' in table 'User_Rental_Details' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUser_Rental_Details.LicenseNoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsvehicleIDNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.vehicleIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetvehicleIDNull()
-            Me(Me.tableUser_Rental_Details.vehicleIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscarModelNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.carModelColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcarModelNull()
-            Me(Me.tableUser_Rental_Details.carModelColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscarYearNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.carYearColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcarYearNull()
-            Me(Me.tableUser_Rental_Details.carYearColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsfirstNameNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.firstNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetfirstNameNull()
-            Me(Me.tableUser_Rental_Details.firstNameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IslastnameNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.lastnameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetlastnameNull()
-            Me(Me.tableUser_Rental_Details.lastnameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsLicenseNoNull() As Boolean
-            Return Me.IsNull(Me.tableUser_Rental_Details.LicenseNoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetLicenseNoNull()
-            Me(Me.tableUser_Rental_Details.LicenseNoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4651,60 +3820,37 @@ Partial Public Class Turkson_Co_DataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class RentalRow
+    Partial Public Class User_Rental_DetailsRow
         Inherits Global.System.Data.DataRow
         
-        Private tableRental As RentalDataTable
+        Private tableUser_Rental_Details As User_Rental_DetailsDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableRental = CType(Me.Table,RentalDataTable)
+            Me.tableUser_Rental_Details = CType(Me.Table,User_Rental_DetailsDataTable)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property carModel() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableRental.carModelColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'carModel' in table 'Rental' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableRental.carModelColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property carYear() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableRental.carYearColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'carYear' in table 'Rental' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableRental.carYearColumn) = value
-            End Set
-        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property clientID() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableRental.clientIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'clientID' in table 'Rental' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableUser_Rental_Details.clientIDColumn),String)
             End Get
             Set
-                Me(Me.tableRental.clientIDColumn) = value
+                Me(Me.tableUser_Rental_Details.clientIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property rentalID() As Integer
+            Get
+                Return CType(Me(Me.tableUser_Rental_Details.rentalIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableUser_Rental_Details.rentalIDColumn) = value
             End Set
         End Property
         
@@ -4713,106 +3859,162 @@ Partial Public Class Turkson_Co_DataSet
         Public Property vehicleID() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableRental.vehicleIDColumn),String)
+                    Return CType(Me(Me.tableUser_Rental_Details.vehicleIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'vehicleID' in table 'Rental' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vehicleID' in table 'User_Rental_Details' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRental.vehicleIDColumn) = value
+                Me(Me.tableUser_Rental_Details.vehicleIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property rentalID() As Integer
+        Public Property carModel() As String
             Get
-                Return CType(Me(Me.tableRental.rentalIDColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableUser_Rental_Details.carModelColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'carModel' in table 'User_Rental_Details' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableRental.rentalIDColumn) = value
+                Me(Me.tableUser_Rental_Details.carModelColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property VehicleRow() As VehicleRow
+        Public Property carYear() As String
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("can cover")),VehicleRow)
+                Try 
+                    Return CType(Me(Me.tableUser_Rental_Details.carYearColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'carYear' in table 'User_Rental_Details' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("can cover"))
+                Me(Me.tableUser_Rental_Details.carYearColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClientRow() As ClientRow
+        Public Property firstName() As String
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("can rent")),ClientRow)
+                Try 
+                    Return CType(Me(Me.tableUser_Rental_Details.firstNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'firstName' in table 'User_Rental_Details' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("can rent"))
+                Me(Me.tableUser_Rental_Details.firstNameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscarModelNull() As Boolean
-            Return Me.IsNull(Me.tableRental.carModelColumn)
-        End Function
+        Public Property lastname() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableUser_Rental_Details.lastnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lastname' in table 'User_Rental_Details' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUser_Rental_Details.lastnameColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcarModelNull()
-            Me(Me.tableRental.carModelColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscarYearNull() As Boolean
-            Return Me.IsNull(Me.tableRental.carYearColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcarYearNull()
-            Me(Me.tableRental.carYearColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsclientIDNull() As Boolean
-            Return Me.IsNull(Me.tableRental.clientIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetclientIDNull()
-            Me(Me.tableRental.clientIDColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property LicenseNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableUser_Rental_Details.LicenseNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LicenseNo' in table 'User_Rental_Details' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUser_Rental_Details.LicenseNoColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsvehicleIDNull() As Boolean
-            Return Me.IsNull(Me.tableRental.vehicleIDColumn)
+            Return Me.IsNull(Me.tableUser_Rental_Details.vehicleIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetvehicleIDNull()
-            Me(Me.tableRental.vehicleIDColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUser_Rental_Details.vehicleIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function GetTransaction_InvoiceRows() As Transaction_InvoiceRow()
-            If (Me.Table.ChildRelations("FK_Transaction_Invoice_Rental") Is Nothing) Then
-                Return New Transaction_InvoiceRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_Transaction_Invoice_Rental")),Transaction_InvoiceRow())
-            End If
+        Public Function IscarModelNull() As Boolean
+            Return Me.IsNull(Me.tableUser_Rental_Details.carModelColumn)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcarModelNull()
+            Me(Me.tableUser_Rental_Details.carModelColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscarYearNull() As Boolean
+            Return Me.IsNull(Me.tableUser_Rental_Details.carYearColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcarYearNull()
+            Me(Me.tableUser_Rental_Details.carYearColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsfirstNameNull() As Boolean
+            Return Me.IsNull(Me.tableUser_Rental_Details.firstNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetfirstNameNull()
+            Me(Me.tableUser_Rental_Details.firstNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IslastnameNull() As Boolean
+            Return Me.IsNull(Me.tableUser_Rental_Details.lastnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetlastnameNull()
+            Me(Me.tableUser_Rental_Details.lastnameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsLicenseNoNull() As Boolean
+            Return Me.IsNull(Me.tableUser_Rental_Details.LicenseNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetLicenseNoNull()
+            Me(Me.tableUser_Rental_Details.LicenseNoColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -4891,16 +4093,16 @@ Partial Public Class Turkson_Co_DataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class All_InvoicesRowChangeEvent
+    Public Class RentalRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As All_InvoicesRow
+        Private eventRow As RentalRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As All_InvoicesRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As RentalRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -4908,7 +4110,7 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As All_InvoicesRow
+        Public ReadOnly Property Row() As RentalRow
             Get
                 Return Me.eventRow
             End Get
@@ -4963,42 +4165,6 @@ Partial Public Class Turkson_Co_DataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class User_Rental_DetailsRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As User_Rental_DetailsRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As User_Rental_DetailsRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As User_Rental_DetailsRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Class VehicleRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -5035,16 +4201,16 @@ Partial Public Class Turkson_Co_DataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class RentalRowChangeEvent
+    Public Class User_Rental_DetailsRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As RentalRow
+        Private eventRow As User_Rental_DetailsRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As RentalRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As User_Rental_DetailsRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -5052,7 +4218,7 @@ Partial Public Class Turkson_Co_DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As RentalRow
+        Public ReadOnly Property Row() As User_Rental_DetailsRow
             Get
                 Return Me.eventRow
             End Get
@@ -5068,7 +4234,7 @@ Partial Public Class Turkson_Co_DataSet
     End Class
 End Class
 
-Namespace Turkson_Co_DataSetTableAdapters
+Namespace TurksonCo_DataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -5233,7 +4399,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_otherName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_otherName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DOB", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DOB", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LicenseNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LicenseNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_contact", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "contact", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5259,7 +4425,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastname", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@otherName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DOB", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LicenseNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contact", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "contact", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5291,7 +4457,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastname", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lastname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@otherName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DOB", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LicenseNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contact", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "contact", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@email", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5306,7 +4472,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_otherName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_otherName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "otherName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DOB", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DOB", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DOB", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DOB", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LicenseNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LicenseNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LicenseNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_contact", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "contact", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5325,7 +4491,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5343,7 +4509,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.ClientDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.ClientDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5356,9 +4522,9 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.ClientDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.ClientDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.ClientDataTable = New Turkson_Co_DataSet.ClientDataTable()
+            Dim dataTable As TurksonCo_DataSet.ClientDataTable = New TurksonCo_DataSet.ClientDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -5366,14 +4532,14 @@ Namespace Turkson_Co_DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Turkson_Co_DataSet.ClientDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As TurksonCo_DataSet.ClientDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Turkson_Co_DataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As TurksonCo_DataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Client")
         End Function
         
@@ -5395,7 +4561,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_clientID As String, ByVal Original_firstName As String, ByVal Original_lastname As String, ByVal Original_otherName As String, ByVal Original_DOB As String, ByVal Original_LicenseNo As String, ByVal Original_contact As String, ByVal Original_email As String, ByVal Original_residenceLocation As String, ByVal Original_username As String, ByVal Original_password As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_clientID As String, ByVal Original_firstName As String, ByVal Original_lastname As String, ByVal Original_otherName As String, ByVal Original_DOB As Global.System.Nullable(Of Date), ByVal Original_LicenseNo As String, ByVal Original_contact As String, ByVal Original_email As String, ByVal Original_residenceLocation As String, ByVal Original_username As String, ByVal Original_password As String) As Integer
             If (Original_clientID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_clientID")
             Else
@@ -5422,12 +4588,12 @@ Namespace Turkson_Co_DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_otherName,String)
             End If
-            If (Original_DOB Is Nothing) Then
+            If (Original_DOB.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_DOB.Value,Date)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_DOB,String)
             End If
             If (Original_LicenseNo Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
@@ -5490,7 +4656,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal clientID As String, ByVal firstName As String, ByVal lastname As String, ByVal otherName As String, ByVal DOB As String, ByVal LicenseNo As String, ByVal contact As String, ByVal email As String, ByVal residenceLocation As String, ByVal username As String, ByVal password As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal clientID As String, ByVal firstName As String, ByVal lastname As String, ByVal otherName As String, ByVal DOB As Global.System.Nullable(Of Date), ByVal LicenseNo As String, ByVal contact As String, ByVal email As String, ByVal residenceLocation As String, ByVal username As String, ByVal password As String) As Integer
             If (clientID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("clientID")
             Else
@@ -5511,10 +4677,10 @@ Namespace Turkson_Co_DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(otherName,String)
             End If
-            If (DOB Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (DOB.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(DOB.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(DOB,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (LicenseNo Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -5570,7 +4736,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal firstName As String,  _
                     ByVal lastname As String,  _
                     ByVal otherName As String,  _
-                    ByVal DOB As String,  _
+                    ByVal DOB As Global.System.Nullable(Of Date),  _
                     ByVal LicenseNo As String,  _
                     ByVal contact As String,  _
                     ByVal email As String,  _
@@ -5581,7 +4747,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal Original_firstName As String,  _
                     ByVal Original_lastname As String,  _
                     ByVal Original_otherName As String,  _
-                    ByVal Original_DOB As String,  _
+                    ByVal Original_DOB As Global.System.Nullable(Of Date),  _
                     ByVal Original_LicenseNo As String,  _
                     ByVal Original_contact As String,  _
                     ByVal Original_email As String,  _
@@ -5608,10 +4774,10 @@ Namespace Turkson_Co_DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(otherName,String)
             End If
-            If (DOB Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (DOB.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(DOB.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(DOB,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (LicenseNo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -5669,12 +4835,12 @@ Namespace Turkson_Co_DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_otherName,String)
             End If
-            If (Original_DOB Is Nothing) Then
+            If (Original_DOB.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_DOB.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_DOB,String)
             End If
             If (Original_LicenseNo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
@@ -5741,7 +4907,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal firstName As String,  _
                     ByVal lastname As String,  _
                     ByVal otherName As String,  _
-                    ByVal DOB As String,  _
+                    ByVal DOB As Global.System.Nullable(Of Date),  _
                     ByVal LicenseNo As String,  _
                     ByVal contact As String,  _
                     ByVal email As String,  _
@@ -5752,7 +4918,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal Original_firstName As String,  _
                     ByVal Original_lastname As String,  _
                     ByVal Original_otherName As String,  _
-                    ByVal Original_DOB As String,  _
+                    ByVal Original_DOB As Global.System.Nullable(Of Date),  _
                     ByVal Original_LicenseNo As String,  _
                     ByVal Original_contact As String,  _
                     ByVal Original_email As String,  _
@@ -5947,7 +5113,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5964,7 +5130,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.EmployeeDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.EmployeeDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5977,9 +5143,9 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.EmployeeDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.EmployeeDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.EmployeeDataTable = New Turkson_Co_DataSet.EmployeeDataTable()
+            Dim dataTable As TurksonCo_DataSet.EmployeeDataTable = New TurksonCo_DataSet.EmployeeDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -5987,14 +5153,14 @@ Namespace Turkson_Co_DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Turkson_Co_DataSet.EmployeeDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As TurksonCo_DataSet.EmployeeDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Turkson_Co_DataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As TurksonCo_DataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Employee")
         End Function
         
@@ -6182,7 +5348,7 @@ Namespace Turkson_Co_DataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class All_InvoicesTableAdapter
+    Partial Public Class RentalTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -6299,29 +5465,73 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "All_Invoices"
+            tableMapping.DataSetTable = "Rental"
+            tableMapping.ColumnMappings.Add("carModel", "carModel")
+            tableMapping.ColumnMappings.Add("carYear", "carYear")
             tableMapping.ColumnMappings.Add("clientID", "clientID")
-            tableMapping.ColumnMappings.Add("firstName", "firstName")
-            tableMapping.ColumnMappings.Add("lastname", "lastname")
-            tableMapping.ColumnMappings.Add("LicenseNo", "LicenseNo")
-            tableMapping.ColumnMappings.Add("empID", "empID")
-            tableMapping.ColumnMappings.Add("empName", "empName")
-            tableMapping.ColumnMappings.Add("dateHired", "dateHired")
-            tableMapping.ColumnMappings.Add("duration", "duration")
-            tableMapping.ColumnMappings.Add("duedate", "duedate")
+            tableMapping.ColumnMappings.Add("vehicleID", "vehicleID")
             tableMapping.ColumnMappings.Add("rentalID", "rentalID")
-            tableMapping.ColumnMappings.Add("recieptNo", "recieptNo")
-            tableMapping.ColumnMappings.Add("dateIssued", "dateIssued")
-            tableMapping.ColumnMappings.Add("totalAmountPayable", "totalAmountPayable")
-            tableMapping.ColumnMappings.Add("paymentMethod", "paymentMethod")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Rental] WHERE (((@IsNull_carModel = 1 AND [carModel] IS NULL) "& _ 
+                "OR ([carModel] = @Original_carModel)) AND ((@IsNull_carYear = 1 AND [carYear] IS"& _ 
+                " NULL) OR ([carYear] = @Original_carYear)) AND ((@IsNull_clientID = 1 AND [clien"& _ 
+                "tID] IS NULL) OR ([clientID] = @Original_clientID)) AND ((@IsNull_vehicleID = 1 "& _ 
+                "AND [vehicleID] IS NULL) OR ([vehicleID] = @Original_vehicleID)) AND ([rentalID]"& _ 
+                " = @Original_rentalID))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carModel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carYear", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_vehicleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_rentalID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rental] ([carModel], [carYear], [clientID], [vehicleID]) VALUE"& _ 
+                "S (@carModel, @carYear, @clientID, @vehicleID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carModel, carYear, clien"& _ 
+                "tID, vehicleID, rentalID FROM Rental WHERE (rentalID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Rental] SET [carModel] = @carModel, [carYear] = @carYear, [clientID"& _ 
+                "] = @clientID, [vehicleID] = @vehicleID WHERE (((@IsNull_carModel = 1 AND [carMo"& _ 
+                "del] IS NULL) OR ([carModel] = @Original_carModel)) AND ((@IsNull_carYear = 1 AN"& _ 
+                "D [carYear] IS NULL) OR ([carYear] = @Original_carYear)) AND ((@IsNull_clientID "& _ 
+                "= 1 AND [clientID] IS NULL) OR ([clientID] = @Original_clientID)) AND ((@IsNull_"& _ 
+                "vehicleID = 1 AND [vehicleID] IS NULL) OR ([vehicleID] = @Original_vehicleID)) A"& _ 
+                "ND ([rentalID] = @Original_rentalID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carModel, carYear, clientID, vehi"& _ 
+                "cleID, rentalID FROM Rental WHERE (rentalID = @rentalID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carModel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carYear", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_vehicleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_rentalID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@rentalID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6330,7 +5540,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        All_Invoices.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            All_Invoices"
+            Me._commandCollection(0).CommandText = "SELECT carModel, carYear, clientID, vehicleID, rentalID FROM dbo.Rental"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6338,7 +5548,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.All_InvoicesDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.RentalDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -6351,11 +5561,206 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.All_InvoicesDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.RentalDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.All_InvoicesDataTable = New Turkson_Co_DataSet.All_InvoicesDataTable()
+            Dim dataTable As TurksonCo_DataSet.RentalDataTable = New TurksonCo_DataSet.RentalDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As TurksonCo_DataSet.RentalDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As TurksonCo_DataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Rental")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer) As Integer
+            If (Original_carModel Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_carModel,String)
+            End If
+            If (Original_carYear Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_carYear,String)
+            End If
+            If (Original_clientID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_clientID,String)
+            End If
+            If (Original_vehicleID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_vehicleID,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_rentalID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String) As Integer
+            If (carModel Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(carModel,String)
+            End If
+            If (carYear Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(carYear,String)
+            End If
+            If (clientID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(clientID,String)
+            End If
+            If (vehicleID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(vehicleID,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String, ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer, ByVal rentalID As Integer) As Integer
+            If (carModel Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(carModel,String)
+            End If
+            If (carYear Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(carYear,String)
+            End If
+            If (clientID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(clientID,String)
+            End If
+            If (vehicleID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(vehicleID,String)
+            End If
+            If (Original_carModel Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_carModel,String)
+            End If
+            If (Original_carYear Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_carYear,String)
+            End If
+            If (Original_clientID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_clientID,String)
+            End If
+            If (Original_vehicleID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_vehicleID,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_rentalID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(rentalID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String, ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer) As Integer
+            Return Me.Update(carModel, carYear, clientID, vehicleID, Original_carModel, Original_carYear, Original_clientID, Original_vehicleID, Original_rentalID, Original_rentalID)
         End Function
     End Class
     
@@ -6499,18 +5904,18 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Transaction_Invoice] WHERE (([recieptNo] = @Original_recieptNo) AND "& _ 
-                "((@IsNull_dateIssued = 1 AND [dateIssued] IS NULL) OR ([dateIssued] = @Original_"& _ 
-                "dateIssued)) AND ((@IsNull_workerID = 1 AND [workerID] IS NULL) OR ([workerID] ="& _ 
-                " @Original_workerID)) AND ((@IsNull_clientID = 1 AND [clientID] IS NULL) OR ([cl"& _ 
-                "ientID] = @Original_clientID)) AND ((@IsNull_totalAmountPayable = 1 AND [totalAm"& _ 
-                "ountPayable] IS NULL) OR ([totalAmountPayable] = @Original_totalAmountPayable)) "& _ 
-                "AND ((@IsNull_paymentMethod = 1 AND [paymentMethod] IS NULL) OR ([paymentMethod]"& _ 
-                " = @Original_paymentMethod)) AND ((@IsNull_duration = 1 AND [duration] IS NULL) "& _ 
-                "OR ([duration] = @Original_duration)) AND ((@IsNull_duedate = 1 AND [duedate] IS"& _ 
-                " NULL) OR ([duedate] = @Original_duedate)) AND ((@IsNull_dateHired = 1 AND [date"& _ 
-                "Hired] IS NULL) OR ([dateHired] = @Original_dateHired)) AND ([rentalID] = @Origi"& _ 
-                "nal_rentalID))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Transaction_Invoice] WHERE (([recieptNo] = @Original_recieptNo"& _ 
+                ") AND ((@IsNull_dateIssued = 1 AND [dateIssued] IS NULL) OR ([dateIssued] = @Ori"& _ 
+                "ginal_dateIssued)) AND ((@IsNull_workerID = 1 AND [workerID] IS NULL) OR ([worke"& _ 
+                "rID] = @Original_workerID)) AND ((@IsNull_clientID = 1 AND [clientID] IS NULL) O"& _ 
+                "R ([clientID] = @Original_clientID)) AND ((@IsNull_totalAmountPayable = 1 AND [t"& _ 
+                "otalAmountPayable] IS NULL) OR ([totalAmountPayable] = @Original_totalAmountPaya"& _ 
+                "ble)) AND ((@IsNull_paymentMethod = 1 AND [paymentMethod] IS NULL) OR ([paymentM"& _ 
+                "ethod] = @Original_paymentMethod)) AND ((@IsNull_duration = 1 AND [duration] IS "& _ 
+                "NULL) OR ([duration] = @Original_duration)) AND ((@IsNull_duedate = 1 AND [dueda"& _ 
+                "te] IS NULL) OR ([duedate] = @Original_duedate)) AND ((@IsNull_dateHired = 1 AND"& _ 
+                " [dateHired] IS NULL) OR ([dateHired] = @Original_dateHired)) AND ([rentalID] = "& _ 
+                "@Original_rentalID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_recieptNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "recieptNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_dateIssued", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateIssued", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6520,7 +5925,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_totalAmountPayable", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalAmountPayable", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalAmountPayable", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_paymentMethod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_paymentMethod", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duration", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6532,47 +5937,47 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_rentalID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Transaction_Invoice] ([recieptNo], [dateIssued], [workerID], [client"& _ 
-                "ID], [totalAmountPayable], [paymentMethod], [duration], [duedate], [dateHired]) "& _ 
-                "VALUES (@recieptNo, @dateIssued, @workerID, @clientID, @totalAmountPayable, @pay"& _ 
-                "mentMethod, @duration, @duedate, @dateHired);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT recieptNo, dateIssued, wor"& _ 
-                "kerID, clientID, totalAmountPayable, paymentMethod, duration, duedate, dateHired"& _ 
-                ", rentalID FROM Transaction_Invoice WHERE (recieptNo = @recieptNo)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Transaction_Invoice] ([recieptNo], [dateIssued], [workerID], ["& _ 
+                "clientID], [totalAmountPayable], [paymentMethod], [duration], [duedate], [dateHi"& _ 
+                "red]) VALUES (@recieptNo, @dateIssued, @workerID, @clientID, @totalAmountPayable"& _ 
+                ", @paymentMethod, @duration, @duedate, @dateHired);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT recieptNo, dateIssue"& _ 
+                "d, workerID, clientID, totalAmountPayable, paymentMethod, duration, duedate, dat"& _ 
+                "eHired, rentalID FROM Transaction_Invoice WHERE (recieptNo = @recieptNo)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@recieptNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "recieptNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateIssued", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateIssued", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@workerID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "workerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalAmountPayable", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalAmountPayable", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@paymentMethod", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duration", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@duedate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duedate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateHired", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateHired", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Transaction_Invoice] SET [recieptNo] = @recieptNo, [dateIssued] = @dateIs"& _ 
-                "sued, [workerID] = @workerID, [clientID] = @clientID, [totalAmountPayable] = @to"& _ 
-                "talAmountPayable, [paymentMethod] = @paymentMethod, [duration] = @duration, [due"& _ 
-                "date] = @duedate, [dateHired] = @dateHired WHERE (([recieptNo] = @Original_recie"& _ 
-                "ptNo) AND ((@IsNull_dateIssued = 1 AND [dateIssued] IS NULL) OR ([dateIssued] = "& _ 
-                "@Original_dateIssued)) AND ((@IsNull_workerID = 1 AND [workerID] IS NULL) OR ([w"& _ 
-                "orkerID] = @Original_workerID)) AND ((@IsNull_clientID = 1 AND [clientID] IS NUL"& _ 
-                "L) OR ([clientID] = @Original_clientID)) AND ((@IsNull_totalAmountPayable = 1 AN"& _ 
-                "D [totalAmountPayable] IS NULL) OR ([totalAmountPayable] = @Original_totalAmount"& _ 
-                "Payable)) AND ((@IsNull_paymentMethod = 1 AND [paymentMethod] IS NULL) OR ([paym"& _ 
-                "entMethod] = @Original_paymentMethod)) AND ((@IsNull_duration = 1 AND [duration]"& _ 
-                " IS NULL) OR ([duration] = @Original_duration)) AND ((@IsNull_duedate = 1 AND [d"& _ 
-                "uedate] IS NULL) OR ([duedate] = @Original_duedate)) AND ((@IsNull_dateHired = 1"& _ 
-                " AND [dateHired] IS NULL) OR ([dateHired] = @Original_dateHired)) AND ([rentalID"& _ 
-                "] = @Original_rentalID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT recieptNo, dateIssued, workerID, clientID, tot"& _ 
-                "alAmountPayable, paymentMethod, duration, duedate, dateHired, rentalID FROM Tran"& _ 
-                "saction_Invoice WHERE (recieptNo = @recieptNo)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Transaction_Invoice] SET [recieptNo] = @recieptNo, [dateIssued] = @"& _ 
+                "dateIssued, [workerID] = @workerID, [clientID] = @clientID, [totalAmountPayable]"& _ 
+                " = @totalAmountPayable, [paymentMethod] = @paymentMethod, [duration] = @duration"& _ 
+                ", [duedate] = @duedate, [dateHired] = @dateHired WHERE (([recieptNo] = @Original"& _ 
+                "_recieptNo) AND ((@IsNull_dateIssued = 1 AND [dateIssued] IS NULL) OR ([dateIssu"& _ 
+                "ed] = @Original_dateIssued)) AND ((@IsNull_workerID = 1 AND [workerID] IS NULL) "& _ 
+                "OR ([workerID] = @Original_workerID)) AND ((@IsNull_clientID = 1 AND [clientID] "& _ 
+                "IS NULL) OR ([clientID] = @Original_clientID)) AND ((@IsNull_totalAmountPayable "& _ 
+                "= 1 AND [totalAmountPayable] IS NULL) OR ([totalAmountPayable] = @Original_total"& _ 
+                "AmountPayable)) AND ((@IsNull_paymentMethod = 1 AND [paymentMethod] IS NULL) OR "& _ 
+                "([paymentMethod] = @Original_paymentMethod)) AND ((@IsNull_duration = 1 AND [dur"& _ 
+                "ation] IS NULL) OR ([duration] = @Original_duration)) AND ((@IsNull_duedate = 1 "& _ 
+                "AND [duedate] IS NULL) OR ([duedate] = @Original_duedate)) AND ((@IsNull_dateHir"& _ 
+                "ed = 1 AND [dateHired] IS NULL) OR ([dateHired] = @Original_dateHired)) AND ([re"& _ 
+                "ntalID] = @Original_rentalID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT recieptNo, dateIssued, workerID, clientI"& _ 
+                "D, totalAmountPayable, paymentMethod, duration, duedate, dateHired, rentalID FRO"& _ 
+                "M Transaction_Invoice WHERE (recieptNo = @recieptNo)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@recieptNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "recieptNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateIssued", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "dateIssued", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@workerID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "workerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalAmountPayable", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalAmountPayable", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@paymentMethod", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duration", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@duedate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duedate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6585,7 +5990,7 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_totalAmountPayable", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalAmountPayable", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalAmountPayable", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalAmountPayable", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_paymentMethod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_paymentMethod", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "paymentMethod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_duration", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "duration", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6601,7 +6006,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6610,7 +6015,8 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Transaction_Invoice.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Transaction_Invoice"
+            Me._commandCollection(0).CommandText = "SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMeth"& _ 
+                "od, duration, duedate, dateHired, rentalID FROM dbo.Transaction_Invoice"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6618,7 +6024,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.Transaction_InvoiceDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.Transaction_InvoiceDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -6631,9 +6037,9 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.Transaction_InvoiceDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.Transaction_InvoiceDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.Transaction_InvoiceDataTable = New Turkson_Co_DataSet.Transaction_InvoiceDataTable()
+            Dim dataTable As TurksonCo_DataSet.Transaction_InvoiceDataTable = New TurksonCo_DataSet.Transaction_InvoiceDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -6641,14 +6047,14 @@ Namespace Turkson_Co_DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Turkson_Co_DataSet.Transaction_InvoiceDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As TurksonCo_DataSet.Transaction_InvoiceDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Turkson_Co_DataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As TurksonCo_DataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Transaction_Invoice")
         End Function
         
@@ -6670,7 +6076,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_recieptNo As String, ByVal Original_dateIssued As Global.System.Nullable(Of Date), ByVal Original_workerID As String, ByVal Original_clientID As String, ByVal Original_totalAmountPayable As Global.System.Nullable(Of Double), ByVal Original_paymentMethod As String, ByVal Original_duration As Global.System.Nullable(Of Integer), ByVal Original_duedate As Global.System.Nullable(Of Date), ByVal Original_dateHired As Global.System.Nullable(Of Date), ByVal Original_rentalID As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_recieptNo As String, ByVal Original_dateIssued As Global.System.Nullable(Of Date), ByVal Original_workerID As String, ByVal Original_clientID As String, ByVal Original_totalAmountPayable As String, ByVal Original_paymentMethod As String, ByVal Original_duration As Global.System.Nullable(Of Integer), ByVal Original_duedate As Global.System.Nullable(Of Date), ByVal Original_dateHired As Global.System.Nullable(Of Date), ByVal Original_rentalID As Integer) As Integer
             If (Original_recieptNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_recieptNo")
             Else
@@ -6697,12 +6103,12 @@ Namespace Turkson_Co_DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_clientID,String)
             End If
-            If (Original_totalAmountPayable.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_totalAmountPayable.Value,Double)
-            Else
+            If (Original_totalAmountPayable Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_totalAmountPayable,String)
             End If
             If (Original_paymentMethod Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
@@ -6752,7 +6158,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal recieptNo As String, ByVal dateIssued As Global.System.Nullable(Of Date), ByVal workerID As String, ByVal clientID As String, ByVal totalAmountPayable As Global.System.Nullable(Of Double), ByVal paymentMethod As String, ByVal duration As Global.System.Nullable(Of Integer), ByVal duedate As Global.System.Nullable(Of Date), ByVal dateHired As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal recieptNo As String, ByVal dateIssued As Global.System.Nullable(Of Date), ByVal workerID As String, ByVal clientID As String, ByVal totalAmountPayable As String, ByVal paymentMethod As String, ByVal duration As Global.System.Nullable(Of Integer), ByVal duedate As Global.System.Nullable(Of Date), ByVal dateHired As Global.System.Nullable(Of Date)) As Integer
             If (recieptNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("recieptNo")
             Else
@@ -6773,10 +6179,10 @@ Namespace Turkson_Co_DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(clientID,String)
             End If
-            If (totalAmountPayable.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(totalAmountPayable.Value,Double)
-            Else
+            If (totalAmountPayable Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(totalAmountPayable,String)
             End If
             If (paymentMethod Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -6822,7 +6228,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal dateIssued As Global.System.Nullable(Of Date),  _
                     ByVal workerID As String,  _
                     ByVal clientID As String,  _
-                    ByVal totalAmountPayable As Global.System.Nullable(Of Double),  _
+                    ByVal totalAmountPayable As String,  _
                     ByVal paymentMethod As String,  _
                     ByVal duration As Global.System.Nullable(Of Integer),  _
                     ByVal duedate As Global.System.Nullable(Of Date),  _
@@ -6831,7 +6237,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal Original_dateIssued As Global.System.Nullable(Of Date),  _
                     ByVal Original_workerID As String,  _
                     ByVal Original_clientID As String,  _
-                    ByVal Original_totalAmountPayable As Global.System.Nullable(Of Double),  _
+                    ByVal Original_totalAmountPayable As String,  _
                     ByVal Original_paymentMethod As String,  _
                     ByVal Original_duration As Global.System.Nullable(Of Integer),  _
                     ByVal Original_duedate As Global.System.Nullable(Of Date),  _
@@ -6857,10 +6263,10 @@ Namespace Turkson_Co_DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(clientID,String)
             End If
-            If (totalAmountPayable.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(totalAmountPayable.Value,Double)
-            Else
+            If (totalAmountPayable Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(totalAmountPayable,String)
             End If
             If (paymentMethod Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -6908,12 +6314,12 @@ Namespace Turkson_Co_DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_clientID,String)
             End If
-            If (Original_totalAmountPayable.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_totalAmountPayable.Value,Double)
-            Else
+            If (Original_totalAmountPayable Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_totalAmountPayable,String)
             End If
             If (Original_paymentMethod Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
@@ -6967,7 +6373,7 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal dateIssued As Global.System.Nullable(Of Date),  _
                     ByVal workerID As String,  _
                     ByVal clientID As String,  _
-                    ByVal totalAmountPayable As Global.System.Nullable(Of Double),  _
+                    ByVal totalAmountPayable As String,  _
                     ByVal paymentMethod As String,  _
                     ByVal duration As Global.System.Nullable(Of Integer),  _
                     ByVal duedate As Global.System.Nullable(Of Date),  _
@@ -6976,193 +6382,13 @@ Namespace Turkson_Co_DataSetTableAdapters
                     ByVal Original_dateIssued As Global.System.Nullable(Of Date),  _
                     ByVal Original_workerID As String,  _
                     ByVal Original_clientID As String,  _
-                    ByVal Original_totalAmountPayable As Global.System.Nullable(Of Double),  _
+                    ByVal Original_totalAmountPayable As String,  _
                     ByVal Original_paymentMethod As String,  _
                     ByVal Original_duration As Global.System.Nullable(Of Integer),  _
                     ByVal Original_duedate As Global.System.Nullable(Of Date),  _
                     ByVal Original_dateHired As Global.System.Nullable(Of Date),  _
                     ByVal Original_rentalID As Integer) As Integer
             Return Me.Update(Original_recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMethod, duration, duedate, dateHired, Original_recieptNo, Original_dateIssued, Original_workerID, Original_clientID, Original_totalAmountPayable, Original_paymentMethod, Original_duration, Original_duedate, Original_dateHired, Original_rentalID)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class User_Rental_DetailsTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "User_Rental_Details"
-            tableMapping.ColumnMappings.Add("clientID", "clientID")
-            tableMapping.ColumnMappings.Add("rentalID", "rentalID")
-            tableMapping.ColumnMappings.Add("vehicleID", "vehicleID")
-            tableMapping.ColumnMappings.Add("carModel", "carModel")
-            tableMapping.ColumnMappings.Add("carYear", "carYear")
-            tableMapping.ColumnMappings.Add("firstName", "firstName")
-            tableMapping.ColumnMappings.Add("lastname", "lastname")
-            tableMapping.ColumnMappings.Add("LicenseNo", "LicenseNo")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        User_Rental_Details.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            User_Rental_Details"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.User_Rental_DetailsDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.User_Rental_DetailsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.User_Rental_DetailsDataTable = New Turkson_Co_DataSet.User_Rental_DetailsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
     End Class
     
@@ -7306,18 +6532,18 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Vehicle] WHERE (([carNo] = @Original_carNo) AND ((@IsNull_carModel ="& _ 
-                " 1 AND [carModel] IS NULL) OR ([carModel] = @Original_carModel)) AND ((@IsNull_c"& _ 
-                "arColour = 1 AND [carColour] IS NULL) OR ([carColour] = @Original_carColour)) AN"& _ 
-                "D ((@IsNull_carYear = 1 AND [carYear] IS NULL) OR ([carYear] = @Original_carYear"& _ 
-                ")) AND ((@IsNull_rentalCost = 1 AND [rentalCost] IS NULL) OR ([rentalCost] = @Or"& _ 
-                "iginal_rentalCost)) AND ((@IsNull_fuel = 1 AND [fuel] IS NULL) OR ([fuel] = @Ori"& _ 
-                "ginal_fuel)) AND ((@IsNull_carManufacturer = 1 AND [carManufacturer] IS NULL) OR"& _ 
-                " ([carManufacturer] = @Original_carManufacturer)) AND ((@IsNull_carStatus = 1 AN"& _ 
-                "D [carStatus] IS NULL) OR ([carStatus] = @Original_carStatus)) AND ((@IsNull_car"& _ 
-                "Category = 1 AND [carCategory] IS NULL) OR ([carCategory] = @Original_carCategor"& _ 
-                "y)) AND ((@IsNull_carName = 1 AND [carName] IS NULL) OR ([carName] = @Original_c"& _ 
-                "arName)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Vehicle] WHERE (([carNo] = @Original_carNo) AND ((@IsNull_carM"& _ 
+                "odel = 1 AND [carModel] IS NULL) OR ([carModel] = @Original_carModel)) AND ((@Is"& _ 
+                "Null_carColour = 1 AND [carColour] IS NULL) OR ([carColour] = @Original_carColou"& _ 
+                "r)) AND ((@IsNull_carYear = 1 AND [carYear] IS NULL) OR ([carYear] = @Original_c"& _ 
+                "arYear)) AND ((@IsNull_rentalCost = 1 AND [rentalCost] IS NULL) OR ([rentalCost]"& _ 
+                " = @Original_rentalCost)) AND ((@IsNull_fuel = 1 AND [fuel] IS NULL) OR ([fuel] "& _ 
+                "= @Original_fuel)) AND ((@IsNull_carManufacturer = 1 AND [carManufacturer] IS NU"& _ 
+                "LL) OR ([carManufacturer] = @Original_carManufacturer)) AND ((@IsNull_carStatus "& _ 
+                "= 1 AND [carStatus] IS NULL) OR ([carStatus] = @Original_carStatus)) AND ((@IsNu"& _ 
+                "ll_carCategory = 1 AND [carCategory] IS NULL) OR ([carCategory] = @Original_carC"& _ 
+                "ategory)) AND ((@IsNull_carName = 1 AND [carName] IS NULL) OR ([carName] = @Orig"& _ 
+                "inal_carName)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carModel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -7340,12 +6566,12 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Vehicle] ([carNo], [carModel], [carColour], [carYear], [rentalCost],"& _ 
-                " [fuel], [carManufacturer], [carStatus], [carCategory], [carName]) VALUES (@carN"& _ 
-                "o, @carModel, @carColour, @carYear, @rentalCost, @fuel, @carManufacturer, @carSt"& _ 
-                "atus, @carCategory, @carName);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carNo, carModel, carColour, carYear, rent"& _ 
-                "alCost, fuel, carManufacturer, carStatus, carCategory, carName FROM Vehicle WHER"& _ 
-                "E (carNo = @carNo)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vehicle] ([carNo], [carModel], [carColour], [carYear], [rental"& _ 
+                "Cost], [fuel], [carManufacturer], [carStatus], [carCategory], [carName]) VALUES "& _ 
+                "(@carNo, @carModel, @carColour, @carYear, @rentalCost, @fuel, @carManufacturer, "& _ 
+                "@carStatus, @carCategory, @carName);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carNo, carModel, carColour, carYear"& _ 
+                ", rentalCost, fuel, carManufacturer, carStatus, carCategory, carName FROM Vehicl"& _ 
+                "e WHERE (carNo = @carNo)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7359,23 +6585,23 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Vehicle] SET [carNo] = @carNo, [carModel] = @carModel, [carColour] = @car"& _ 
-                "Colour, [carYear] = @carYear, [rentalCost] = @rentalCost, [fuel] = @fuel, [carMa"& _ 
-                "nufacturer] = @carManufacturer, [carStatus] = @carStatus, [carCategory] = @carCa"& _ 
-                "tegory, [carName] = @carName WHERE (([carNo] = @Original_carNo) AND ((@IsNull_ca"& _ 
-                "rModel = 1 AND [carModel] IS NULL) OR ([carModel] = @Original_carModel)) AND ((@"& _ 
-                "IsNull_carColour = 1 AND [carColour] IS NULL) OR ([carColour] = @Original_carCol"& _ 
-                "our)) AND ((@IsNull_carYear = 1 AND [carYear] IS NULL) OR ([carYear] = @Original"& _ 
-                "_carYear)) AND ((@IsNull_rentalCost = 1 AND [rentalCost] IS NULL) OR ([rentalCos"& _ 
-                "t] = @Original_rentalCost)) AND ((@IsNull_fuel = 1 AND [fuel] IS NULL) OR ([fuel"& _ 
-                "] = @Original_fuel)) AND ((@IsNull_carManufacturer = 1 AND [carManufacturer] IS "& _ 
-                "NULL) OR ([carManufacturer] = @Original_carManufacturer)) AND ((@IsNull_carStatu"& _ 
-                "s = 1 AND [carStatus] IS NULL) OR ([carStatus] = @Original_carStatus)) AND ((@Is"& _ 
-                "Null_carCategory = 1 AND [carCategory] IS NULL) OR ([carCategory] = @Original_ca"& _ 
-                "rCategory)) AND ((@IsNull_carName = 1 AND [carName] IS NULL) OR ([carName] = @Or"& _ 
-                "iginal_carName)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carNo, carModel, carColour, carYear, rentalCost, fuel"& _ 
-                ", carManufacturer, carStatus, carCategory, carName FROM Vehicle WHERE (carNo = @"& _ 
-                "carNo)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Vehicle] SET [carNo] = @carNo, [carModel] = @carModel, [carColour] "& _ 
+                "= @carColour, [carYear] = @carYear, [rentalCost] = @rentalCost, [fuel] = @fuel, "& _ 
+                "[carManufacturer] = @carManufacturer, [carStatus] = @carStatus, [carCategory] = "& _ 
+                "@carCategory, [carName] = @carName WHERE (([carNo] = @Original_carNo) AND ((@IsN"& _ 
+                "ull_carModel = 1 AND [carModel] IS NULL) OR ([carModel] = @Original_carModel)) A"& _ 
+                "ND ((@IsNull_carColour = 1 AND [carColour] IS NULL) OR ([carColour] = @Original_"& _ 
+                "carColour)) AND ((@IsNull_carYear = 1 AND [carYear] IS NULL) OR ([carYear] = @Or"& _ 
+                "iginal_carYear)) AND ((@IsNull_rentalCost = 1 AND [rentalCost] IS NULL) OR ([ren"& _ 
+                "talCost] = @Original_rentalCost)) AND ((@IsNull_fuel = 1 AND [fuel] IS NULL) OR "& _ 
+                "([fuel] = @Original_fuel)) AND ((@IsNull_carManufacturer = 1 AND [carManufacture"& _ 
+                "r] IS NULL) OR ([carManufacturer] = @Original_carManufacturer)) AND ((@IsNull_ca"& _ 
+                "rStatus = 1 AND [carStatus] IS NULL) OR ([carStatus] = @Original_carStatus)) AND"& _ 
+                " ((@IsNull_carCategory = 1 AND [carCategory] IS NULL) OR ([carCategory] = @Origi"& _ 
+                "nal_carCategory)) AND ((@IsNull_carName = 1 AND [carName] IS NULL) OR ([carName]"& _ 
+                " = @Original_carName)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carNo, carModel, carColour, carYear, rentalCost"& _ 
+                ", fuel, carManufacturer, carStatus, carCategory, carName FROM Vehicle WHERE (car"& _ 
+                "No = @carNo)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carNo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7412,7 +6638,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7421,7 +6647,8 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Vehicle.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Vehicle"
+            Me._commandCollection(0).CommandText = "SELECT carNo, carModel, carColour, carYear, rentalCost, fuel, carManufacturer, ca"& _ 
+                "rStatus, carCategory, carName FROM dbo.Vehicle"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -7429,7 +6656,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.VehicleDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.VehicleDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7442,9 +6669,9 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.VehicleDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.VehicleDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.VehicleDataTable = New Turkson_Co_DataSet.VehicleDataTable()
+            Dim dataTable As TurksonCo_DataSet.VehicleDataTable = New TurksonCo_DataSet.VehicleDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7452,14 +6679,14 @@ Namespace Turkson_Co_DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Turkson_Co_DataSet.VehicleDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As TurksonCo_DataSet.VehicleDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Turkson_Co_DataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As TurksonCo_DataSet) As Integer
             Return Me.Adapter.Update(dataSet, "Vehicle")
         End Function
         
@@ -7830,7 +7057,7 @@ Namespace Turkson_Co_DataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class RentalTableAdapter
+    Partial Public Class User_Rental_DetailsTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -7947,73 +7174,23 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Rental"
+            tableMapping.DataSetTable = "User_Rental_Details"
+            tableMapping.ColumnMappings.Add("clientID", "clientID")
+            tableMapping.ColumnMappings.Add("rentalID", "rentalID")
+            tableMapping.ColumnMappings.Add("vehicleID", "vehicleID")
             tableMapping.ColumnMappings.Add("carModel", "carModel")
             tableMapping.ColumnMappings.Add("carYear", "carYear")
-            tableMapping.ColumnMappings.Add("clientID", "clientID")
-            tableMapping.ColumnMappings.Add("vehicleID", "vehicleID")
-            tableMapping.ColumnMappings.Add("rentalID", "rentalID")
+            tableMapping.ColumnMappings.Add("firstName", "firstName")
+            tableMapping.ColumnMappings.Add("lastname", "lastname")
+            tableMapping.ColumnMappings.Add("LicenseNo", "LicenseNo")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Rental] WHERE (((@IsNull_carModel = 1 AND [carModel] IS NULL) OR ([c"& _ 
-                "arModel] = @Original_carModel)) AND ((@IsNull_carYear = 1 AND [carYear] IS NULL)"& _ 
-                " OR ([carYear] = @Original_carYear)) AND ((@IsNull_clientID = 1 AND [clientID] I"& _ 
-                "S NULL) OR ([clientID] = @Original_clientID)) AND ((@IsNull_vehicleID = 1 AND [v"& _ 
-                "ehicleID] IS NULL) OR ([vehicleID] = @Original_vehicleID)) AND ([rentalID] = @Or"& _ 
-                "iginal_rentalID))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carModel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carYear", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_vehicleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_rentalID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Rental] ([carModel], [carYear], [clientID], [vehicleID]) VALUES (@ca"& _ 
-                "rModel, @carYear, @clientID, @vehicleID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carModel, carYear, clientID, v"& _ 
-                "ehicleID, rentalID FROM Rental WHERE (rentalID = SCOPE_IDENTITY())"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Rental] SET [carModel] = @carModel, [carYear] = @carYear, [clientID] = @c"& _ 
-                "lientID, [vehicleID] = @vehicleID WHERE (((@IsNull_carModel = 1 AND [carModel] I"& _ 
-                "S NULL) OR ([carModel] = @Original_carModel)) AND ((@IsNull_carYear = 1 AND [car"& _ 
-                "Year] IS NULL) OR ([carYear] = @Original_carYear)) AND ((@IsNull_clientID = 1 AN"& _ 
-                "D [clientID] IS NULL) OR ([clientID] = @Original_clientID)) AND ((@IsNull_vehicl"& _ 
-                "eID = 1 AND [vehicleID] IS NULL) OR ([vehicleID] = @Original_vehicleID)) AND ([r"& _ 
-                "entalID] = @Original_rentalID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carModel, carYear, clientID, vehicleID,"& _ 
-                " rentalID FROM Rental WHERE (rentalID = @rentalID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carModel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carModel", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carModel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_carYear", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_carYear", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carYear", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_clientID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_clientID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_vehicleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vehicleID", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vehicleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_rentalID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@rentalID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "rentalID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.Turkson_CoConnectionString
+            Me._connection.ConnectionString = Global.Turkson_Car_Rentals_Co.My.MySettings.Default.TurksonCo_DbConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8022,7 +7199,8 @@ Namespace Turkson_Co_DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Rental.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Rental"
+            Me._commandCollection(0).CommandText = "SELECT clientID, rentalID, vehicleID, carModel, carYear, firstName, lastname, Lic"& _ 
+                "enseNo FROM dbo.User_Rental_Details"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -8030,7 +7208,7 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Turkson_Co_DataSet.RentalDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As TurksonCo_DataSet.User_Rental_DetailsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -8043,206 +7221,11 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As Turkson_Co_DataSet.RentalDataTable
+        Public Overloads Overridable Function GetData() As TurksonCo_DataSet.User_Rental_DetailsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As Turkson_Co_DataSet.RentalDataTable = New Turkson_Co_DataSet.RentalDataTable()
+            Dim dataTable As TurksonCo_DataSet.User_Rental_DetailsDataTable = New TurksonCo_DataSet.User_Rental_DetailsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As Turkson_Co_DataSet.RentalDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As Turkson_Co_DataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Rental")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer) As Integer
-            If (Original_carModel Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_carModel,String)
-            End If
-            If (Original_carYear Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_carYear,String)
-            End If
-            If (Original_clientID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_clientID,String)
-            End If
-            If (Original_vehicleID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_vehicleID,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_rentalID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String) As Integer
-            If (carModel Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(carModel,String)
-            End If
-            If (carYear Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(carYear,String)
-            End If
-            If (clientID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(clientID,String)
-            End If
-            If (vehicleID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(vehicleID,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String, ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer, ByVal rentalID As Integer) As Integer
-            If (carModel Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(carModel,String)
-            End If
-            If (carYear Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(carYear,String)
-            End If
-            If (clientID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(clientID,String)
-            End If
-            If (vehicleID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(vehicleID,String)
-            End If
-            If (Original_carModel Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_carModel,String)
-            End If
-            If (Original_carYear Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_carYear,String)
-            End If
-            If (Original_clientID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_clientID,String)
-            End If
-            If (Original_vehicleID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_vehicleID,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_rentalID,Integer)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(rentalID,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal carModel As String, ByVal carYear As String, ByVal clientID As String, ByVal vehicleID As String, ByVal Original_carModel As String, ByVal Original_carYear As String, ByVal Original_clientID As String, ByVal Original_vehicleID As String, ByVal Original_rentalID As Integer) As Integer
-            Return Me.Update(carModel, carYear, clientID, vehicleID, Original_carModel, Original_carYear, Original_clientID, Original_vehicleID, Original_rentalID, Original_rentalID)
         End Function
     End Class
     
@@ -8263,11 +7246,11 @@ Namespace Turkson_Co_DataSetTableAdapters
         
         Private _employeeTableAdapter As EmployeeTableAdapter
         
+        Private _rentalTableAdapter As RentalTableAdapter
+        
         Private _transaction_InvoiceTableAdapter As Transaction_InvoiceTableAdapter
         
         Private _vehicleTableAdapter As VehicleTableAdapter
-        
-        Private _rentalTableAdapter As RentalTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -8317,6 +7300,20 @@ Namespace Turkson_Co_DataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property RentalTableAdapter() As RentalTableAdapter
+            Get
+                Return Me._rentalTableAdapter
+            End Get
+            Set
+                Me._rentalTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property Transaction_InvoiceTableAdapter() As Transaction_InvoiceTableAdapter
             Get
                 Return Me._transaction_InvoiceTableAdapter
@@ -8337,20 +7334,6 @@ Namespace Turkson_Co_DataSetTableAdapters
             End Get
             Set
                 Me._vehicleTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property RentalTableAdapter() As RentalTableAdapter
-            Get
-                Return Me._rentalTableAdapter
-            End Get
-            Set
-                Me._rentalTableAdapter = value
             End Set
         End Property
         
@@ -8381,6 +7364,10 @@ Namespace Turkson_Co_DataSetTableAdapters
                             AndAlso (Not (Me._employeeTableAdapter.Connection) Is Nothing)) Then
                     Return Me._employeeTableAdapter.Connection
                 End If
+                If ((Not (Me._rentalTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._rentalTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._rentalTableAdapter.Connection
+                End If
                 If ((Not (Me._transaction_InvoiceTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._transaction_InvoiceTableAdapter.Connection) Is Nothing)) Then
                     Return Me._transaction_InvoiceTableAdapter.Connection
@@ -8388,10 +7375,6 @@ Namespace Turkson_Co_DataSetTableAdapters
                 If ((Not (Me._vehicleTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._vehicleTableAdapter.Connection) Is Nothing)) Then
                     Return Me._vehicleTableAdapter.Connection
-                End If
-                If ((Not (Me._rentalTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._rentalTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._rentalTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -8412,13 +7395,13 @@ Namespace Turkson_Co_DataSetTableAdapters
                 If (Not (Me._employeeTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._rentalTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 If (Not (Me._transaction_InvoiceTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._vehicleTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._rentalTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -8430,7 +7413,7 @@ Namespace Turkson_Co_DataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As Turkson_Co_DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As TurksonCo_DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._clientTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Client.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
@@ -8485,7 +7468,7 @@ Namespace Turkson_Co_DataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As Turkson_Co_DataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As TurksonCo_DataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._clientTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Client.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
@@ -8535,7 +7518,7 @@ Namespace Turkson_Co_DataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As Turkson_Co_DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As TurksonCo_DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._transaction_InvoiceTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Transaction_Invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -8611,7 +7594,7 @@ Namespace Turkson_Co_DataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As Turkson_Co_DataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As TurksonCo_DataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
@@ -8628,6 +7611,11 @@ Namespace Turkson_Co_DataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._rentalTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._rentalTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             If ((Not (Me._transaction_InvoiceTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._transaction_InvoiceTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -8635,11 +7623,6 @@ Namespace Turkson_Co_DataSetTableAdapters
             End If
             If ((Not (Me._vehicleTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._vehicleTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._rentalTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._rentalTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -8693,6 +7676,15 @@ Namespace Turkson_Co_DataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._employeeTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._rentalTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._rentalTableAdapter, Me._rentalTableAdapter.Connection)
+                    Me._rentalTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._rentalTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._rentalTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._rentalTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._rentalTableAdapter.Adapter)
+                    End If
+                End If
                 If (Not (Me._transaction_InvoiceTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._transaction_InvoiceTableAdapter, Me._transaction_InvoiceTableAdapter.Connection)
                     Me._transaction_InvoiceTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -8709,15 +7701,6 @@ Namespace Turkson_Co_DataSetTableAdapters
                     If Me._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._vehicleTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._rentalTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._rentalTableAdapter, Me._rentalTableAdapter.Connection)
-                    Me._rentalTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._rentalTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._rentalTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._rentalTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._rentalTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -8788,6 +7771,10 @@ Namespace Turkson_Co_DataSetTableAdapters
                     Me._employeeTableAdapter.Connection = CType(revertConnections(Me._employeeTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._employeeTableAdapter.Transaction = Nothing
                 End If
+                If (Not (Me._rentalTableAdapter) Is Nothing) Then
+                    Me._rentalTableAdapter.Connection = CType(revertConnections(Me._rentalTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._rentalTableAdapter.Transaction = Nothing
+                End If
                 If (Not (Me._transaction_InvoiceTableAdapter) Is Nothing) Then
                     Me._transaction_InvoiceTableAdapter.Connection = CType(revertConnections(Me._transaction_InvoiceTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._transaction_InvoiceTableAdapter.Transaction = Nothing
@@ -8795,10 +7782,6 @@ Namespace Turkson_Co_DataSetTableAdapters
                 If (Not (Me._vehicleTableAdapter) Is Nothing) Then
                     Me._vehicleTableAdapter.Connection = CType(revertConnections(Me._vehicleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._vehicleTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._rentalTableAdapter) Is Nothing) Then
-                    Me._rentalTableAdapter.Connection = CType(revertConnections(Me._rentalTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._rentalTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
