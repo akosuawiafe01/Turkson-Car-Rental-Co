@@ -5076,12 +5076,19 @@ Namespace TurksonCo_DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT clientID, firstName, lastname, otherName, DOB, LicenseNo, contact, email, "& _ 
                 "residenceLocation, username, password FROM dbo.Client"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        clientID, firstName, lastname, otherName, DOB, LicenseNo, contact, "& _ 
+                "email, residenceLocation, username, password"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Client"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     "& _ 
+                "   (clientID = @clientIDparams)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clientIDparams", Global.System.Data.SqlDbType.NChar, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "clientID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5103,6 +5110,40 @@ Namespace TurksonCo_DataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As TurksonCo_DataSet.ClientDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As TurksonCo_DataSet.ClientDataTable = New TurksonCo_DataSet.ClientDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As TurksonCo_DataSet.ClientDataTable, ByVal clientIDparams As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (clientIDparams Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("clientIDparams")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(clientIDparams,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal clientIDparams As String) As TurksonCo_DataSet.ClientDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (clientIDparams Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("clientIDparams")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(clientIDparams,String)
+            End If
             Dim dataTable As TurksonCo_DataSet.ClientDataTable = New TurksonCo_DataSet.ClientDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
