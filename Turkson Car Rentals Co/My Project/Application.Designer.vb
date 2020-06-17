@@ -34,5 +34,10 @@ Namespace My
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.Turkson_Car_Rentals_Co.frmUserLogin
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+        Protected Overrides Sub OnCreateSplashScreen()
+            Me.SplashScreen = Global.Turkson_Car_Rentals_Co.Turkson_Rental_Co_Splash_Screen
+        End Sub
     End Class
 End Namespace

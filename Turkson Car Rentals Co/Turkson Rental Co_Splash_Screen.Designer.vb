@@ -45,9 +45,9 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         '
         'pbSplashScreen
         '
-        Me.pbSplashScreen.Location = New System.Drawing.Point(1, 337)
+        Me.pbSplashScreen.Location = New System.Drawing.Point(1, 351)
         Me.pbSplashScreen.Name = "pbSplashScreen"
-        Me.pbSplashScreen.Size = New System.Drawing.Size(499, 34)
+        Me.pbSplashScreen.Size = New System.Drawing.Size(734, 34)
         Me.pbSplashScreen.TabIndex = 3
         '
         'Label2
@@ -66,7 +66,7 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(506, 351)
+        Me.Label3.Location = New System.Drawing.Point(509, 321)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(214, 13)
         Me.Label3.TabIndex = 5
