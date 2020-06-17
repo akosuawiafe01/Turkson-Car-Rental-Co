@@ -26,7 +26,6 @@ Partial Class frmEmployeeMenu
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RentACarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AgreementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchForACustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,13 +35,15 @@ Partial Class frmEmployeeMenu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ClientListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AvailableCarsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Green
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.SearchForACustomerToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LoginToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.SearchForACustomerToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.LoginToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 92)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -61,12 +62,6 @@ Partial Class frmEmployeeMenu
         Me.RentACarToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.RentACarToolStripMenuItem.Text = "Rental List"
         '
-        'AgreementToolStripMenuItem
-        '
-        Me.AgreementToolStripMenuItem.Name = "AgreementToolStripMenuItem"
-        Me.AgreementToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.AgreementToolStripMenuItem.Text = "Car List"
-        '
         'InvoiceToolStripMenuItem
         '
         Me.InvoiceToolStripMenuItem.Name = "InvoiceToolStripMenuItem"
@@ -81,7 +76,7 @@ Partial Class frmEmployeeMenu
         '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientListToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientListToolStripMenuItem, Me.AvailableCarsToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
         Me.ReportsToolStripMenuItem.Text = "Reports"
@@ -134,12 +129,32 @@ Partial Class frmEmployeeMenu
         Me.ClientListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ClientListToolStripMenuItem.Text = "Client List"
         '
+        'AvailableCarsToolStripMenuItem
+        '
+        Me.AvailableCarsToolStripMenuItem.Name = "AvailableCarsToolStripMenuItem"
+        Me.AvailableCarsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AvailableCarsToolStripMenuItem.Text = "Car List"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.RichTextBox1.Location = New System.Drawing.Point(0, 116)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(800, 334)
+        Me.RichTextBox1.TabIndex = 16
+        Me.RichTextBox1.Text = "Work Ethics" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "1. The Customer is always right" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "2. Possess a Positive Attitude" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "3. " &
+    " Honesty and Integrity" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "4. Professionalism" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "5. Punctuality" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "6. Strong Work Ethic" &
+    ""
+        '
         'frmEmployeeMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.Label2)
@@ -157,7 +172,6 @@ Partial Class frmEmployeeMenu
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents HomeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RentACarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AgreementToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InvoiceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents lblUsername As Label
@@ -167,4 +181,6 @@ Partial Class frmEmployeeMenu
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchForACustomerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AvailableCarsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

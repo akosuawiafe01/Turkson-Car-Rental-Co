@@ -19,6 +19,8 @@
 
         Else
             MessageBox.Show("Enter a correct username or password", "Incorrect Details")
+            txtUserName.Clear()
+            txtUserName.Clear()
         End If
 
     End Sub
