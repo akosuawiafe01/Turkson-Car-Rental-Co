@@ -139,6 +139,7 @@ Partial Class frmEmployeeMenu
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Enabled = False
         Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RichTextBox1.Location = New System.Drawing.Point(0, 116)
         Me.RichTextBox1.Name = "RichTextBox1"
