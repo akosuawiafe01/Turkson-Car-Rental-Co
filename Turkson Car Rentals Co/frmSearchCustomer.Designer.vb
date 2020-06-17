@@ -65,9 +65,11 @@ Partial Class frmSearchCustomer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.LightSlateGray
-        Me.Label2.Location = New System.Drawing.Point(565, 88)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(520, 79)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 13)
+        Me.Label2.Size = New System.Drawing.Size(146, 22)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Customer Panel"
         '
@@ -76,6 +78,8 @@ Partial Class frmSearchCustomer
         Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(-1, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1244, 92)
@@ -95,7 +99,7 @@ Partial Class frmSearchCustomer
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(95, 266)
+        Me.Label4.Location = New System.Drawing.Point(140, 312)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 13)
         Me.Label4.TabIndex = 16
@@ -104,7 +108,7 @@ Partial Class frmSearchCustomer
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(100, 227)
+        Me.Label5.Location = New System.Drawing.Point(145, 273)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 17
@@ -113,7 +117,7 @@ Partial Class frmSearchCustomer
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(95, 192)
+        Me.Label6.Location = New System.Drawing.Point(140, 238)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 18
@@ -122,7 +126,7 @@ Partial Class frmSearchCustomer
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(100, 319)
+        Me.Label7.Location = New System.Drawing.Point(145, 365)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 19
@@ -131,7 +135,7 @@ Partial Class frmSearchCustomer
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(450, 192)
+        Me.Label8.Location = New System.Drawing.Point(495, 238)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(64, 13)
         Me.Label8.TabIndex = 20
@@ -140,7 +144,7 @@ Partial Class frmSearchCustomer
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(450, 227)
+        Me.Label9.Location = New System.Drawing.Point(495, 273)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(44, 13)
         Me.Label9.TabIndex = 21
@@ -149,7 +153,7 @@ Partial Class frmSearchCustomer
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(450, 315)
+        Me.Label10.Location = New System.Drawing.Point(495, 361)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(32, 13)
         Me.Label10.TabIndex = 22
@@ -158,7 +162,7 @@ Partial Class frmSearchCustomer
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(432, 266)
+        Me.Label11.Location = New System.Drawing.Point(477, 312)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(99, 13)
         Me.Label11.TabIndex = 23
@@ -167,7 +171,7 @@ Partial Class frmSearchCustomer
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(707, 196)
+        Me.Label12.Location = New System.Drawing.Point(752, 242)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(55, 13)
         Me.Label12.TabIndex = 24
@@ -176,7 +180,7 @@ Partial Class frmSearchCustomer
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(709, 227)
+        Me.Label13.Location = New System.Drawing.Point(754, 273)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(53, 13)
         Me.Label13.TabIndex = 25
@@ -184,70 +188,70 @@ Partial Class frmSearchCustomer
         '
         'txtUserID
         '
-        Me.txtUserID.Location = New System.Drawing.Point(303, 19)
+        Me.txtUserID.Location = New System.Drawing.Point(156, 16)
         Me.txtUserID.Name = "txtUserID"
-        Me.txtUserID.Size = New System.Drawing.Size(133, 20)
+        Me.txtUserID.Size = New System.Drawing.Size(172, 20)
         Me.txtUserID.TabIndex = 26
         '
         'txtLN
         '
-        Me.txtLN.Location = New System.Drawing.Point(179, 188)
+        Me.txtLN.Location = New System.Drawing.Point(224, 234)
         Me.txtLN.Name = "txtLN"
         Me.txtLN.Size = New System.Drawing.Size(169, 20)
         Me.txtLN.TabIndex = 27
         '
         'txtON
         '
-        Me.txtON.Location = New System.Drawing.Point(179, 218)
+        Me.txtON.Location = New System.Drawing.Point(224, 264)
         Me.txtON.Name = "txtON"
         Me.txtON.Size = New System.Drawing.Size(169, 20)
         Me.txtON.TabIndex = 28
         '
         'txtFN
         '
-        Me.txtFN.Location = New System.Drawing.Point(162, 267)
+        Me.txtFN.Location = New System.Drawing.Point(207, 313)
         Me.txtFN.Name = "txtFN"
         Me.txtFN.Size = New System.Drawing.Size(186, 20)
         Me.txtFN.TabIndex = 29
         '
         'txtLicNo
         '
-        Me.txtLicNo.Location = New System.Drawing.Point(533, 189)
+        Me.txtLicNo.Location = New System.Drawing.Point(578, 235)
         Me.txtLicNo.Name = "txtLicNo"
         Me.txtLicNo.Size = New System.Drawing.Size(133, 20)
         Me.txtLicNo.TabIndex = 31
         '
         'txtContact
         '
-        Me.txtContact.Location = New System.Drawing.Point(533, 227)
+        Me.txtContact.Location = New System.Drawing.Point(578, 273)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.Size = New System.Drawing.Size(133, 20)
         Me.txtContact.TabIndex = 32
         '
         'txtResAddr
         '
-        Me.txtResAddr.Location = New System.Drawing.Point(533, 263)
+        Me.txtResAddr.Location = New System.Drawing.Point(578, 309)
         Me.txtResAddr.Name = "txtResAddr"
         Me.txtResAddr.Size = New System.Drawing.Size(130, 20)
         Me.txtResAddr.TabIndex = 33
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(533, 312)
+        Me.txtEmail.Location = New System.Drawing.Point(578, 358)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(133, 20)
         Me.txtEmail.TabIndex = 34
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(768, 188)
+        Me.txtUsername.Location = New System.Drawing.Point(813, 234)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(112, 20)
         Me.txtUsername.TabIndex = 35
         '
         'txtUserPassss
         '
-        Me.txtUserPassss.Location = New System.Drawing.Point(773, 220)
+        Me.txtUserPassss.Location = New System.Drawing.Point(818, 266)
         Me.txtUserPassss.Name = "txtUserPassss"
         Me.txtUserPassss.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtUserPassss.Size = New System.Drawing.Size(106, 20)
@@ -255,7 +259,8 @@ Partial Class frmSearchCustomer
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(534, 19)
+        Me.btnSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSearch.Location = New System.Drawing.Point(342, 16)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(151, 21)
         Me.btnSearch.TabIndex = 37
@@ -264,6 +269,7 @@ Partial Class frmSearchCustomer
         '
         'btnEdit
         '
+        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Location = New System.Drawing.Point(6, 19)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(102, 20)
@@ -273,6 +279,7 @@ Partial Class frmSearchCustomer
         '
         'btnAddClient
         '
+        Me.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAddClient.Location = New System.Drawing.Point(6, 49)
         Me.btnAddClient.Name = "btnAddClient"
         Me.btnAddClient.Size = New System.Drawing.Size(106, 22)
@@ -282,6 +289,7 @@ Partial Class frmSearchCustomer
         '
         'btnBack
         '
+        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBack.Location = New System.Drawing.Point(57, 98)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(100, 21)
@@ -291,13 +299,14 @@ Partial Class frmSearchCustomer
         '
         'dtpDOB
         '
-        Me.dtpDOB.Location = New System.Drawing.Point(158, 317)
+        Me.dtpDOB.Location = New System.Drawing.Point(203, 363)
         Me.dtpDOB.Name = "dtpDOB"
         Me.dtpDOB.Size = New System.Drawing.Size(190, 20)
         Me.dtpDOB.TabIndex = 41
         '
         'btnSave
         '
+        Me.btnSave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSave.Location = New System.Drawing.Point(117, 50)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(100, 21)
@@ -307,6 +316,7 @@ Partial Class frmSearchCustomer
         '
         'btnSaveEdits
         '
+        Me.btnSaveEdits.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSaveEdits.Location = New System.Drawing.Point(129, 24)
         Me.btnSaveEdits.Name = "btnSaveEdits"
         Me.btnSaveEdits.Size = New System.Drawing.Size(87, 19)
@@ -330,12 +340,14 @@ Partial Class frmSearchCustomer
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.btnSearch)
         Me.GroupBox2.Controls.Add(Me.txtUserID)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(443, 114)
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GroupBox2.Location = New System.Drawing.Point(578, 114)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(708, 61)
+        Me.GroupBox2.Size = New System.Drawing.Size(573, 61)
         Me.GroupBox2.TabIndex = 45
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search By"
@@ -345,6 +357,7 @@ Partial Class frmSearchCustomer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1255, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dtpDOB)
@@ -369,6 +382,7 @@ Partial Class frmSearchCustomer
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Name = "frmSearchCustomer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSearchCustomer"

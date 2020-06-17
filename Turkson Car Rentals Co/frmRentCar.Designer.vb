@@ -59,15 +59,19 @@ Partial Class frmRentCar
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(597, 96)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.Size = New System.Drawing.Size(99, 22)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Car Rental"
         '
         'Label1
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1228, 109)
@@ -250,6 +254,7 @@ Partial Class frmRentCar
         '
         'btnRentCar
         '
+        Me.btnRentCar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnRentCar.Location = New System.Drawing.Point(884, 418)
         Me.btnRentCar.Name = "btnRentCar"
         Me.btnRentCar.Size = New System.Drawing.Size(97, 33)
@@ -259,6 +264,7 @@ Partial Class frmRentCar
         '
         'btnBack
         '
+        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBack.Location = New System.Drawing.Point(1021, 418)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(85, 33)
@@ -320,6 +326,7 @@ Partial Class frmRentCar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1228, 471)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txtRentalID)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.labUserID)
