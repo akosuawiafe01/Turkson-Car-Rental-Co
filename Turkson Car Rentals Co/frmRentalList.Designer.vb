@@ -27,11 +27,6 @@ Partial Class frmRentalList
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnViewList = New System.Windows.Forms.Button()
-        Me.btnBack = New System.Windows.Forms.Button()
-        Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
-        Me.RentalListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Rental_ListTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.Rental_ListTableAdapter()
         Me.ClientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,10 +34,15 @@ Partial Class frmRentalList
         Me.RentalIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VehicleIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CarNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RentalListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
+        Me.btnViewList = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.Rental_ListTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.Rental_ListTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RentalListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -88,6 +88,65 @@ Partial Class frmRentalList
         Me.DataGridView1.Size = New System.Drawing.Size(745, 276)
         Me.DataGridView1.TabIndex = 0
         '
+        'ClientIDDataGridViewTextBoxColumn
+        '
+        Me.ClientIDDataGridViewTextBoxColumn.DataPropertyName = "clientID"
+        Me.ClientIDDataGridViewTextBoxColumn.HeaderText = "clientID"
+        Me.ClientIDDataGridViewTextBoxColumn.Name = "ClientIDDataGridViewTextBoxColumn"
+        Me.ClientIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LastnameDataGridViewTextBoxColumn
+        '
+        Me.LastnameDataGridViewTextBoxColumn.DataPropertyName = "lastname"
+        Me.LastnameDataGridViewTextBoxColumn.HeaderText = "lastname"
+        Me.LastnameDataGridViewTextBoxColumn.Name = "LastnameDataGridViewTextBoxColumn"
+        Me.LastnameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'OtherNameDataGridViewTextBoxColumn
+        '
+        Me.OtherNameDataGridViewTextBoxColumn.DataPropertyName = "otherName"
+        Me.OtherNameDataGridViewTextBoxColumn.HeaderText = "otherName"
+        Me.OtherNameDataGridViewTextBoxColumn.Name = "OtherNameDataGridViewTextBoxColumn"
+        Me.OtherNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RentalIDDataGridViewTextBoxColumn
+        '
+        Me.RentalIDDataGridViewTextBoxColumn.DataPropertyName = "rentalID"
+        Me.RentalIDDataGridViewTextBoxColumn.HeaderText = "rentalID"
+        Me.RentalIDDataGridViewTextBoxColumn.Name = "RentalIDDataGridViewTextBoxColumn"
+        Me.RentalIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'VehicleIDDataGridViewTextBoxColumn
+        '
+        Me.VehicleIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleID"
+        Me.VehicleIDDataGridViewTextBoxColumn.HeaderText = "vehicleID"
+        Me.VehicleIDDataGridViewTextBoxColumn.Name = "VehicleIDDataGridViewTextBoxColumn"
+        Me.VehicleIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CarNameDataGridViewTextBoxColumn
+        '
+        Me.CarNameDataGridViewTextBoxColumn.DataPropertyName = "carName"
+        Me.CarNameDataGridViewTextBoxColumn.HeaderText = "carName"
+        Me.CarNameDataGridViewTextBoxColumn.Name = "CarNameDataGridViewTextBoxColumn"
+        Me.CarNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RentalListBindingSource
+        '
+        Me.RentalListBindingSource.DataMember = "Rental_List"
+        Me.RentalListBindingSource.DataSource = Me.TurksonCo_DataSet
+        '
+        'TurksonCo_DataSet
+        '
+        Me.TurksonCo_DataSet.DataSetName = "TurksonCo_DataSet"
+        Me.TurksonCo_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'btnViewList
         '
         Me.btnViewList.Location = New System.Drawing.Point(672, 537)
@@ -106,61 +165,9 @@ Partial Class frmRentalList
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
         '
-        'TurksonCo_DataSet
-        '
-        Me.TurksonCo_DataSet.DataSetName = "TurksonCo_DataSet"
-        Me.TurksonCo_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'RentalListBindingSource
-        '
-        Me.RentalListBindingSource.DataMember = "Rental_List"
-        Me.RentalListBindingSource.DataSource = Me.TurksonCo_DataSet
-        '
         'Rental_ListTableAdapter
         '
         Me.Rental_ListTableAdapter.ClearBeforeFill = True
-        '
-        'ClientIDDataGridViewTextBoxColumn
-        '
-        Me.ClientIDDataGridViewTextBoxColumn.DataPropertyName = "clientID"
-        Me.ClientIDDataGridViewTextBoxColumn.HeaderText = "clientID"
-        Me.ClientIDDataGridViewTextBoxColumn.Name = "ClientIDDataGridViewTextBoxColumn"
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        '
-        'LastnameDataGridViewTextBoxColumn
-        '
-        Me.LastnameDataGridViewTextBoxColumn.DataPropertyName = "lastname"
-        Me.LastnameDataGridViewTextBoxColumn.HeaderText = "lastname"
-        Me.LastnameDataGridViewTextBoxColumn.Name = "LastnameDataGridViewTextBoxColumn"
-        '
-        'OtherNameDataGridViewTextBoxColumn
-        '
-        Me.OtherNameDataGridViewTextBoxColumn.DataPropertyName = "otherName"
-        Me.OtherNameDataGridViewTextBoxColumn.HeaderText = "otherName"
-        Me.OtherNameDataGridViewTextBoxColumn.Name = "OtherNameDataGridViewTextBoxColumn"
-        '
-        'RentalIDDataGridViewTextBoxColumn
-        '
-        Me.RentalIDDataGridViewTextBoxColumn.DataPropertyName = "rentalID"
-        Me.RentalIDDataGridViewTextBoxColumn.HeaderText = "rentalID"
-        Me.RentalIDDataGridViewTextBoxColumn.Name = "RentalIDDataGridViewTextBoxColumn"
-        '
-        'VehicleIDDataGridViewTextBoxColumn
-        '
-        Me.VehicleIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleID"
-        Me.VehicleIDDataGridViewTextBoxColumn.HeaderText = "vehicleID"
-        Me.VehicleIDDataGridViewTextBoxColumn.Name = "VehicleIDDataGridViewTextBoxColumn"
-        '
-        'CarNameDataGridViewTextBoxColumn
-        '
-        Me.CarNameDataGridViewTextBoxColumn.DataPropertyName = "carName"
-        Me.CarNameDataGridViewTextBoxColumn.HeaderText = "carName"
-        Me.CarNameDataGridViewTextBoxColumn.Name = "CarNameDataGridViewTextBoxColumn"
         '
         'frmRentalList
         '
@@ -173,11 +180,12 @@ Partial Class frmRentalList
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmRentalList"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRentalList"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RentalListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

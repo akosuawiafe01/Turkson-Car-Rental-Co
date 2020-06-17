@@ -54,8 +54,7 @@
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         fieldsStats(True)
 
-        clientAdapter.UpdateClientTable(txtFN.Text, txtLN.Text, txtON.Text, dtpDOB.Value.Date, txtLicNo.Text, txtContact.Text, txtEmail.Text, txtResAddr.Text, txtUsername.Text, txtUserPassss.Text, txtUserID.Text)
-        MessageBox.Show("Updates saved!", "Turkson Car Rentals Company")
+
     End Sub
 
     Private Sub btnAddClient_Click(sender As Object, e As EventArgs) Handles btnAddClient.Click
@@ -130,11 +129,22 @@
 
 
         If cancelOption = DialogResult.Yes Then
-            frmUserMenu.Show()
+            frmEmployeeMenu.Show()
 
             Me.Close()
         Else
             Me.Close()
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSaveEdits.Click
+        clientAdapter.UpdateClientTable(txtFN.Text, txtLN.Text, txtON.Text, dtpDOB.Value.Date, txtLicNo.Text, txtContact.Text, txtEmail.Text, txtResAddr.Text, txtUsername.Text, txtUserPassss.Text, txtUserID.Text)
+        MessageBox.Show("Updates saved!", "Turkson Car Rentals Company")
+        clearAllFields()
+    End Sub
+
+    Private Sub frmSearchCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        fieldsStats(False)
+        txtUserID.Enabled = True
     End Sub
 End Class

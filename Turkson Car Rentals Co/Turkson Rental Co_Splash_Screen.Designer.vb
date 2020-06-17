@@ -38,16 +38,16 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(847, 92)
+        Me.Label1.Size = New System.Drawing.Size(735, 92)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pbSplashScreen
         '
-        Me.pbSplashScreen.Location = New System.Drawing.Point(28, 337)
+        Me.pbSplashScreen.Location = New System.Drawing.Point(1, 337)
         Me.pbSplashScreen.Name = "pbSplashScreen"
-        Me.pbSplashScreen.Size = New System.Drawing.Size(472, 34)
+        Me.pbSplashScreen.Size = New System.Drawing.Size(499, 34)
         Me.pbSplashScreen.TabIndex = 3
         '
         'Label2
@@ -55,7 +55,7 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(269, 60)
+        Me.Label2.Location = New System.Drawing.Point(208, 60)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(319, 22)
         Me.Label2.TabIndex = 4
@@ -93,9 +93,9 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        'Me.BackgroundImage = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1506883968894_6e7738ccfc05
+        Me.BackgroundImage = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1506883968894_6e7738ccfc05
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(847, 383)
+        Me.ClientSize = New System.Drawing.Size(735, 383)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)

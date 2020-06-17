@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="RichTextBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="RichTextBox1.Text" xml:space="preserve">
     <value>1. DEFINITIONS
 In this AGREEMENT, unless the context indicates otherwise, the following expressions will bear the following meanings:
@@ -222,8 +225,9 @@ YOU warrant that:
 10.12 This document contains the entire AGREEMENT between YOU and US regarding the matters contained herein and WE will not be bound by any undertakings, representations, warranties, promises or the like not recorded herein, unless otherwise stipulated by law.
 10.13 It is agreed that each clause of these terms and conditions is severable, the one from the other, and if any clause is found to be defective or unenforceable for any reason by any competent Court, then the remaining clauses will be and continue to be of full force and effect.
 10.14 This AGREEMENT will be governed by and interpreted in accordance with the laws of the Republic of South Africa.
+
 10.15 No extension, relaxation or other leniency that may be given or allowed by US can be taken to mean that other rights may not be enforced.
-10.16 The RENTER and/or DRIVER authorises US to conduct any credit checks which WE deem necessary to adequately assess the risk of contracting with YOU. WE are entitled to note any default by YOU in terms of this AGREEMENT and, in accordance with The National Credit Act's requirements, with any credit bureau, and YOU hold US blameless for any consequences arising from the notation.
-</value>
+
+10.16 The RENTER and/or DRIVER authorises US to conduct any credit checks which WE deem necessary to adequately assess the risk of contracting with YOU. WE are entitled to note any default by YOU in terms of this AGREEMENT and, in accordance with The National Credit Act's requirements, with any credit bureau, and YOU hold US blameless for any consequences arising from the notation.</value>
   </data>
 </root>

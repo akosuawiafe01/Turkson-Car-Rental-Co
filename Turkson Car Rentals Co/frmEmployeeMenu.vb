@@ -25,4 +25,9 @@
         frmSearchCustomer.Show()
         Me.Hide()
     End Sub
+
+    Private Sub AgreementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgreementToolStripMenuItem.Click
+        frmCarList.Show()
+        Me.Hide()
+    End Sub
 End Class

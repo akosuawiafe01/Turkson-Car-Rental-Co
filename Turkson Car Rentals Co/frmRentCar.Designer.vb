@@ -331,6 +331,7 @@ Partial Class frmRentCar
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmRentCar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmRentCar"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

@@ -27,7 +27,22 @@ Turkson Car Rentals Co
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.Background">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.empCar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.empCar1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1506883968894_6e7738ccfc05">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

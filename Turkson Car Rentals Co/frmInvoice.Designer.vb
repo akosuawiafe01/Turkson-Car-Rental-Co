@@ -553,6 +553,7 @@ Partial Class frmInvoice
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmInvoice"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmInvoice"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

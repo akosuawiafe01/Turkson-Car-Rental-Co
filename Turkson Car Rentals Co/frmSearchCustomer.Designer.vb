@@ -51,6 +51,11 @@ Partial Class frmSearchCustomer
         Me.btnBack = New System.Windows.Forms.Button()
         Me.dtpDOB = New System.Windows.Forms.DateTimePicker()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnSaveEdits = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -60,7 +65,7 @@ Partial Class frmSearchCustomer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.LightSlateGray
-        Me.Label2.Location = New System.Drawing.Point(450, 88)
+        Me.Label2.Location = New System.Drawing.Point(565, 88)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 13)
         Me.Label2.TabIndex = 14
@@ -73,7 +78,7 @@ Partial Class frmSearchCustomer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Location = New System.Drawing.Point(-1, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1003, 92)
+        Me.Label1.Size = New System.Drawing.Size(1244, 92)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -81,7 +86,7 @@ Partial Class frmSearchCustomer
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(95, 128)
+        Me.Label3.Location = New System.Drawing.Point(69, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 15
@@ -179,7 +184,7 @@ Partial Class frmSearchCustomer
         '
         'txtUserID
         '
-        Me.txtUserID.Location = New System.Drawing.Point(162, 128)
+        Me.txtUserID.Location = New System.Drawing.Point(303, 19)
         Me.txtUserID.Name = "txtUserID"
         Me.txtUserID.Size = New System.Drawing.Size(133, 20)
         Me.txtUserID.TabIndex = 26
@@ -188,21 +193,21 @@ Partial Class frmSearchCustomer
         '
         Me.txtLN.Location = New System.Drawing.Point(179, 188)
         Me.txtLN.Name = "txtLN"
-        Me.txtLN.Size = New System.Drawing.Size(137, 20)
+        Me.txtLN.Size = New System.Drawing.Size(169, 20)
         Me.txtLN.TabIndex = 27
         '
         'txtON
         '
         Me.txtON.Location = New System.Drawing.Point(179, 218)
         Me.txtON.Name = "txtON"
-        Me.txtON.Size = New System.Drawing.Size(142, 20)
+        Me.txtON.Size = New System.Drawing.Size(169, 20)
         Me.txtON.TabIndex = 28
         '
         'txtFN
         '
         Me.txtFN.Location = New System.Drawing.Point(162, 267)
         Me.txtFN.Name = "txtFN"
-        Me.txtFN.Size = New System.Drawing.Size(158, 20)
+        Me.txtFN.Size = New System.Drawing.Size(186, 20)
         Me.txtFN.TabIndex = 29
         '
         'txtLicNo
@@ -216,7 +221,7 @@ Partial Class frmSearchCustomer
         '
         Me.txtContact.Location = New System.Drawing.Point(533, 227)
         Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(158, 20)
+        Me.txtContact.Size = New System.Drawing.Size(133, 20)
         Me.txtContact.TabIndex = 32
         '
         'txtResAddr
@@ -250,7 +255,7 @@ Partial Class frmSearchCustomer
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(532, 124)
+        Me.btnSearch.Location = New System.Drawing.Point(534, 19)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(151, 21)
         Me.btnSearch.TabIndex = 37
@@ -259,7 +264,7 @@ Partial Class frmSearchCustomer
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(162, 373)
+        Me.btnEdit.Location = New System.Drawing.Point(6, 19)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(102, 20)
         Me.btnEdit.TabIndex = 38
@@ -268,7 +273,7 @@ Partial Class frmSearchCustomer
         '
         'btnAddClient
         '
-        Me.btnAddClient.Location = New System.Drawing.Point(316, 371)
+        Me.btnAddClient.Location = New System.Drawing.Point(6, 49)
         Me.btnAddClient.Name = "btnAddClient"
         Me.btnAddClient.Size = New System.Drawing.Size(106, 22)
         Me.btnAddClient.TabIndex = 39
@@ -277,7 +282,7 @@ Partial Class frmSearchCustomer
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(608, 371)
+        Me.btnBack.Location = New System.Drawing.Point(57, 98)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(100, 21)
         Me.btnBack.TabIndex = 40
@@ -288,29 +293,61 @@ Partial Class frmSearchCustomer
         '
         Me.dtpDOB.Location = New System.Drawing.Point(158, 317)
         Me.dtpDOB.Name = "dtpDOB"
-        Me.dtpDOB.Size = New System.Drawing.Size(173, 20)
+        Me.dtpDOB.Size = New System.Drawing.Size(190, 20)
         Me.dtpDOB.TabIndex = 41
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(465, 371)
+        Me.btnSave.Location = New System.Drawing.Point(117, 50)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(100, 21)
         Me.btnSave.TabIndex = 42
         Me.btnSave.Text = "Save New Client"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'btnSaveEdits
+        '
+        Me.btnSaveEdits.Location = New System.Drawing.Point(129, 24)
+        Me.btnSaveEdits.Name = "btnSaveEdits"
+        Me.btnSaveEdits.Size = New System.Drawing.Size(87, 19)
+        Me.btnSaveEdits.TabIndex = 43
+        Me.btnSaveEdits.Text = "Save Edits"
+        Me.btnSaveEdits.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btnAddClient)
+        Me.GroupBox1.Controls.Add(Me.btnSaveEdits)
+        Me.GroupBox1.Controls.Add(Me.btnSave)
+        Me.GroupBox1.Controls.Add(Me.btnEdit)
+        Me.GroupBox1.Controls.Add(Me.btnBack)
+        Me.GroupBox1.Location = New System.Drawing.Point(977, 278)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(239, 160)
+        Me.GroupBox1.TabIndex = 44
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Form Controls"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnSearch)
+        Me.GroupBox2.Controls.Add(Me.txtUserID)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Location = New System.Drawing.Point(443, 114)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(708, 61)
+        Me.GroupBox2.TabIndex = 45
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Search By"
+        '
         'frmSearchCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1014, 450)
-        Me.Controls.Add(Me.btnSave)
+        Me.ClientSize = New System.Drawing.Size(1255, 450)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dtpDOB)
-        Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.btnAddClient)
-        Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtUserPassss)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.txtEmail)
@@ -320,7 +357,6 @@ Partial Class frmSearchCustomer
         Me.Controls.Add(Me.txtFN)
         Me.Controls.Add(Me.txtON)
         Me.Controls.Add(Me.txtLN)
-        Me.Controls.Add(Me.txtUserID)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
@@ -331,11 +367,14 @@ Partial Class frmSearchCustomer
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmSearchCustomer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSearchCustomer"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -370,4 +409,7 @@ Partial Class frmSearchCustomer
     Friend WithEvents btnBack As Button
     Friend WithEvents dtpDOB As DateTimePicker
     Friend WithEvents btnSave As Button
+    Friend WithEvents btnSaveEdits As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

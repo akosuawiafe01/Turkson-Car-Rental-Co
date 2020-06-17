@@ -80,6 +80,12 @@
     <Compile Include="frmAgreement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCarList.Designer.vb">
+      <DependentUpon>frmCarList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRentalList.Designer.vb">
       <DependentUpon>frmRentalList.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="frmAgreement.resx">
       <DependentUpon>frmAgreement.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCarList.resx">
+      <DependentUpon>frmCarList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRentalList.resx">
       <DependentUpon>frmRentalList.vb</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empCar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

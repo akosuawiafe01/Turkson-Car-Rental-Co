@@ -9,10 +9,12 @@
 
     Private Sub AgreementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgreementToolStripMenuItem.Click
         frmAgreement.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub InvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub InvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmInvoice.Show()
+        Me.Hide()
     End Sub
 
     Private Sub RentACarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RentACarToolStripMenuItem.Click

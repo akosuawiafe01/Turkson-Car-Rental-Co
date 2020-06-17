@@ -41,6 +41,7 @@ Partial Class frmUserMenu
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem, Me.RentACarToolStripMenuItem, Me.AgreementToolStripMenuItem, Me.LogoutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -80,15 +81,19 @@ Partial Class frmUserMenu
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(357, 86)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 13)
+        Me.Label2.Size = New System.Drawing.Size(101, 22)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "User Menu"
         '
         'Label1
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(0, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(800, 92)
@@ -106,8 +111,8 @@ Partial Class frmUserMenu
         '
         'PictureBox2
         '
-        ' Me.PictureBox2.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
-        Me.PictureBox2.Location = New System.Drawing.Point(365, 119)
+        Me.PictureBox2.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
+        Me.PictureBox2.Location = New System.Drawing.Point(412, 119)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(376, 319)
         Me.PictureBox2.TabIndex = 13
@@ -127,6 +132,7 @@ Partial Class frmUserMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblUsername)
@@ -134,7 +140,10 @@ Partial Class frmUserMenu
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmUserMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmUserMenu"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

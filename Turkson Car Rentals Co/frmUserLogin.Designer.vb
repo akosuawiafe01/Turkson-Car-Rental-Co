@@ -37,6 +37,8 @@ Partial Class frmUserLogin
         'Label1
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Arial Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(800, 92)
@@ -47,40 +49,46 @@ Partial Class frmUserLogin
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(367, 79)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.Size = New System.Drawing.Size(111, 22)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "User Login"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(527, 177)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(537, 241)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 13)
+        Me.Label3.Size = New System.Drawing.Size(97, 22)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Username"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(527, 221)
+        Me.Label4.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(537, 285)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 13)
+        Me.Label4.Size = New System.Drawing.Size(94, 22)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Password"
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(664, 174)
+        Me.txtUserName.Location = New System.Drawing.Point(674, 238)
         Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(105, 20)
+        Me.txtUserName.Size = New System.Drawing.Size(114, 20)
         Me.txtUserName.TabIndex = 4
         '
         'txtUserpasss
         '
-        Me.txtUserpasss.Location = New System.Drawing.Point(663, 221)
+        Me.txtUserpasss.Location = New System.Drawing.Point(673, 285)
         Me.txtUserpasss.Name = "txtUserpasss"
         Me.txtUserpasss.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtUserpasss.Size = New System.Drawing.Size(117, 20)
@@ -88,9 +96,10 @@ Partial Class frmUserLogin
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(561, 258)
+        Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLogin.Location = New System.Drawing.Point(571, 331)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(129, 36)
+        Me.btnLogin.Size = New System.Drawing.Size(129, 27)
         Me.btnLogin.TabIndex = 6
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
@@ -98,20 +107,20 @@ Partial Class frmUserLogin
         'empLogin
         '
         Me.empLogin.AutoSize = True
-        Me.empLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.empLogin.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.empLogin.Location = New System.Drawing.Point(649, 0)
+        Me.empLogin.Font = New System.Drawing.Font("Arial", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.empLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.empLogin.Location = New System.Drawing.Point(671, 0)
         Me.empLogin.Name = "empLogin"
-        Me.empLogin.Size = New System.Drawing.Size(151, 15)
+        Me.empLogin.Size = New System.Drawing.Size(132, 15)
         Me.empLogin.TabIndex = 7
         Me.empLogin.Text = "Employee? Login here"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
+        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.Background
         Me.PictureBox1.Location = New System.Drawing.Point(12, 148)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(365, 290)
+        Me.PictureBox1.Size = New System.Drawing.Size(496, 290)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -130,6 +139,7 @@ Partial Class frmUserLogin
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmUserLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmUserLogin"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
