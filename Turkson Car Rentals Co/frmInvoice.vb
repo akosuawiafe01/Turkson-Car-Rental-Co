@@ -91,7 +91,7 @@ Public Class frmInvoice
 
             Me.Close()
         Else
-            Me.Close()
+            Me.Show()
         End If
     End Sub
 

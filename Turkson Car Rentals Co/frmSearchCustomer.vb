@@ -184,7 +184,8 @@ Public Class frmSearchCustomer
 
             Me.Close()
         Else
-            Me.Close()
+
+            Me.Show()
         End If
     End Sub
 
