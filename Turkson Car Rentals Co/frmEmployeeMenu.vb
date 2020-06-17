@@ -30,4 +30,9 @@
         frmCarList.Show()
         Me.Hide()
     End Sub
+
+    Private Sub ClientListToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientListToolStripMenuItem.Click
+        frmCustomerList.Show()
+        Me.Hide()
+    End Sub
 End Class

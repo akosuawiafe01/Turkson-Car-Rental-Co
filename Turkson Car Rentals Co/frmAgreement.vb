@@ -3,7 +3,7 @@
         Dim cancelOption = MessageBox.Show("Do you want to go back to the Main Menu?", "Back to Main Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
 
         If cancelOption = DialogResult.Yes Then
-            frmEmployeeMenu.Show()
+            frmUserMenu.Show()
 
             Me.Close()
         Else

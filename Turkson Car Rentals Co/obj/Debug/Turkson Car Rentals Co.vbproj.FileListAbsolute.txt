@@ -20,3 +20,4 @@ C:\Users\Inspiron\Documents\Level 300\Visual Basic .NET\Turkson Car Rentals Co\T
 C:\Users\Inspiron\Documents\Level 300\Visual Basic .NET\Turkson Car Rentals Co\Turkson Car Rentals Co\obj\Debug\Turkson_Car_Rentals_Co.frmRentalList.resources
 C:\Users\Inspiron\Documents\Level 300\Visual Basic .NET\Turkson Car Rentals Co\Turkson Car Rentals Co\obj\Debug\Turkson_Car_Rentals_Co.frmSearchCustomer.resources
 C:\Users\Inspiron\Documents\Level 300\Visual Basic .NET\Turkson Car Rentals Co\Turkson Car Rentals Co\obj\Debug\Turkson_Car_Rentals_Co.frmCarList.resources
+C:\Users\Inspiron\Documents\Level 300\Visual Basic .NET\Turkson Car Rentals Co\Turkson Car Rentals Co\obj\Debug\Turkson_Car_Rentals_Co.frmCustomerList.resources

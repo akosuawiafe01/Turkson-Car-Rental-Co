@@ -131,6 +131,15 @@ WHERE        (clientID = @clientIDparams)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="TurksonCo_DbConnectionString (MySettings)" DbObjectName="[TurksonCo-Db].dbo.Client" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        clientID, firstName, lastname, otherName, DOB, LicenseNo, contact, email, residenceLocation
+FROM            Client</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="TurksonCo_DbConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateClientTable" Modifier="Public" Name="UpdateClientTable" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateClientTable">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -556,7 +565,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
   <xs:element name="TurksonCo_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TurksonCo_DataSet" msprop:Generator_UserDSName="TurksonCo_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Client" msprop:Generator_TableClassName="ClientDataTable" msprop:Generator_TableVarName="tableClient" msprop:Generator_RowChangedName="ClientRowChanged" msprop:Generator_TablePropName="Client" msprop:Generator_RowDeletingName="ClientRowDeleting" msprop:Generator_RowChangingName="ClientRowChanging" msprop:Generator_RowEvHandlerName="ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientRowDeleted" msprop:Generator_RowClassName="ClientRow" msprop:Generator_UserTableName="Client" msprop:Generator_RowEvArgName="ClientRowChangeEvent">
+        <xs:element name="Client" msprop:Generator_TableClassName="ClientDataTable" msprop:Generator_TableVarName="tableClient" msprop:Generator_TablePropName="Client" msprop:Generator_RowDeletingName="ClientRowDeleting" msprop:Generator_RowChangingName="ClientRowChanging" msprop:Generator_RowEvHandlerName="ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientRowDeleted" msprop:Generator_UserTableName="Client" msprop:Generator_RowChangedName="ClientRowChanged" msprop:Generator_RowEvArgName="ClientRowChangeEvent" msprop:Generator_RowClassName="ClientRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="clientID" msprop:Generator_ColumnVarNameInTable="columnclientID" msprop:Generator_ColumnPropNameInRow="clientID" msprop:Generator_ColumnPropNameInTable="clientIDColumn" msprop:Generator_UserColumnName="clientID">
@@ -633,7 +642,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_RowClassName="EmployeeRow" msprop:Generator_UserTableName="Employee" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent">
+        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_UserTableName="Employee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent" msprop:Generator_RowClassName="EmployeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="empID" msprop:Generator_ColumnVarNameInTable="columnempID" msprop:Generator_ColumnPropNameInRow="empID" msprop:Generator_ColumnPropNameInTable="empIDColumn" msprop:Generator_UserColumnName="empID">
@@ -667,7 +676,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicle" msprop:Generator_TableClassName="VehicleDataTable" msprop:Generator_TableVarName="tableVehicle" msprop:Generator_RowChangedName="VehicleRowChanged" msprop:Generator_TablePropName="Vehicle" msprop:Generator_RowDeletingName="VehicleRowDeleting" msprop:Generator_RowChangingName="VehicleRowChanging" msprop:Generator_RowEvHandlerName="VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="VehicleRowDeleted" msprop:Generator_RowClassName="VehicleRow" msprop:Generator_UserTableName="Vehicle" msprop:Generator_RowEvArgName="VehicleRowChangeEvent">
+        <xs:element name="Vehicle" msprop:Generator_TableClassName="VehicleDataTable" msprop:Generator_TableVarName="tableVehicle" msprop:Generator_TablePropName="Vehicle" msprop:Generator_RowDeletingName="VehicleRowDeleting" msprop:Generator_RowChangingName="VehicleRowChanging" msprop:Generator_RowEvHandlerName="VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="VehicleRowDeleted" msprop:Generator_UserTableName="Vehicle" msprop:Generator_RowChangedName="VehicleRowChanged" msprop:Generator_RowEvArgName="VehicleRowChangeEvent" msprop:Generator_RowClassName="VehicleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="carNo" msprop:Generator_ColumnVarNameInTable="columncarNo" msprop:Generator_ColumnPropNameInRow="carNo" msprop:Generator_ColumnPropNameInTable="carNoColumn" msprop:Generator_UserColumnName="carNo">
@@ -737,7 +746,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="User_Rental_Details" msprop:Generator_TableClassName="User_Rental_DetailsDataTable" msprop:Generator_TableVarName="tableUser_Rental_Details" msprop:Generator_RowChangedName="User_Rental_DetailsRowChanged" msprop:Generator_TablePropName="User_Rental_Details" msprop:Generator_RowDeletingName="User_Rental_DetailsRowDeleting" msprop:Generator_RowChangingName="User_Rental_DetailsRowChanging" msprop:Generator_RowEvHandlerName="User_Rental_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="User_Rental_DetailsRowDeleted" msprop:Generator_RowClassName="User_Rental_DetailsRow" msprop:Generator_UserTableName="User_Rental_Details" msprop:Generator_RowEvArgName="User_Rental_DetailsRowChangeEvent">
+        <xs:element name="User_Rental_Details" msprop:Generator_TableClassName="User_Rental_DetailsDataTable" msprop:Generator_TableVarName="tableUser_Rental_Details" msprop:Generator_TablePropName="User_Rental_Details" msprop:Generator_RowDeletingName="User_Rental_DetailsRowDeleting" msprop:Generator_RowChangingName="User_Rental_DetailsRowChanging" msprop:Generator_RowEvHandlerName="User_Rental_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="User_Rental_DetailsRowDeleted" msprop:Generator_UserTableName="User_Rental_Details" msprop:Generator_RowChangedName="User_Rental_DetailsRowChanged" msprop:Generator_RowEvArgName="User_Rental_DetailsRowChangeEvent" msprop:Generator_RowClassName="User_Rental_DetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="clientID" msprop:Generator_ColumnVarNameInTable="columnclientID" msprop:Generator_ColumnPropNameInRow="clientID" msprop:Generator_ColumnPropNameInTable="clientIDColumn" msprop:Generator_UserColumnName="clientID">
@@ -793,7 +802,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rental_List" msprop:Generator_TableClassName="Rental_ListDataTable" msprop:Generator_TableVarName="tableRental_List" msprop:Generator_RowChangedName="Rental_ListRowChanged" msprop:Generator_TablePropName="Rental_List" msprop:Generator_RowDeletingName="Rental_ListRowDeleting" msprop:Generator_RowChangingName="Rental_ListRowChanging" msprop:Generator_RowEvHandlerName="Rental_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="Rental_ListRowDeleted" msprop:Generator_RowClassName="Rental_ListRow" msprop:Generator_UserTableName="Rental_List" msprop:Generator_RowEvArgName="Rental_ListRowChangeEvent">
+        <xs:element name="Rental_List" msprop:Generator_TableClassName="Rental_ListDataTable" msprop:Generator_TableVarName="tableRental_List" msprop:Generator_TablePropName="Rental_List" msprop:Generator_RowDeletingName="Rental_ListRowDeleting" msprop:Generator_RowChangingName="Rental_ListRowChanging" msprop:Generator_RowEvHandlerName="Rental_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="Rental_ListRowDeleted" msprop:Generator_UserTableName="Rental_List" msprop:Generator_RowChangedName="Rental_ListRowChanged" msprop:Generator_RowEvArgName="Rental_ListRowChangeEvent" msprop:Generator_RowClassName="Rental_ListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="clientID" msprop:Generator_ColumnVarNameInTable="columnclientID" msprop:Generator_ColumnPropNameInRow="clientID" msprop:Generator_ColumnPropNameInTable="clientIDColumn" msprop:Generator_UserColumnName="clientID">
@@ -842,7 +851,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rental" msprop:Generator_TableClassName="RentalDataTable" msprop:Generator_TableVarName="tableRental" msprop:Generator_TablePropName="Rental" msprop:Generator_RowDeletingName="RentalRowDeleting" msprop:Generator_RowChangingName="RentalRowChanging" msprop:Generator_RowEvHandlerName="RentalRowChangeEventHandler" msprop:Generator_RowDeletedName="RentalRowDeleted" msprop:Generator_UserTableName="Rental" msprop:Generator_RowChangedName="RentalRowChanged" msprop:Generator_RowEvArgName="RentalRowChangeEvent" msprop:Generator_RowClassName="RentalRow">
+        <xs:element name="Rental" msprop:Generator_TableClassName="RentalDataTable" msprop:Generator_TableVarName="tableRental" msprop:Generator_RowChangedName="RentalRowChanged" msprop:Generator_TablePropName="Rental" msprop:Generator_RowDeletingName="RentalRowDeleting" msprop:Generator_RowChangingName="RentalRowChanging" msprop:Generator_RowEvHandlerName="RentalRowChangeEventHandler" msprop:Generator_RowDeletedName="RentalRowDeleted" msprop:Generator_RowClassName="RentalRow" msprop:Generator_UserTableName="Rental" msprop:Generator_RowEvArgName="RentalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="carModel" msprop:Generator_ColumnVarNameInTable="columncarModel" msprop:Generator_ColumnPropNameInRow="carModel" msprop:Generator_ColumnPropNameInTable="carModelColumn" msprop:Generator_UserColumnName="carModel" minOccurs="0">
@@ -883,7 +892,7 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Transaction_Invoice" msprop:Generator_TableClassName="Transaction_InvoiceDataTable" msprop:Generator_TableVarName="tableTransaction_Invoice" msprop:Generator_TablePropName="Transaction_Invoice" msprop:Generator_RowDeletingName="Transaction_InvoiceRowDeleting" msprop:Generator_RowChangingName="Transaction_InvoiceRowChanging" msprop:Generator_RowEvHandlerName="Transaction_InvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="Transaction_InvoiceRowDeleted" msprop:Generator_UserTableName="Transaction_Invoice" msprop:Generator_RowChangedName="Transaction_InvoiceRowChanged" msprop:Generator_RowEvArgName="Transaction_InvoiceRowChangeEvent" msprop:Generator_RowClassName="Transaction_InvoiceRow">
+        <xs:element name="Transaction_Invoice" msprop:Generator_TableClassName="Transaction_InvoiceDataTable" msprop:Generator_TableVarName="tableTransaction_Invoice" msprop:Generator_RowChangedName="Transaction_InvoiceRowChanged" msprop:Generator_TablePropName="Transaction_Invoice" msprop:Generator_RowDeletingName="Transaction_InvoiceRowDeleting" msprop:Generator_RowChangingName="Transaction_InvoiceRowChanging" msprop:Generator_RowEvHandlerName="Transaction_InvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="Transaction_InvoiceRowDeleted" msprop:Generator_RowClassName="Transaction_InvoiceRow" msprop:Generator_UserTableName="Transaction_Invoice" msprop:Generator_RowEvArgName="Transaction_InvoiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="recieptNo" msprop:Generator_ColumnVarNameInTable="columnrecieptNo" msprop:Generator_ColumnPropNameInRow="recieptNo" msprop:Generator_ColumnPropNameInTable="recieptNoColumn" msprop:Generator_UserColumnName="recieptNo">
@@ -965,11 +974,11 @@ SELECT recieptNo, dateIssued, workerID, clientID, totalAmountPayable, paymentMet
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="can_x0020_cover" msdata:parent="Vehicle" msdata:child="Rental" msdata:parentkey="carNo" msdata:childkey="vehicleID" msprop:Generator_UserChildTable="Rental" msprop:Generator_ChildPropName="GetRentalRows" msprop:Generator_UserRelationName="can cover" msprop:Generator_ParentPropName="VehicleRow" msprop:Generator_RelationVarName="relationcan_cover" msprop:Generator_UserParentTable="Vehicle" />
-      <msdata:Relationship name="can_x0020_rent" msdata:parent="Client" msdata:child="Rental" msdata:parentkey="clientID" msdata:childkey="clientID" msprop:Generator_UserChildTable="Rental" msprop:Generator_ChildPropName="GetRentalRows" msprop:Generator_UserRelationName="can rent" msprop:Generator_ParentPropName="ClientRow" msprop:Generator_RelationVarName="relationcan_rent" msprop:Generator_UserParentTable="Client" />
-      <msdata:Relationship name="endorses" msdata:parent="Employee" msdata:child="Transaction_Invoice" msdata:parentkey="empID" msdata:childkey="workerID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="endorses" msprop:Generator_ParentPropName="EmployeeRow" msprop:Generator_RelationVarName="relationendorses" msprop:Generator_UserParentTable="Employee" />
-      <msdata:Relationship name="recieves" msdata:parent="Client" msdata:child="Transaction_Invoice" msdata:parentkey="clientID" msdata:childkey="clientID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="recieves" msprop:Generator_ParentPropName="ClientRow" msprop:Generator_RelationVarName="relationrecieves" msprop:Generator_UserParentTable="Client" />
-      <msdata:Relationship name="Rental_Invoice" msdata:parent="Rental" msdata:child="Transaction_Invoice" msdata:parentkey="rentalID" msdata:childkey="rentalID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="Rental_Invoice" msprop:Generator_ParentPropName="RentalRow" msprop:Generator_RelationVarName="relationRental_Invoice" msprop:Generator_UserParentTable="Rental" />
+      <msdata:Relationship name="can_x0020_cover" msdata:parent="Vehicle" msdata:child="Rental" msdata:parentkey="carNo" msdata:childkey="vehicleID" msprop:Generator_UserChildTable="Rental" msprop:Generator_ChildPropName="GetRentalRows" msprop:Generator_UserRelationName="can cover" msprop:Generator_RelationVarName="relationcan_cover" msprop:Generator_UserParentTable="Vehicle" msprop:Generator_ParentPropName="VehicleRow" />
+      <msdata:Relationship name="can_x0020_rent" msdata:parent="Client" msdata:child="Rental" msdata:parentkey="clientID" msdata:childkey="clientID" msprop:Generator_UserChildTable="Rental" msprop:Generator_ChildPropName="GetRentalRows" msprop:Generator_UserRelationName="can rent" msprop:Generator_RelationVarName="relationcan_rent" msprop:Generator_UserParentTable="Client" msprop:Generator_ParentPropName="ClientRow" />
+      <msdata:Relationship name="endorses" msdata:parent="Employee" msdata:child="Transaction_Invoice" msdata:parentkey="empID" msdata:childkey="workerID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="endorses" msprop:Generator_RelationVarName="relationendorses" msprop:Generator_UserParentTable="Employee" msprop:Generator_ParentPropName="EmployeeRow" />
+      <msdata:Relationship name="recieves" msdata:parent="Client" msdata:child="Transaction_Invoice" msdata:parentkey="clientID" msdata:childkey="clientID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="recieves" msprop:Generator_RelationVarName="relationrecieves" msprop:Generator_UserParentTable="Client" msprop:Generator_ParentPropName="ClientRow" />
+      <msdata:Relationship name="Rental_Invoice" msdata:parent="Rental" msdata:child="Transaction_Invoice" msdata:parentkey="rentalID" msdata:childkey="rentalID" msprop:Generator_UserChildTable="Transaction_Invoice" msprop:Generator_ChildPropName="GetTransaction_InvoiceRows" msprop:Generator_UserRelationName="Rental_Invoice" msprop:Generator_RelationVarName="relationRental_Invoice" msprop:Generator_UserParentTable="Rental" msprop:Generator_ParentPropName="RentalRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

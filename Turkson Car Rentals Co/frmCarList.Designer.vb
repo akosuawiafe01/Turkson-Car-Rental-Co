@@ -40,6 +40,8 @@ Partial Class frmCarList
         Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
         Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter()
+        Me.btnListCars = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -160,12 +162,32 @@ Partial Class frmCarList
         '
         Me.VehicleTableAdapter.ClearBeforeFill = True
         '
+        'btnListCars
+        '
+        Me.btnListCars.Location = New System.Drawing.Point(1112, 245)
+        Me.btnListCars.Name = "btnListCars"
+        Me.btnListCars.Size = New System.Drawing.Size(82, 25)
+        Me.btnListCars.TabIndex = 18
+        Me.btnListCars.Text = "View List"
+        Me.btnListCars.UseVisualStyleBackColor = True
+        '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(1117, 300)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(77, 24)
+        Me.btnBack.TabIndex = 19
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'frmCarList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1206, 450)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnListCars)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -198,4 +220,6 @@ Partial Class frmCarList
     Friend WithEvents CarStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CarCategoryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CarNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnListCars As Button
+    Friend WithEvents btnBack As Button
 End Class

@@ -153,6 +153,7 @@ Partial Class frmRentalList
         '
         'btnViewList
         '
+        Me.btnViewList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnViewList.Location = New System.Drawing.Point(672, 537)
         Me.btnViewList.Name = "btnViewList"
         Me.btnViewList.Size = New System.Drawing.Size(75, 23)
@@ -162,6 +163,7 @@ Partial Class frmRentalList
         '
         'btnBack
         '
+        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBack.Location = New System.Drawing.Point(790, 537)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(83, 22)

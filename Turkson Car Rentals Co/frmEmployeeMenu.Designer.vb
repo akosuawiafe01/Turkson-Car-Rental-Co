@@ -35,6 +35,7 @@ Partial Class frmEmployeeMenu
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ClientListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,6 +81,7 @@ Partial Class frmEmployeeMenu
         '
         'ReportsToolStripMenuItem
         '
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientListToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
         Me.ReportsToolStripMenuItem.Text = "Reports"
@@ -126,6 +128,12 @@ Partial Class frmEmployeeMenu
         Me.Label1.Text = "Turkson Car Rentals Co"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ClientListToolStripMenuItem
+        '
+        Me.ClientListToolStripMenuItem.Name = "ClientListToolStripMenuItem"
+        Me.ClientListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClientListToolStripMenuItem.Text = "Client List"
+        '
         'frmEmployeeMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,4 +166,5 @@ Partial Class frmEmployeeMenu
     Friend WithEvents LoginToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchForACustomerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientListToolStripMenuItem As ToolStripMenuItem
 End Class
