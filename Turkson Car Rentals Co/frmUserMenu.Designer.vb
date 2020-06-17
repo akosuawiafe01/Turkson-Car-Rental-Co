@@ -27,12 +27,16 @@ Partial Class frmUserMenu
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RentACarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgreementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -61,6 +65,12 @@ Partial Class frmUserMenu
         Me.AgreementToolStripMenuItem.Name = "AgreementToolStripMenuItem"
         Me.AgreementToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
         Me.AgreementToolStripMenuItem.Text = "Agreement"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'ContextMenuStrip1
         '
@@ -94,17 +104,31 @@ Partial Class frmUserMenu
         Me.lblUsername.TabIndex = 11
         Me.lblUsername.Text = "username"
         '
-        'LogoutToolStripMenuItem
+        'PictureBox2
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.PictureBox2.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
+        Me.PictureBox2.Location = New System.Drawing.Point(365, 119)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(376, 319)
+        Me.PictureBox2.TabIndex = 13
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1567818735868_e71b99932e29
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 119)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(333, 319)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'frmUserMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -114,6 +138,8 @@ Partial Class frmUserMenu
         Me.Text = "frmUserMenu"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -128,4 +154,6 @@ Partial Class frmUserMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents lblUsername As Label
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

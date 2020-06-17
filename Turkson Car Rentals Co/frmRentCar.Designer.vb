@@ -28,6 +28,8 @@ Partial Class frmRentCar
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cmbCarstatus = New System.Windows.Forms.ComboBox()
+        Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
         Me.cmbCarCategory = New System.Windows.Forms.ComboBox()
         Me.cmbCarYear = New System.Windows.Forms.ComboBox()
         Me.cmbCarMaker = New System.Windows.Forms.ComboBox()
@@ -47,13 +49,11 @@ Partial Class frmRentCar
         Me.labUserID = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRentalID = New System.Windows.Forms.TextBox()
-        Me.TurksonCo_DataSet = New Turkson_Car_Rentals_Co.TurksonCo_DataSet()
-        Me.VehicleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VehicleTableAdapter = New Turkson_Car_Rentals_Co.TurksonCo_DataSetTableAdapters.VehicleTableAdapter()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -117,6 +117,16 @@ Partial Class frmRentCar
         Me.cmbCarstatus.Size = New System.Drawing.Size(146, 21)
         Me.cmbCarstatus.TabIndex = 35
         Me.cmbCarstatus.ValueMember = "carStatus"
+        '
+        'VehicleBindingSource
+        '
+        Me.VehicleBindingSource.DataMember = "Vehicle"
+        Me.VehicleBindingSource.DataSource = Me.TurksonCo_DataSet
+        '
+        'TurksonCo_DataSet
+        '
+        Me.TurksonCo_DataSet.DataSetName = "TurksonCo_DataSet"
+        Me.TurksonCo_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmbCarCategory
         '
@@ -301,16 +311,6 @@ Partial Class frmRentCar
         Me.txtRentalID.Size = New System.Drawing.Size(144, 20)
         Me.txtRentalID.TabIndex = 26
         '
-        'TurksonCo_DataSet
-        '
-        Me.TurksonCo_DataSet.DataSetName = "TurksonCo_DataSet"
-        Me.TurksonCo_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VehicleBindingSource
-        '
-        Me.VehicleBindingSource.DataMember = "Vehicle"
-        Me.VehicleBindingSource.DataSource = Me.TurksonCo_DataSet
-        '
         'VehicleTableAdapter
         '
         Me.VehicleTableAdapter.ClearBeforeFill = True
@@ -334,9 +334,9 @@ Partial Class frmRentCar
         Me.Text = "frmRentCar"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VehicleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TurksonCo_DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

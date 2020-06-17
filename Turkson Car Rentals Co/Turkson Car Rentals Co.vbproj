@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="frmAgreement.Designer.vb">
       <DependentUpon>frmAgreement.vb</DependentUpon>
     </Compile>
@@ -222,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\expCar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2011_Element_EX_004_640x420.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

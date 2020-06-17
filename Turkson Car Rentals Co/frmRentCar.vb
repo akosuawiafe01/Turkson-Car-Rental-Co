@@ -17,25 +17,22 @@ Public Class frmRentCar
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRentCar.Click
 
-        ' Try
+        Try
 
-        rentalRow = rentalDataset.Rental.NewRow
-        'transRow = transDataSet.Transcript.NewRow
+            rentalRow = rentalDataset.Rental.NewRow
 
 
-        'recieving data from text boxes
-
-        rentalRow.vehicleID = cmbCarVehiNo.SelectedValue.ToString
-        rentalRow.carModel = cmbCarModel.SelectedValue.ToString
-        rentalRow.carYear = cmbCarYear.SelectedValue.ToString
-        rentalRow.clientID = labUserID.Text
-        rentalRow.rentalID = txtRentalID.Text
+            rentalRow.vehicleID = cmbCarVehiNo.SelectedValue.ToString
+            rentalRow.carModel = cmbCarModel.SelectedValue.ToString
+            rentalRow.carYear = cmbCarYear.SelectedValue.ToString
+            rentalRow.clientID = labUserID.Text
+            rentalRow.rentalID = txtRentalID.Text
 
 
 
-        'Catch ex As Exception
-        '   MessageBox.Show(ex.Message)
-        'End Try
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
 
         'saving the Courses into the database

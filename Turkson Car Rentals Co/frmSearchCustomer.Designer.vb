@@ -50,6 +50,7 @@ Partial Class frmSearchCustomer
         Me.btnAddClient = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.dtpDOB = New System.Windows.Forms.DateTimePicker()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -258,27 +259,27 @@ Partial Class frmSearchCustomer
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(193, 376)
+        Me.btnEdit.Location = New System.Drawing.Point(162, 373)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(139, 52)
+        Me.btnEdit.Size = New System.Drawing.Size(102, 20)
         Me.btnEdit.TabIndex = 38
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnAddClient
         '
-        Me.btnAddClient.Location = New System.Drawing.Point(403, 382)
+        Me.btnAddClient.Location = New System.Drawing.Point(316, 371)
         Me.btnAddClient.Name = "btnAddClient"
-        Me.btnAddClient.Size = New System.Drawing.Size(173, 45)
+        Me.btnAddClient.Size = New System.Drawing.Size(106, 22)
         Me.btnAddClient.TabIndex = 39
         Me.btnAddClient.Text = "Add Client"
         Me.btnAddClient.UseVisualStyleBackColor = True
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(644, 390)
+        Me.btnBack.Location = New System.Drawing.Point(608, 371)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(203, 36)
+        Me.btnBack.Size = New System.Drawing.Size(100, 21)
         Me.btnBack.TabIndex = 40
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
@@ -290,11 +291,21 @@ Partial Class frmSearchCustomer
         Me.dtpDOB.Size = New System.Drawing.Size(173, 20)
         Me.dtpDOB.TabIndex = 41
         '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(465, 371)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(100, 21)
+        Me.btnSave.TabIndex = 42
+        Me.btnSave.Text = "Save New Client"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
         'frmSearchCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1014, 450)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.dtpDOB)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAddClient)
@@ -358,4 +369,5 @@ Partial Class frmSearchCustomer
     Friend WithEvents btnAddClient As Button
     Friend WithEvents btnBack As Button
     Friend WithEvents dtpDOB As DateTimePicker
+    Friend WithEvents btnSave As Button
 End Class

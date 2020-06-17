@@ -30,6 +30,8 @@ Partial Class frmUserLogin
         Me.txtUserpasss = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.empLogin = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -54,7 +56,7 @@ Partial Class frmUserLogin
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(161, 191)
+        Me.Label3.Location = New System.Drawing.Point(527, 177)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 13)
         Me.Label3.TabIndex = 2
@@ -63,7 +65,7 @@ Partial Class frmUserLogin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(150, 245)
+        Me.Label4.Location = New System.Drawing.Point(527, 221)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 13)
         Me.Label4.TabIndex = 3
@@ -71,14 +73,14 @@ Partial Class frmUserLogin
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(333, 186)
+        Me.txtUserName.Location = New System.Drawing.Point(664, 174)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(105, 20)
         Me.txtUserName.TabIndex = 4
         '
         'txtUserpasss
         '
-        Me.txtUserpasss.Location = New System.Drawing.Point(332, 233)
+        Me.txtUserpasss.Location = New System.Drawing.Point(663, 221)
         Me.txtUserpasss.Name = "txtUserpasss"
         Me.txtUserpasss.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtUserpasss.Size = New System.Drawing.Size(117, 20)
@@ -86,7 +88,7 @@ Partial Class frmUserLogin
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(320, 349)
+        Me.btnLogin.Location = New System.Drawing.Point(561, 258)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(129, 36)
         Me.btnLogin.TabIndex = 6
@@ -104,11 +106,21 @@ Partial Class frmUserLogin
         Me.empLogin.TabIndex = 7
         Me.empLogin.Text = "Employee? Login here"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources._2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x382
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 125)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(489, 285)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'frmUserLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.empLogin)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtUserpasss)
@@ -119,6 +131,7 @@ Partial Class frmUserLogin
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmUserLogin"
         Me.Text = "frmUserLogin"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -132,4 +145,5 @@ Partial Class frmUserLogin
     Friend WithEvents txtUserpasss As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents empLogin As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

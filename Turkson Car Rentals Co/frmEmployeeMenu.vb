@@ -13,8 +13,12 @@
 
 
     Private Sub LoginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginToolStripMenuItem.Click
+        frmEmployeeLogin.txtEmpName.Clear()
+        frmEmployeeLogin.txtEmpPasss.Clear()
+
         frmEmployeeLogin.Show()
         Me.Hide()
+
     End Sub
 
     Private Sub SearchForACustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchForACustomerToolStripMenuItem.Click

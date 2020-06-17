@@ -21,6 +21,9 @@
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        frmUserLogin.txtUserName.Clear()
+        frmUserLogin.txtUserpasss.Clear()
+
         Me.Hide()
         frmUserLogin.Show()
     End Sub
