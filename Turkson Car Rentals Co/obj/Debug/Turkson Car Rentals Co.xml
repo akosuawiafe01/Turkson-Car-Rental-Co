@@ -22,27 +22,22 @@ Turkson Car Rentals Co
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources._2011_Element_EX_004_640x420">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources._2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x382">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources._2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x3821">
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.empCar">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.expCar">
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.expCar1">
+<member name="P:Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1567818735868_e71b99932e29">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

@@ -63,16 +63,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property _2011_Element_EX_004_640x420() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("2011_Element_EX_004_640x420", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property _2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x382() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("2013-Bugatti-Veyron-Grand-Sport-Vitesse-placement-626x382", resourceCulture)
@@ -83,59 +73,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property _2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x3821() As System.Drawing.Bitmap
+        Friend ReadOnly Property empCar() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("2013-Bugatti-Veyron-Grand-Sport-Vitesse-placement-626x3821", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property expCar() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("expCar", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property expCar1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("expCar1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property photo_1462396881884_de2c07cb95ed() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("photo-1462396881884-de2c07cb95ed", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property photo_1500530855697_b586d89ba3ee() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("photo-1500530855697-b586d89ba3ee", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property photo_1506883968894_6e7738ccfc05() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("photo-1506883968894-6e7738ccfc05", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("empCar", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

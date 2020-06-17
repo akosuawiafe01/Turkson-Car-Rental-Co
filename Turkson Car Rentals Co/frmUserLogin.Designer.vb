@@ -108,11 +108,11 @@ Partial Class frmUserLogin
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources._2013_Bugatti_Veyron_Grand_Sport_Vitesse_placement_626x382
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 125)
+        Me.PictureBox1.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 148)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(489, 285)
-        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.Size = New System.Drawing.Size(365, 290)
+        Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'frmUserLogin

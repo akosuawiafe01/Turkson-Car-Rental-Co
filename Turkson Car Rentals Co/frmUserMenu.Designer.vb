@@ -106,7 +106,7 @@ Partial Class frmUserMenu
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
+        ' Me.PictureBox2.Image = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1543796076_c8a565501995
         Me.PictureBox2.Location = New System.Drawing.Point(365, 119)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(376, 319)

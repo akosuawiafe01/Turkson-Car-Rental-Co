@@ -187,9 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Turkson Rental Co_Splash_Screen.resx">
       <DependentUpon>Turkson Rental Co_Splash_Screen.vb</DependentUpon>
@@ -222,10 +222,16 @@
     <None Include="Resources\2013-Bugatti-Veyron-Grand-Sport-Vitesse-placement-626x382.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\expCar.jpg" />
+    <None Include="Resources\photo-1567818735868-e71b99932e29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2011_Element_EX_004_640x420.jpg" />
+    <None Include="Resources\photo-1543796076-c8a565501995.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-1506883968894-6e7738ccfc05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empCar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

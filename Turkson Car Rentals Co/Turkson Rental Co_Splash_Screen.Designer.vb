@@ -93,7 +93,7 @@ Partial Class Turkson_Rental_Co_Splash_Screen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1506883968894_6e7738ccfc05
+        'Me.BackgroundImage = Global.Turkson_Car_Rentals_Co.My.Resources.Resources.photo_1506883968894_6e7738ccfc05
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(847, 383)
         Me.ControlBox = False
